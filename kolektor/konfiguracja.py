@@ -25,6 +25,10 @@ FILTR_DROGOWY = [
     "lidzbark",
 ]
 
+# Źródła chwilowo wyłączone — nie będą odpytywane ani pokazywane.
+# GDDKiA: plik XML zniknął po przeniesieniu serwisu na drogi.gddkia.gov.pl.
+ZRODLA_WYLACZONE = ["gddkia"]
+
 # --- Świeżość danych ---------------------------------------------------
 # Po ilu minutach od ostatniego udanego pobrania źródło uznajemy za nieaktualne.
 # Kafelka przechodzi wtedy w stan "BRAK DANYCH" — nigdy w "brak zagrożeń".
