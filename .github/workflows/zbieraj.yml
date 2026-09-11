@@ -1,0 +1,76 @@
+name: Zbieranie ostrzeżeń
+
+on:
+  schedule:
+    # Co 20 minut. GitHub bywa niepunktualny przy obciążeniu platformy —
+    # realnie oznacza to 20–35 minut. Do tego zastosowania w zupełności wystarczy.
+    - cron: "*/20 * * * *"
+  workflow_dispatch:          # możliwość ręcznego uruchomienia z zakładki Actions
+  push:
+    branches: [main]
+    paths:
+      - "kolektor/**"
+      - "szablony/**"
+      - ".github/workflows/**"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: zbieranie
+  cancel-in-progress: false
+
+jobs:
+  zbierz:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Pobierz repozytorium
+        uses: actions/checkout@v4
+        with:
+          # Token osobisty (TOKEN_COMMIT) jest tu ważny z nieoczywistego powodu:
+          # commity wykonane domyślnym GITHUB_TOKEN nie liczą się jako aktywność
+          # repozytorium, więc zaplanowany workflow zostałby po ~60 dniach
+          # automatycznie wyłączony. Cichy zanik aktualizacji to najgorszy
+          # możliwy tryb awarii takiego serwisu.
+          token: ${{ secrets.TOKEN_COMMIT || secrets.GITHUB_TOKEN }}
+
+      - name: Przygotuj Pythona
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Zainstaluj zależności
+        run: pip install -r requirements.txt
+
+      - name: Zbierz dane i zbuduj stronę
+        run: python -m kolektor.main
+
+      - name: Zapisz stan w repozytorium
+        # public/dane.json pełni podwójną rolę: jest wynikiem i pamięcią
+        # między uruchomieniami (ostatnie udane pobranie każdego źródła).
+        run: |
+          git config user.name "kolektor"
+          git config user.email "kolektor@users.noreply.github.com"
+          git add public/dane.json
+          if git diff --staged --quiet; then
+            echo "Bez zmian w danych."
+          else
+            git commit -m "Aktualizacja danych: $(date -u '+%Y-%m-%d %H:%M UTC')"
+            git push
+          fi
+
+      - name: Wyślij na InfinityFree
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERWER }}
+          username: ${{ secrets.FTP_UZYTKOWNIK }}
+          password: ${{ secrets.FTP_HASLO }}
+          protocol: ftp          # darmowy InfinityFree nie obsługuje FTPS
+          server-dir: /htdocs/
+          local-dir: ./public/
+          exclude: |
+            **/.git*
+            **/.git*/**
