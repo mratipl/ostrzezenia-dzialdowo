@@ -17,7 +17,7 @@ from pathlib import Path
 from typing import Any, Callable
 
 from .konfiguracja import (
-    KATALOG_WYJSCIA, PROGI_SWIEZOSCI_MIN, PROG_DOMYSLNY_MIN,
+    KATALOG_WYJSCIA, PROGI_SWIEZOSCI_MIN, PROG_DOMYSLNY_MIN, ZRODLA_WYLACZONE,
 )
 from .model import StatusZrodla, Wynik, teraz
 from .render import przygotuj, wzbogac, zapisz
@@ -97,6 +97,8 @@ def zbierz() -> int:
                                               blad=f"{type(e).__name__}: {e}"))
 
         status = wynik.status
+        if status.id in ZRODLA_WYLACZONE:
+            continue
         surowe = [p.do_slownika() for p in wynik.pozycje]
 
         if not status.ok:
@@ -109,7 +111,8 @@ def zbierz() -> int:
                 if not czy_wygaslo(p, moment)
             ]
         else:
-            print(f"  [OK]   {status.nazwa}: {len(surowe)} poz.")
+            dopisek = f" ({status.uwaga})" if status.uwaga else ""
+            print(f"  [OK]   {status.nazwa}: {len(surowe)} poz.{dopisek}")
 
         status.wiek_minut = minuty_od(status.pobrano, moment)
         prog = PROGI_SWIEZOSCI_MIN.get(status.id, PROG_DOMYSLNY_MIN)
