@@ -1,7 +1,7 @@
 {
   "powiat": "powiat działdowski",
-  "wygenerowano": "11.09.2026, 14:03",
-  "wygenerowano_iso": "2026-09-11T12:03:29+00:00",
+  "wygenerowano": "11.09.2026, 14:10",
+  "wygenerowano_iso": "2026-09-11T12:10:17+00:00",
   "naglowek": "Brak ostrzeżeń",
   "klasa_statusu": "s0",
   "najwyzszy_stopien": 0,
@@ -43,10 +43,10 @@
       "nazwa": "IMGW – ostrzeżenia hydrologiczne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-11T12:03:38+00:00",
+      "pobrano": "2026-09-11T12:10:28+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
-      "pobrano_ladnie": "11.09.2026, 14:03"
+      "pobrano_ladnie": "11.09.2026, 14:10"
     },
     {
       "id": "gios",
@@ -63,10 +63,10 @@
       "nazwa": "Open-Meteo – prognoza 24 h",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-11T12:03:50+00:00",
+      "pobrano": "2026-09-11T12:10:38+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
-      "pobrano_ladnie": "11.09.2026, 14:03"
+      "pobrano_ladnie": "11.09.2026, 14:10"
     },
     {
       "id": "gddkia",
