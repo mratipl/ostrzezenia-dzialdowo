@@ -15,6 +15,25 @@ from ..siec import BladPobierania, pobierz_json
 URL_METEO = "https://danepubliczne.imgw.pl/api/data/warningsmeteo"
 URL_HYDRO = "https://danepubliczne.imgw.pl/api/data/warningshydro"
 
+# Endpoint kontrolny: zawsze zwraca dane, niezależnie od sytuacji pogodowej.
+URL_KONTROLNY = "https://danepubliczne.imgw.pl/api/data/synop"
+
+
+def _api_zyje() -> bool:
+    """Czy serwis IMGW w ogóle odpowiada.
+
+    Endpointy ostrzeżeń potrafią zwrócić 404 zamiast pustej tablicy, gdy w kraju
+    nie ma żadnego ostrzeżenia danego typu. Samo 404 jest więc dwuznaczne:
+    może znaczyć "brak ostrzeżeń" albo "adres przestał istnieć". Rozstrzygamy to
+    zapytaniem kontrolnym — bez tego uznanie 404 za brak zagrożeń byłoby
+    dokładnie tą cichą dezinformacją, której unikamy.
+    """
+    try:
+        pobierz_json(URL_KONTROLNY)
+        return True
+    except BladPobierania:
+        return False
+
 
 def _stopien(wpis: dict) -> int:
     surowy = pole(wpis, "stopien", "stopien_zagrozenia", "level", domyslnie=0)
@@ -63,6 +82,11 @@ def _zbierz(url: str, zrodlo: str, nazwa: str, etykieta: str) -> Wynik:
     try:
         dane = pobierz_json(url)
     except BladPobierania as e:
+        if e.kod == 404 and _api_zyje():
+            status.ok = True
+            status.pobrano = teraz().isoformat(timespec="seconds")
+            status.uwaga = "API odpowiada, endpoint zwrócił 404 — brak ostrzeżeń tego typu"
+            return Wynik(status=status)
         status.blad = str(e)
         return Wynik(status=status)
 
