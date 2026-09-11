@@ -18,7 +18,7 @@ from ..pomocnicze import jako_float, odleglosc_km, pierwsza_lista, pole, znormal
 from ..siec import BladPobierania, pobierz_json
 
 BAZA = "https://api.gios.gov.pl/pjp-api/v1/rest"
-URL_STACJE = f"{BAZA}/station/findAll?size=500"
+URL_STACJE = f"{BAZA}/station/findAll?page=0&size=500"
 URL_INDEKS = f"{BAZA}/aqindex/getIndex/{{}}"
 
 # Skala GIOŚ przełożona na naszą skalę 0–3.
