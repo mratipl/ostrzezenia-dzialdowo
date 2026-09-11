@@ -47,7 +47,7 @@ jobs:
         run: python -m kolektor.main
 
       - name: Zapisz stan w repozytorium
-        run: |
+                run: |
           git config user.name "kolektor"
           git config user.email "kolektor@users.noreply.github.com"
           git add public/dane.json
@@ -55,7 +55,8 @@ jobs:
             echo "Bez zmian w danych."
           else
             git commit -m "Aktualizacja danych: $(date -u '+%Y-%m-%d %H:%M UTC')"
-            git push
+            git pull --rebase --autostash origin main || true
+            git push || echo "Nie udało się zapisać stanu — dane i tak zostały opublikowane."
           fi
 
       - name: Przygotuj artefakt strony
