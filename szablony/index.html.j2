@@ -131,7 +131,7 @@ footer strong{color:var(--tekst); font-weight:600}
         {%- elif z.pobrano %}brak danych
         {%- else %}niedostępne{% endif -%}
       </td>
-      <td>{{ z.pobrano_ladnie or "—" }}</td>
+      <td>{{ z.pobrano_ladnie or "—" }}{% if z.uwaga %}<br><span style="color:var(--cichy);font-size:.82rem">{{ z.uwaga }}</span>{% endif %}</td>
     </tr>
   {% endfor %}
   </tbody>
