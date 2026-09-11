@@ -1,7 +1,7 @@
 {
   "powiat": "powiat działdowski",
-  "wygenerowano": "11.09.2026, 14:12",
-  "wygenerowano_iso": "2026-09-11T12:12:23+00:00",
+  "wygenerowano": "11.09.2026, 18:35",
+  "wygenerowano_iso": "2026-09-11T16:35:15+00:00",
   "naglowek": "Brak ostrzeżeń",
   "klasa_statusu": "s0",
   "najwyzszy_stopien": 0,
@@ -12,13 +12,13 @@
       "charakter": "stan",
       "typ": "Prognoza",
       "tytul": "Najbliższe 24 godziny",
-      "opis": "Najsilniejszy prognozowany poryw 19 km/h, suma opadów 0.0 mm. Temperatura od 7 do 17 °C.",
+      "opis": "Najsilniejszy prognozowany poryw 18 km/h, suma opadów 0.0 mm. Temperatura od 7 do 17 °C.",
       "stopien": 0,
       "obowiazuje_od": null,
       "obowiazuje_do": null,
       "link": null,
       "dodatkowe": {
-        "maks_poryw_kmh": 19,
+        "maks_poryw_kmh": 18,
         "suma_opadow_mm": 0.0
       },
       "klucz": "8c15ed19d97c626d",
@@ -33,22 +33,22 @@
       "nazwa": "IMGW – ostrzeżenia meteorologiczne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-11T12:12:25+00:00",
+      "pobrano": "2026-09-11T16:35:17+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "API odpowiada, endpoint zwrócił 404 — brak ostrzeżeń tego typu",
-      "pobrano_ladnie": "11.09.2026, 14:12"
+      "pobrano_ladnie": "11.09.2026, 18:35"
     },
     {
       "id": "imgw-hydro",
       "nazwa": "IMGW – ostrzeżenia hydrologiczne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-11T12:12:26+00:00",
+      "pobrano": "2026-09-11T16:35:18+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": null,
-      "pobrano_ladnie": "11.09.2026, 14:12"
+      "pobrano_ladnie": "11.09.2026, 18:35"
     },
     {
       "id": "gios",
@@ -66,11 +66,11 @@
       "nazwa": "Open-Meteo – prognoza 24 h",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-11T12:12:29+00:00",
+      "pobrano": "2026-09-11T16:35:25+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": null,
-      "pobrano_ladnie": "11.09.2026, 14:12"
+      "pobrano_ladnie": "11.09.2026, 18:35"
     }
   ],
   "zrodla_niedostepne": [
