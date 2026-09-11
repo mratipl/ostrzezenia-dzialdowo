@@ -1,0 +1,98 @@
+{
+  "powiat": "powiat działdowski",
+  "wygenerowano": "11.09.2026, 13:46",
+  "wygenerowano_iso": "2026-09-11T11:46:20+00:00",
+  "naglowek": "Brak ostrzeżeń",
+  "klasa_statusu": "s0",
+  "najwyzszy_stopien": 0,
+  "zdarzenia": [],
+  "stany": [
+    {
+      "zrodlo": "open-meteo",
+      "charakter": "stan",
+      "typ": "Prognoza",
+      "tytul": "Najbliższe 24 godziny",
+      "opis": "Najsilniejszy prognozowany poryw 19 km/h, suma opadów 0.0 mm. Temperatura od 7 do 17 °C.",
+      "stopien": 0,
+      "obowiazuje_od": null,
+      "obowiazuje_do": null,
+      "link": null,
+      "dodatkowe": {
+        "maks_poryw_kmh": 19,
+        "suma_opadow_mm": 0.0
+      },
+      "klucz": "8c15ed19d97c626d",
+      "przestarzale": false,
+      "wiek": null,
+      "okres": ""
+    }
+  ],
+  "zrodla": [
+    {
+      "id": "imgw-meteo",
+      "nazwa": "IMGW – ostrzeżenia meteorologiczne",
+      "ok": false,
+      "blad": "https://danepubliczne.imgw.pl/api/data/warningsmeteo: HTTP Error 404: Not Found",
+      "pobrano": null,
+      "wiek_minut": null,
+      "nieaktualne": true,
+      "pobrano_ladnie": null
+    },
+    {
+      "id": "imgw-hydro",
+      "nazwa": "IMGW – ostrzeżenia hydrologiczne",
+      "ok": true,
+      "blad": null,
+      "pobrano": "2026-09-11T11:46:30+00:00",
+      "wiek_minut": 0,
+      "nieaktualne": false,
+      "pobrano_ladnie": "11.09.2026, 13:46"
+    },
+    {
+      "id": "gios",
+      "nazwa": "GIOŚ – jakość powietrza",
+      "ok": false,
+      "blad": "https://api.gios.gov.pl/pjp-api/v1/rest/station/findAll?size=500: HTTP Error 406: ",
+      "pobrano": null,
+      "wiek_minut": null,
+      "nieaktualne": true,
+      "pobrano_ladnie": null
+    },
+    {
+      "id": "open-meteo",
+      "nazwa": "Open-Meteo – prognoza 24 h",
+      "ok": true,
+      "blad": null,
+      "pobrano": "2026-09-11T11:46:42+00:00",
+      "wiek_minut": 0,
+      "nieaktualne": false,
+      "pobrano_ladnie": "11.09.2026, 13:46"
+    },
+    {
+      "id": "gddkia",
+      "nazwa": "GDDKiA – drogi krajowe",
+      "ok": false,
+      "blad": "https://www.gddkia.gov.pl/dane/zima_html/utrdane.xml: HTTP Error 404: Not Found; https://www.gddkia.gov.pl/dane/utrudnienia/utrdane.xml: HTTP Error 404: Not Found",
+      "pobrano": null,
+      "wiek_minut": null,
+      "nieaktualne": true,
+      "pobrano_ladnie": null
+    }
+  ],
+  "zrodla_niedostepne": [
+    "IMGW – ostrzeżenia meteorologiczne",
+    "GIOŚ – jakość powietrza",
+    "GDDKiA – drogi krajowe"
+  ],
+  "zrodla_bez_danych": [
+    "IMGW – ostrzeżenia meteorologiczne",
+    "GIOŚ – jakość powietrza",
+    "GDDKiA – drogi krajowe"
+  ],
+  "atrybucja": [
+    "Źródłem pochodzenia danych jest Instytut Meteorologii i Gospodarki Wodnej – Państwowy Instytut Badawczy.",
+    "Dane Instytutu Meteorologii i Gospodarki Wodnej – Państwowego Instytutu Badawczego zostały przetworzone.",
+    "Dane o jakości powietrza: Główny Inspektorat Ochrony Środowiska, portal „Jakość Powietrza”.",
+    "Dane o utrudnieniach na drogach krajowych: Generalna Dyrekcja Dróg Krajowych i Autostrad."
+  ]
+}
