@@ -115,7 +115,12 @@ assert any("Wezbranie" in t for t in tytuly), "zgubiono ostrzeżenie hydrologicz
 assert dane["najwyzszy_stopien"] == 2
 assert any("Olsztyn" in s["tytul"] or "Mława" in s["tytul"] for s in dane["stany"])
 assert not any("Warszawa" in s["tytul"] for s in dane["stany"]), "stacja spoza promienia"
-assert any("Lidzbark" in z["opis"] for z in dane["zdarzenia"]), "zgubiono utrudnienie"
-assert not any("Wrocławia" in z["opis"] for z in dane["zdarzenia"]), "utrudnienie spoza terenu"
+from kolektor.konfiguracja import ZRODLA_WYLACZONE
+if "gddkia" in ZRODLA_WYLACZONE:
+    assert not any(z["zrodlo"] == "gddkia" for z in dane["zdarzenia"]), "wyłączone źródło nadal widoczne"
+    assert not any(z["id"] == "gddkia" for z in dane["zrodla"]), "wyłączone źródło w tabeli"
+else:
+    assert any("Lidzbark" in z["opis"] for z in dane["zdarzenia"]), "zgubiono utrudnienie"
+    assert not any("Wrocławia" in z["opis"] for z in dane["zdarzenia"]), "utrudnienie spoza terenu"
 assert not dane["zrodla_niedostepne"], "źródła zastępcze powinny działać"
 print("\nWszystkie kontrole przeszły.")
