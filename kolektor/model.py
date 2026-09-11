@@ -69,6 +69,7 @@ class StatusZrodla:
     pobrano: str | None = None        # ISO 8601 ostatniego UDANEGO pobrania
     wiek_minut: int | None = None
     nieaktualne: bool = False
+    uwaga: str | None = None
 
     def do_slownika(self) -> dict[str, Any]:
         return asdict(self)
