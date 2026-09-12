@@ -91,3 +91,51 @@ print("   ok:", w.status.ok, "| blad:", w.status.blad)
 assert not w.status.ok, "nierozpoznany układ musi być błędem, nie brakiem komunikatów"
 
 print("\nWszystkie kontrole scraperów przeszły.")
+
+print("\n== Stopnie: dojście przez artykuł z listy komunikatów ==")
+LISTA_Z_WPISEM = """
+<html><body><ul>
+ <li><a href="/web/rcb/stopnie-alarmowe-przedluzone">Przedłużenie obowiązywania
+     stopni alarmowych na terytorium RP</a><span>29 sierpnia 2026</span>
+     <p>Premier podpisał zarządzenia.</p></li>
+ <li><a href="/web/rcb/cos-innego">Bezpieczne wakacje nad wodą</a>
+     <span>1 sierpnia 2026</span><p>Porady dla wypoczywających.</p></li>
+ <li><a href="/web/rcb/trzecie">Komunikat o burzach</a>
+     <span>2 sierpnia 2026</span><p>Treść komunikatu.</p></li>
+</ul></body></html>
+"""
+
+def podstaw_dwustopniowo():
+    def f(url, naglowki=None, proby=None, zapasowy_ua=True):
+        if "stopnie-alarmowe-przedluzone" in url:
+            return STRONA_STOPNIE                 # treść artykułu
+        if "stopnie-alarmowe" in url or "premier" in url:
+            return "<html><body><p>Strona informacyjna bez nazw.</p></body></html>"
+        if "komunikaty" in url:
+            return LISTA_Z_WPISEM
+        raise siec.BladPobierania(f"nieobsłużony adres: {url}")
+    html_pomoc.pobierz_tekst = f
+
+podstaw_dwustopniowo()
+w = rcb.stopnie_alarmowe()
+print("   ok:", w.status.ok, "|", w.status.uwaga)
+for p in w.pozycje:
+    print(f"   [{p.stopien}] {p.tytul}")
+assert w.status.ok, f"nie doszło do artykułu: {w.status.blad}"
+assert any("CHARLIE" in p.tytul for p in w.pozycje)
+
+print("\n== Stopnie: brak wpisu na liście → błąd z przykładami tytułów ==")
+def bez_wpisu(url, naglowki=None, proby=None, zapasowy_ua=True):
+    if "komunikaty" in url:
+        return """<html><body><ul>
+          <li><a href="/a">Bezpieczne wakacje nad wodą</a><p>Porady dla osób.</p></li>
+          <li><a href="/b">Czad i ogień. Obudź czujność</a><p>Kampania informacyjna.</p></li>
+          <li><a href="/c">Jak przygotować plecak ewakuacyjny</a><p>Lista rzeczy.</p></li>
+        </ul></body></html>"""
+    return "<html><body><p>nic</p></body></html>"
+html_pomoc.pobierz_tekst = bez_wpisu
+w = rcb.stopnie_alarmowe()
+print("   blad:", (w.status.blad or "")[:180])
+assert not w.status.ok and "Przykłady" in w.status.blad, "brak próbki tytułów w diagnostyce"
+
+print("\nDodatkowe kontrole przeszły.")
