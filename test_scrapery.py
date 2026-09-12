@@ -26,13 +26,18 @@ a także drugi stopień alarmowy CRP BRAVO-CRP na całym obszarze kraju.
 Stopnie obowiązują do 30 listopada 2026 r. do godz. 23:59.</p></body></html>
 """
 
-STRONA_LASY = """
-<html><body><table>
-<tr><td>RDLP Białystok</td><td>1</td></tr>
-<tr><td>RDLP Olsztyn</td><td>2</td></tr>
-<tr><td>RDLP Gdańsk</td><td>0</td></tr>
-</table></body></html>
-"""
+# Realistycznie długa tabela: nowa walidacja odrzuca krótkie strony opisowe,
+# więc dane testowe muszą wyglądać jak prawdziwa tabela zbiorcza.
+STRONA_LASY = "<html><body><h1>Stopień zagrożenia pożarowego lasu</h1><table>" + "".join(
+    f"<tr><td>RDLP {n}</td><td>Nadleśnictwo {n}</td>"
+    f"<td>strefa prognostyczna {i}</td><td>{s}</td>"
+    f"<td>wilgotność ściółki {20 + i}%</td></tr>"
+    for i, (n, s) in enumerate([
+        ("Białystok", 1), ("Olsztyn", 2), ("Gdańsk", 0), ("Toruń", 1),
+        ("Poznań", 1), ("Katowice", 3), ("Kraków", 2), ("Lublin", 1),
+        ("Łódź", 0), ("Szczecin", 1), ("Wrocław", 2), ("Zielona Góra", 1),
+    ])
+) + "</table></body></html>"
 
 from bs4 import BeautifulSoup
 
@@ -71,7 +76,7 @@ assert all(p.charakter == "stan" for p in w.pozycje), "stopień musi być stanem
 assert w.pozycje[0].obowiazuje_do and "2026-11-30" in w.pozycje[0].obowiazuje_do
 
 print("\n== Lasy: właściwa strefa, nie pierwsza z tabeli ==")
-podstaw({"bazapozarow": STRONA_LASY})
+podstaw({"bazapozarow": STRONA_LASY, "traxelektronik": STRONA_LASY})
 import kolektor.zrodla.lasy as L
 L._w_sezonie = lambda: True
 w = L.zagrozenie_pozarowe()
@@ -139,3 +144,61 @@ print("   blad:", (w.status.blad or "")[:180])
 assert not w.status.ok and "Przykłady" in w.status.blad, "brak próbki tytułów w diagnostyce"
 
 print("\nDodatkowe kontrole przeszły.")
+
+print("\n== Stopnie: element menu nie może udawać artykułu ==")
+LISTA_Z_MENU = """
+<html><body>
+<nav><ul>
+  <li><a href="/web/rcb/co-robimy">Co robimy</a>
+      <p>Zajmujemy się stopniami alarmowymi, alertami RCB i ostrzeżeniami.</p></li>
+  <li><a href="/web/rcb/o-nas">O nas</a><p>Rządowe Centrum Bezpieczeństwa.</p></li>
+</ul></nav>
+<ul>
+  <li><a href="/web/rcb/przedluzenie">Przedłużenie obowiązywania stopni alarmowych
+      na terytorium Rzeczypospolitej</a><span>29 sierpnia 2026</span>
+      <p>Premier podpisał zarządzenia.</p></li>
+  <li><a href="/web/rcb/inne">Bezpieczne wakacje nad wodą</a><p>Porady.</p></li>
+</ul></body></html>
+"""
+def dwustopniowo_z_menu(url, naglowki=None, proby=None, zapasowy_ua=True):
+    if "przedluzenie" in url:
+        return STRONA_STOPNIE
+    if "co-robimy" in url:
+        return "<html><body><p>Opis zadań centrum, bez nazw stopni.</p></body></html>"
+    if "komunikaty" in url:
+        return LISTA_Z_MENU
+    return "<html><body><p>nic</p></body></html>"
+html_pomoc.pobierz_tekst = dwustopniowo_z_menu
+w = rcb.stopnie_alarmowe()
+print("   ok:", w.status.ok, "|", w.status.uwaga or w.status.blad)
+assert w.status.ok, f"wybrano zły wpis: {w.status.blad}"
+assert any("CHARLIE" in p.tytul for p in w.pozycje)
+
+print("\n== Lasy: strona opisowa odrzucona, tabela z danymi przyjęta ==")
+OPISOWA = "<html><body><p>" + ("Mapa zagrożenia pożarowego lasu ustalanego zgodnie "
+          "z metodą IBL obowiązującą w Polsce. " * 4) + "</p></body></html>"
+TABELA = "<html><body><table>" + "".join(
+    f"<tr><td>RDLP {n}</td><td>Nadleśnictwo X</td><td>{s}</td></tr>"
+    for n, s in [("Białystok", 1), ("Olsztyn", 2), ("Gdańsk", 0)]
+) + "</table><p>" + ("Strefa prognostyczna, wilgotność ściółki, stopień zagrożenia. " * 40) + "</p></body></html>"
+
+def lasy_dwa(url, naglowki=None, proby=None, zapasowy_ua=True):
+    if "traxelektronik" in url:
+        return OPISOWA                       # za krótka, bez danych
+    if "mapa" in url:
+        return TABELA
+    return OPISOWA
+html_pomoc.pobierz_tekst = lasy_dwa
+L._w_sezonie = lambda: True
+w = L.zagrozenie_pozarowe()
+print("   ok:", w.status.ok, "|", (w.pozycje[0].tytul if w.pozycje else w.status.blad)[:70])
+print("   uwaga:", w.status.uwaga)
+assert w.status.ok and w.pozycje[0].stopien == 2, "nie pominięto strony opisowej"
+
+print("\n== Lasy: same strony opisowe → błąd, nie stopień 0 ==")
+html_pomoc.pobierz_tekst = lambda url, naglowki=None, proby=None, zapasowy_ua=True: OPISOWA
+w = L.zagrozenie_pozarowe()
+print("   blad:", (w.status.blad or "")[:110])
+assert not w.status.ok and ("opisowa" in w.status.blad or "za mało" in w.status.blad)
+
+print("\nKontrole poprawek przeszły.")
