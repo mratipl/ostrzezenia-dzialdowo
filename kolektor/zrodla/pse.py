@@ -13,9 +13,15 @@ from __future__ import annotations
 from ..model import Pozycja, StatusZrodla, Wynik, teraz
 from ..siec import BladPobierania, pobierz_json
 
+# Wnioski z pierwszego przebiegu na produkcji:
+#  - his-obc zwraca 404, czyli taki zbiór nie istnieje,
+#  - pk5l-wp odpowiada 400 z komunikatem "Invalid Query Parameter: $top",
+#    czyli zbiór ISTNIEJE, a odrzucony został wyłącznie parametr.
+# Dlatego pytamy bez parametrów i ograniczamy dane po swojej stronie.
 WARIANTY = [
-    ("api raportów", "https://api.raporty.pse.pl/api/his-obc?$top=1&$orderby=udtczas%20desc"),
-    ("api rezerw", "https://api.raporty.pse.pl/api/pk5l-wp?$top=1"),
+    ("plan koordynacyjny dobowy", "https://api.raporty.pse.pl/api/pk5l-wp"),
+    ("plan z ograniczeniem pól", "https://api.raporty.pse.pl/api/pk5l-wp?$select=business_date"),
+    ("bilans mocy", "https://api.raporty.pse.pl/api/cr-wp"),
 ]
 
 NAGLOWKI = {"Accept": "application/json", "Accept-Encoding": "gzip, deflate"}

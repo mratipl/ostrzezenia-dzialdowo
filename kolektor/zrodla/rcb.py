@@ -83,6 +83,15 @@ def komunikaty() -> Wynik:
     status.ok = True
     status.pobrano = teraz().isoformat(timespec="seconds")
     status.uwaga = f"układ listy: {strategia}, wpisów na stronie: {len(wpisy)}"
+
+    if not pozycje and wpisy:
+        # Zero trafień przy 32 wpisach może znaczyć dwie rzeczy: naprawdę nic
+        # nas nie dotyczy albo filtr jest za wąski. Bez próbki tytułów nie ma
+        # jak tego rozstrzygnąć.
+        przyklady = " ;; ".join(w["tytul"][:70] for w in wpisy[:6])
+        print(f"  [uwaga RCB] filtr terenu odrzucił wszystkie {len(wpisy)} wpisów. "
+              f"Przykłady: {przyklady}")
+
     return Wynik(status=status, pozycje=pozycje)
 
 
@@ -100,24 +109,68 @@ def _wytnij_stopnie(tekst: str) -> list[tuple[str, bool, str]]:
     return znalezione
 
 
+def _tekst_ze_strony(url: str) -> tuple[str, str | None]:
+    """Zwraca (tekst, komunikat_bledu)."""
+    try:
+        return czysty(zupa(url).get_text(" ")), None
+    except BladPobierania as e:
+        return "", str(e)
+
+
+def _przez_liste_komunikatow() -> tuple[str, str | None]:
+    """Wejście w artykuł o stopniach z listy komunikatów.
+
+    Pierwszy przebieg pokazał, że strona /stopnie-alarmowe nie zawiera nazw
+    stopni w treści, a lista komunikatów parsuje się poprawnie (32 wpisy).
+    Szukamy więc wpisu o stopniach alarmowych i czytamy jego stronę.
+    """
+    try:
+        dokument = zupa(URL_KOMUNIKATY)
+    except BladPobierania as e:
+        return "", str(e)
+
+    wpisy, _ = wpisy_z_listy(dokument)
+    kandydaci = [
+        w for w in wpisy
+        if "stopni" in w["tytul"].lower() or "stopnie alarmowe" in w["tekst"].lower()
+    ]
+    if not kandydaci:
+        przyklady = " | ".join(w["tytul"][:60] for w in wpisy[:5])
+        return "", f"na liście {len(wpisy)} komunikatów brak wpisu o stopniach. Przykłady: {przyklady}"
+
+    for wpis in kandydaci[:2]:
+        adres = pelny_adres(wpis["link"], URL_KOMUNIKATY)
+        if not adres:
+            continue
+        tekst, blad = _tekst_ze_strony(adres)
+        if tekst and any(n in tekst.upper() for n in NAZWY_STOPNI):
+            return tekst, None
+    return "", f"wpis znaleziony ('{kandydaci[0]['tytul'][:60]}'), ale bez nazw stopni w treści"
+
+
 def stopnie_alarmowe() -> Wynik:
     status = StatusZrodla(id="stopnie-alarmowe", nazwa="Stopnie alarmowe")
 
     tekst = ""
     bledy = []
+
     for url in URL_STOPNIE:
-        try:
-            tekst = czysty(zupa(url).get_text(" "))
-        except BladPobierania as e:
-            bledy.append(str(e))
+        kandydat, blad = _tekst_ze_strony(url)
+        if blad:
+            bledy.append(blad)
             continue
-        if any(n in tekst.upper() for n in NAZWY_STOPNI):
+        if any(n in kandydat.upper() for n in NAZWY_STOPNI):
+            tekst = kandydat
             break
         bledy.append(f"{url}: brak wzmianki o stopniach")
-        tekst = ""
 
     if not tekst:
-        status.blad = " ;; ".join(bledy)[:400]
+        tekst, blad = _przez_liste_komunikatow()
+        if blad:
+            bledy.append(f"przez listę komunikatów: {blad}")
+
+    if not tekst:
+        status.blad = " ;; ".join(bledy)[:600]
         return Wynik(status=status)
 
     trafienia = _wytnij_stopnie(tekst)

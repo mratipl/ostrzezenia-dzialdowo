@@ -57,13 +57,26 @@ def zagrozenie_pozarowe() -> Wynik:
         status.blad = " ;; ".join(bledy)[:400]
         return Wynik(status=status)
 
-    # Szukamy nazwy strefy i najbliższej jej cyfry 0-3.
-    wzor = re.compile(rf"{re.escape(LASY_STREFA)}\D{{0,80}}?([0-3])", re.IGNORECASE)
-    dopasowanie = wzor.search(tekst)
+    # Kilka wariantów zapisu nazwy strefy — serwisy LP używają różnych form.
+    warianty_nazwy = [
+        LASY_STREFA, f"RDLP {LASY_STREFA}", f"RDLP w {LASY_STREFA}ie",
+        f"{LASY_STREFA}ie", "Lidzbark", "Dwukoły",
+    ]
+    dopasowanie = None
+    for nazwa in warianty_nazwy:
+        dopasowanie = re.search(
+            rf"{re.escape(nazwa)}\D{{0,80}}?([0-3])\b", tekst, re.IGNORECASE
+        )
+        if dopasowanie:
+            break
 
     if not dopasowanie:
-        status.blad = (f"strona pobrana, nie znaleziono strefy '{LASY_STREFA}' "
-                       "— sprawdź nazwę w LASY_STREFA")
+        # Bez próbki tekstu kolejna iteracja byłaby znowu zgadywaniem.
+        probka = tekst[:300] if tekst else "(pusto)"
+        status.blad = (
+            f"strona pobrana ({len(tekst)} znaków), nie znaleziono żadnego z wariantów "
+            f"{warianty_nazwy[:3]}. Początek treści: {probka}"
+        )
         return Wynik(status=status)
 
     stopien = int(dopasowanie.group(1))
