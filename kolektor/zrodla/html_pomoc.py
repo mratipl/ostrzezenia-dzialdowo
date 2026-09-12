@@ -83,6 +83,61 @@ def wpisy_z_listy(dokument: BeautifulSoup, minimum_znakow: int = 25) -> tuple[li
     return [], ""
 
 
+def adres_rss(dokument: BeautifulSoup, baza: str) -> str | None:
+    """Kanał RSS ogłoszony przez stronę (autodiscovery).
+
+    Wolimy RSS od parsowania HTML: nie psuje się przy przemodelowaniu szablonu
+    i zawiera datę publikacji w jednoznacznym formacie.
+    """
+    for znacznik in dokument.find_all("link"):
+        typ = (znacznik.get("type") or "").lower()
+        rel = " ".join(znacznik.get("rel") or []).lower()
+        if "rss" in typ or "atom" in typ or ("alternate" in rel and "xml" in typ):
+            return pelny_adres(znacznik.get("href"), baza)
+    return None
+
+
+def wpisy_z_rss(xml: str) -> list[dict]:
+    """Wpisy z kanału RSS 2.0 albo Atom."""
+    import xml.etree.ElementTree as ET
+    from email.utils import parsedate_to_datetime
+
+    try:
+        korzen = ET.fromstring(xml.strip())
+    except ET.ParseError:
+        return []
+
+    def bez_przestrzeni(znacznik: str) -> str:
+        return znacznik.split("}")[-1].lower()
+
+    wpisy = []
+    for element in korzen.iter():
+        if bez_przestrzeni(element.tag) not in ("item", "entry"):
+            continue
+
+        dane = {"tytul": "", "link": None, "tekst": "", "data": None}
+        for dziecko in element:
+            nazwa = bez_przestrzeni(dziecko.tag)
+            wartosc = czysty(dziecko.text or "")
+            if nazwa == "title":
+                dane["tytul"] = wartosc[:200]
+            elif nazwa == "link":
+                dane["link"] = wartosc or dziecko.get("href")
+            elif nazwa in ("description", "summary", "content"):
+                dane["tekst"] = czysty(
+                    BeautifulSoup(dziecko.text or "", "html.parser").get_text(" ")
+                )[:600]
+            elif nazwa in ("pubdate", "published", "updated", "date"):
+                try:
+                    dane["data"] = parsedate_to_datetime(dziecko.text.strip())
+                except (TypeError, ValueError, AttributeError):
+                    dane["data"] = data_z_tekstu(wartosc)
+
+        if dane["tytul"]:
+            wpisy.append(dane)
+    return wpisy
+
+
 def pelny_adres(link: str | None, baza: str) -> str | None:
     if not link:
         return None
