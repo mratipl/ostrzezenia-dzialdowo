@@ -66,7 +66,7 @@ XML = """<?xml version="1.0" encoding="UTF-8"?>
 </utrudnienia>"""
 
 
-def fałszywy_json(url, naglowki=None):
+def fałszywy_json(url, naglowki=None, proby=None, zapasowy_ua=True):
     if "warningsmeteo" in url:
         return METEO
     if "warningshydro" in url:
@@ -80,7 +80,7 @@ def fałszywy_json(url, naglowki=None):
     raise siec.BladPobierania(f"nieobsłużony adres: {url}")
 
 
-def fałszywy_tekst(url, naglowki=None):
+def fałszywy_tekst(url, naglowki=None, proby=None, zapasowy_ua=True):
     if "utrdane" in url:
         return XML
     raise siec.BladPobierania(f"nieobsłużony adres: {url}")
@@ -88,7 +88,7 @@ def fałszywy_tekst(url, naglowki=None):
 
 siec.pobierz_json = fałszywy_json
 siec.pobierz_tekst = fałszywy_tekst
-for modul in ("imgw", "gios", "open_meteo", "gddkia"):
+for modul in ("imgw", "gios", "open_meteo", "gddkia", "airly"):
     m = __import__(f"kolektor.zrodla.{modul}", fromlist=["x"])
     if hasattr(m, "pobierz_json"):
         m.pobierz_json = fałszywy_json
