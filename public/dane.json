@@ -1,7 +1,7 @@
 {
   "powiat": "powiat działdowski",
   "wygenerowano": "12.09.2026, 22:41",
-  "wygenerowano_iso": "2026-09-12T20:41:16+00:00",
+  "wygenerowano_iso": "2026-09-12T20:41:56+00:00",
   "naglowek": "Brak ostrzeżeń",
   "klasa_statusu": "s0",
   "najwyzszy_stopien": 0,
@@ -93,7 +93,7 @@
       "nazwa": "IMGW – ostrzeżenia meteorologiczne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-12T20:41:18+00:00",
+      "pobrano": "2026-09-12T20:41:58+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "API odpowiada, endpoint zwrócił 404 — brak ostrzeżeń tego typu",
@@ -104,7 +104,7 @@
       "nazwa": "IMGW – ostrzeżenia hydrologiczne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-12T20:41:18+00:00",
+      "pobrano": "2026-09-12T20:41:59+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": null,
@@ -114,7 +114,7 @@
       "id": "gios",
       "nazwa": "GIOŚ – jakość powietrza",
       "ok": false,
-      "blad": "Stacje znalezione, żadna nie zwróciła indeksu (wariant: v1 z nagłówkami przeglądarki)",
+      "blad": "Stacje znalezione, żadna nie zwróciła indeksu (wariant: pełne nagłówki przeglądarki)",
       "pobrano": null,
       "wiek_minut": null,
       "nieaktualne": true,
@@ -127,7 +127,7 @@
       "ok": true,
       "blad": null,
       "pobrano": "2026-09-12T20:31:20+00:00",
-      "wiek_minut": 9,
+      "wiek_minut": 10,
       "nieaktualne": false,
       "uwaga": "z pamięci — odpytywane co 55 min (limit dobowy)",
       "pobrano_ladnie": "12.09.2026, 22:31"
@@ -137,11 +137,11 @@
       "nazwa": "Open-Meteo – prognoza 24 h",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-12T20:41:26+00:00",
+      "pobrano": "2026-09-12T20:42:07+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": null,
-      "pobrano_ladnie": "12.09.2026, 22:41"
+      "pobrano_ladnie": "12.09.2026, 22:42"
     }
   ],
   "zrodla_niedostepne": [
