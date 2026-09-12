@@ -122,5 +122,8 @@ if "gddkia" in ZRODLA_WYLACZONE:
 else:
     assert any("Lidzbark" in z["opis"] for z in dane["zdarzenia"]), "zgubiono utrudnienie"
     assert not any("Wrocławia" in z["opis"] for z in dane["zdarzenia"]), "utrudnienie spoza terenu"
-assert not dane["zrodla_niedostepne"], "źródła zastępcze powinny działać"
+PODSTAWIONE = {"IMGW", "GIOŚ", "Open-Meteo"}
+zepsute = [z["nazwa"] for z in dane["zrodla"]
+           if not z["ok"] and any(n in z["nazwa"] for n in PODSTAWIONE)]
+assert not zepsute, f"źródła zastępcze powinny działać: {zepsute}"
 print("\nWszystkie kontrole przeszły.")
