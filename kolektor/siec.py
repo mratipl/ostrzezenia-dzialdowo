@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import gzip
 import json
+import re
 import time
 import zlib
 import urllib.error
@@ -18,21 +19,53 @@ class BladPobierania(Exception):
         self.kod = kod
 
 
-def _odkoduj(surowe: bytes, kodowanie: str | None) -> str:
-    """Rozpakowanie odpowiedzi, gdy poprosiliśmy o kompresję.
-
-    urllib nie robi tego sam, a niektóre serwery odrzucają żądania bez
-    nagłówka Accept-Encoding jako ruch automatyczny.
-    """
+def _rozpakuj(surowe: bytes, kodowanie: str | None) -> bytes:
+    """urllib nie rozpakowuje sam, a bez Accept-Encoding część serwerów odrzuca ruch."""
     if kodowanie:
         nazwa = kodowanie.lower()
         try:
             if "gzip" in nazwa:
-                surowe = gzip.decompress(surowe)
-            elif "deflate" in nazwa:
-                surowe = zlib.decompress(surowe, -zlib.MAX_WBITS)
+                return gzip.decompress(surowe)
+            if "deflate" in nazwa:
+                return zlib.decompress(surowe, -zlib.MAX_WBITS)
         except (OSError, zlib.error):
             pass
+    return surowe
+
+
+def _znajdz_kodowanie(surowe: bytes, typ_tresci: str | None) -> str | None:
+    """Kodowanie z nagłówka Content-Type albo ze znacznika meta w HTML-u."""
+    if typ_tresci:
+        m = re.search(r"charset=\s*([\w-]+)", typ_tresci, re.IGNORECASE)
+        if m:
+            return m.group(1)
+
+    # Znacznik meta szukamy w surowych bajtach — jeszcze nie wiemy, jak dekodować.
+    poczatek = surowe[:2048].decode("ascii", errors="ignore")
+    m = re.search(r"charset=[\"\']?\s*([\w-]+)", poczatek, re.IGNORECASE)
+    return m.group(1) if m else None
+
+
+def _odkoduj(surowe: bytes, kodowanie: str | None, typ_tresci: str | None = None) -> str:
+    """Rozpakowanie i zdekodowanie odpowiedzi.
+
+    Kodowanie NIE jest na sztywno UTF-8. Starsze polskie serwisy publiczne
+    nadal używają ISO-8859-2 i windows-1250; zdekodowane jako UTF-8 dają
+    krzaki w miejscu polskich znaków, co skutecznie psuje dopasowywanie nazw.
+    """
+    surowe = _rozpakuj(surowe, kodowanie)
+
+    proby = []
+    wskazane = _znajdz_kodowanie(surowe, typ_tresci)
+    if wskazane:
+        proby.append(wskazane)
+    proby += ["utf-8", "cp1250", "iso-8859-2"]
+
+    for nazwa in proby:
+        try:
+            return surowe.decode(nazwa)
+        except (UnicodeDecodeError, LookupError):
+            continue
     return surowe.decode("utf-8", errors="replace")
 
 
@@ -41,7 +74,12 @@ def _tresc_bledu(e: urllib.error.HTTPError) -> str:
         surowe = e.read()[:400]
     except Exception:
         return ""
-    tekst = _odkoduj(surowe, e.headers.get("Content-Encoding") if e.headers else None)
+    naglowki = e.headers if e.headers else None
+    tekst = _odkoduj(
+        surowe,
+        naglowki.get("Content-Encoding") if naglowki else None,
+        naglowki.get("Content-Type") if naglowki else None,
+    )
     return " ".join(tekst.split())[:250]
 
 
@@ -75,7 +113,11 @@ def pobierz_tekst(
             try:
                 zadanie = urllib.request.Request(url, headers=naglowek)
                 with urllib.request.urlopen(zadanie, timeout=TIMEOUT) as odp:
-                    return _odkoduj(odp.read(), odp.headers.get("Content-Encoding"))
+                    return _odkoduj(
+                        odp.read(),
+                        odp.headers.get("Content-Encoding"),
+                        odp.headers.get("Content-Type"),
+                    )
             except urllib.error.HTTPError as e:
                 # Treść odpowiedzi błędu bywa najcenniejszą informacją: przy 406
                 # serwery zwykle wypisują, jakie formaty są akceptowalne.
