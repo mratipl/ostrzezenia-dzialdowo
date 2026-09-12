@@ -2,8 +2,10 @@
 
 from __future__ import annotations
 
+import gzip
 import json
 import time
+import zlib
 import urllib.error
 import urllib.request
 
@@ -14,6 +16,33 @@ class BladPobierania(Exception):
     def __init__(self, komunikat: str, kod: int | None = None):
         super().__init__(komunikat)
         self.kod = kod
+
+
+def _odkoduj(surowe: bytes, kodowanie: str | None) -> str:
+    """Rozpakowanie odpowiedzi, gdy poprosiliśmy o kompresję.
+
+    urllib nie robi tego sam, a niektóre serwery odrzucają żądania bez
+    nagłówka Accept-Encoding jako ruch automatyczny.
+    """
+    if kodowanie:
+        nazwa = kodowanie.lower()
+        try:
+            if "gzip" in nazwa:
+                surowe = gzip.decompress(surowe)
+            elif "deflate" in nazwa:
+                surowe = zlib.decompress(surowe, -zlib.MAX_WBITS)
+        except (OSError, zlib.error):
+            pass
+    return surowe.decode("utf-8", errors="replace")
+
+
+def _tresc_bledu(e: urllib.error.HTTPError) -> str:
+    try:
+        surowe = e.read()[:400]
+    except Exception:
+        return ""
+    tekst = _odkoduj(surowe, e.headers.get("Content-Encoding") if e.headers else None)
+    return " ".join(tekst.split())[:250]
 
 
 # Część serwerów publicznych odrzuca nietypowe User-Agenty, zwracając 403 lub 406.
@@ -46,9 +75,15 @@ def pobierz_tekst(
             try:
                 zadanie = urllib.request.Request(url, headers=naglowek)
                 with urllib.request.urlopen(zadanie, timeout=TIMEOUT) as odp:
-                    return odp.read().decode("utf-8", errors="replace")
+                    return _odkoduj(odp.read(), odp.headers.get("Content-Encoding"))
             except urllib.error.HTTPError as e:
-                ostatni, ostatni_kod = e, e.code
+                # Treść odpowiedzi błędu bywa najcenniejszą informacją: przy 406
+                # serwery zwykle wypisują, jakie formaty są akceptowalne.
+                tresc = _tresc_bledu(e)
+                ostatni = BladPobierania(
+                    f"{url}: HTTP Error {e.code}{f' — {tresc}' if tresc else ''}", e.code
+                )
+                ostatni_kod = e.code
                 if e.code in (403, 406):
                     break          # zmiana agenta ma sens, ponawianie nie
                 if e.code == 404:
@@ -60,6 +95,8 @@ def pobierz_tekst(
                 if proba < limit:
                     time.sleep(2 * proba)
 
+    if isinstance(ostatni, BladPobierania):
+        raise ostatni
     raise BladPobierania(f"{url}: {ostatni}", ostatni_kod) from ostatni
 
 
