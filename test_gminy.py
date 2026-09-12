@@ -164,3 +164,49 @@ assert len(wpisy) == 3, f"zgubiono prawdziwe aktualności: {len(wpisy)}"
 assert not any("Przejdź" in w["tytul"] for w in wpisy)
 
 print("\nKontrole filtra nawigacji przeszły.")
+
+print("\n== Waga wpisów: trening syren to nie ostrzeżenie ==")
+PRZYPADKI = [
+    ("Komunikat dla mieszkańców - uruchomienie syren w dniu 20.12.2026",
+     "Informujemy o treningu systemu wykrywania i alarmowania.", 0),
+    ("Przerwa w dostawie wody w Burkacie",
+     "W dniu 20 grudnia nastąpi przerwa w dostawie wody.", 1),
+    ("Awaria sieci wodociągowej — woda niezdatna do spożycia",
+     "Zakaz spożywania wody do odwołania.", 2),
+    ("Ostrzeżenie meteorologiczne — silny wiatr",
+     "IMGW ostrzega przed porywami.", 2),
+    ("Planowane wyłączenie prądu w Uzdowie",
+     "Energa informuje o wyłączeniu prądu.", 1),
+]
+for tytul, opis, oczekiwany in PRZYPADKI:
+    waga = gminy._waga(f"{tytul} {opis}")
+    znak = "✓" if waga == oczekiwany else "✗"
+    print(f"   {znak} [{waga}] {tytul[:52]}")
+    assert waga == oczekiwany, f"zła waga dla: {tytul}"
+
+print("\n== Zapowiedź po terminie wypada z tablicy ==")
+from kolektor.model import teraz
+assert gminy._minela_data_w_tytule("uruchomienie syren w dniu 01.09.2026", teraz())
+assert not gminy._minela_data_w_tytule("uruchomienie syren w dniu 31.12.2026", teraz())
+assert not gminy._minela_data_w_tytule("Przerwa w dostawie wody", teraz())
+print("   ✓ wpis z datą 01.09.2026 odrzucony, z 31.12.2026 zachowany")
+
+print("\n== Nagłówek: same informacje nie dają ostrzeżenia ==")
+from kolektor.render import przygotuj
+from kolektor.model import StatusZrodla
+status = StatusZrodla(id="gminy", nazwa="Gminy", ok=True,
+                      pobrano=teraz().isoformat(timespec="seconds"))
+tylko_info = [{"zrodlo": "gminy", "charakter": "zdarzenie", "typ": "Komunikat",
+               "tytul": "Trening syren", "opis": "", "stopien": 0,
+               "obowiazuje_od": None, "obowiazuje_do": None, "przestarzale": False,
+               "wiek": None, "okres": ""}]
+dane = przygotuj(list(tylko_info), [status], teraz())
+print("   nagłówek:", dane["naglowek"], "| klasa:", dane["klasa_statusu"])
+assert dane["naglowek"] == "Brak ostrzeżeń" and dane["klasa_statusu"] == "s0"
+
+z_ostrzezeniem = tylko_info + [dict(tylko_info[0], tytul="Woda niezdatna do spożycia", stopien=2)]
+dane = przygotuj(z_ostrzezeniem, [status], teraz())
+print("   nagłówek:", dane["naglowek"], "| klasa:", dane["klasa_statusu"])
+assert "2. stopnia" in dane["naglowek"] and "woda niezdatna" in dane["naglowek"]
+
+print("\nKontrole wagi i nagłówka przeszły.")
