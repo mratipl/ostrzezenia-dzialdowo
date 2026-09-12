@@ -21,16 +21,28 @@ class BladPobierania(Exception):
 UA_ZAPASOWY = "Mozilla/5.0 (compatible; OstrzezeniaBot/1.0)"
 
 
-def pobierz_tekst(url: str, naglowki: dict[str, str] | None = None) -> str:
+def pobierz_tekst(
+    url: str,
+    naglowki: dict[str, str] | None = None,
+    proby: int | None = None,
+    zapasowy_ua: bool = True,
+) -> str:
+    """proby i zapasowy_ua pozwalają ograniczyć liczbę żądań.
+
+    Ma to znaczenie przy API z dziennym limitem: domyślne ponawianie razem ze
+    zmianą User-Agenta może wygenerować do sześciu żądań na jedno wywołanie.
+    """
+    limit = proby if proby is not None else PROBY
+    agenci = (UA, UA_ZAPASOWY) if zapasowy_ua else (UA,)
     ostatni: Exception | None = None
     ostatni_kod: int | None = None
 
-    for agent in (UA, UA_ZAPASOWY):
+    for agent in agenci:
         naglowek = {"User-Agent": agent, "Accept": "*/*"}
         if naglowki:
             naglowek.update(naglowki)
 
-        for proba in range(1, PROBY + 1):
+        for proba in range(1, limit + 1):
             try:
                 zadanie = urllib.request.Request(url, headers=naglowek)
                 with urllib.request.urlopen(zadanie, timeout=TIMEOUT) as odp:
@@ -41,21 +53,26 @@ def pobierz_tekst(url: str, naglowki: dict[str, str] | None = None) -> str:
                     break          # zmiana agenta ma sens, ponawianie nie
                 if e.code == 404:
                     raise BladPobierania(f"{url}: HTTP Error 404: Not Found", 404) from e
-                if proba < PROBY:
+                if proba < limit:
                     time.sleep(2 * proba)
             except (urllib.error.URLError, OSError) as e:
                 ostatni = e
-                if proba < PROBY:
+                if proba < limit:
                     time.sleep(2 * proba)
 
     raise BladPobierania(f"{url}: {ostatni}", ostatni_kod) from ostatni
 
 
-def pobierz_json(url: str, naglowki: dict[str, str] | None = None):
+def pobierz_json(
+    url: str,
+    naglowki: dict[str, str] | None = None,
+    proby: int | None = None,
+    zapasowy_ua: bool = True,
+):
     naglowek = {"Accept": "application/json"}
     if naglowki:
         naglowek.update(naglowki)
-    tekst = pobierz_tekst(url, naglowek)
+    tekst = pobierz_tekst(url, naglowek, proby=proby, zapasowy_ua=zapasowy_ua)
     try:
         return json.loads(tekst)
     except json.JSONDecodeError as e:
