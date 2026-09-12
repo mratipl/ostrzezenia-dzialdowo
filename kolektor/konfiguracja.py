@@ -42,6 +42,19 @@ AIRLY_INSTALACJE: list[tuple[int, str]] = [
 ]
 AIRLY_PROMIEN_KM = 30
 
+# --- Scrapery HTML -----------------------------------------------------
+# Frazy, po których rozpoznajemy, że komunikat dotyczy terenu. Szeroko,
+# bo komunikaty wojewódzkie rzadko wymieniają powiat z nazwy.
+FRAZY_TERENU = [
+    "warmińsko-mazursk", "warminsko-mazursk", "warmii", "warmińsk",
+    "działdow", "dzialdow", "lidzbark", "iłowo", "ilowo", "płośnic", "plosnic",
+    "rybno", "nidzic", "mław", "mlaw",
+    "całej polsce", "całego kraju", "cały kraj", "obszar kraju",
+]
+
+# Nazwa strefy prognostycznej zagrożenia pożarowego lasu.
+LASY_STREFA = "Olsztyn"
+
 # Źródła chwilowo wyłączone — nie będą odpytywane ani pokazywane.
 # GDDKiA: plik XML zniknął po przeniesieniu serwisu na drogi.gddkia.gov.pl.
 ZRODLA_WYLACZONE = ["gddkia"]
@@ -55,6 +68,10 @@ PROGI_SWIEZOSCI_MIN = {
     "imgw-synop": 120,
     "gios": 180,
     "airly": 120,
+    "rcb": 90,
+    "stopnie-alarmowe": 24 * 60,
+    "lasy": 24 * 60,
+    "pse": 180,
     "open-meteo": 180,
     "gddkia": 120,
 }
@@ -65,6 +82,12 @@ PROG_DOMYSLNY_MIN = 120
 # Airly wyczerpałoby dobowy limit przed południem.
 MIN_ODSTEP_MIN = {
     "airly": 55,
+    # Stopnie alarmowe zmieniają się kwartalnie, a stopień zagrożenia
+    # pożarowego raz na dobę. Odpytywanie ich co 20 minut to tylko obciążanie
+    # cudzych serwerów bez żadnego zysku informacyjnego.
+    "stopnie-alarmowe": 180,
+    "lasy": 180,
+    "rcb": 40,
 }
 
 # --- Sieć --------------------------------------------------------------

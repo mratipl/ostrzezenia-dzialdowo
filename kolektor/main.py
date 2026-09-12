@@ -22,7 +22,7 @@ from .konfiguracja import (
 )
 from .model import StatusZrodla, Wynik, teraz
 from .render import przygotuj, wzbogac, zapisz
-from .zrodla import airly, gddkia, gios, imgw, open_meteo
+from .zrodla import airly, gddkia, gios, imgw, lasy, open_meteo, pse, rcb
 
 KORZEN = Path(__file__).resolve().parent.parent
 WYJSCIE = KORZEN / KATALOG_WYJSCIA
@@ -37,6 +37,10 @@ ZRODLA: list[tuple[str, Callable[[], Wynik]]] = [
     ("airly", airly.pomiar),
     ("open-meteo", open_meteo.prognoza),
     ("gddkia", gddkia.utrudnienia),
+    ("rcb", rcb.komunikaty),
+    ("stopnie-alarmowe", rcb.stopnie_alarmowe),
+    ("lasy", lasy.zagrozenie_pozarowe),
+    ("pse", pse.bilans_mocy),
 ]
 
 
