@@ -22,20 +22,32 @@ from ..siec import BladPobierania, pobierz_json
 BAZA = "https://api.gios.gov.pl/pjp-api"
 URL_INDEKS = f"{BAZA}/v1/rest/aqindex/getIndex/{{}}"
 
+# Pełny zestaw nagłówków przeglądarki. Brak Accept-Encoding jest częstym
+# powodem odrzucenia żądania przez zaporę aplikacyjną jako ruch automatyczny —
+# a urllib domyślnie wysyła Accept-Encoding: identity, co wygląda nietypowo.
+PRZEGLADARKA = {
+    "Accept": "application/json, text/plain, */*",
+    "Accept-Encoding": "gzip, deflate",
+    "Accept-Language": "pl-PL,pl;q=0.9,en;q=0.8",
+    "Referer": "https://powietrze.gios.gov.pl/pjp/current",
+    "Origin": "https://powietrze.gios.gov.pl",
+    "Connection": "keep-alive",
+}
+
 # Kolejne próby dotarcia do listy stacji. Pierwsza, która zwróci dane, wygrywa.
 WARIANTY: list[tuple[str, str, dict[str, str]]] = [
+    ("pełne nagłówki przeglądarki", f"{BAZA}/v1/rest/station/findAll?page=0&size=500",
+     PRZEGLADARKA),
+    ("przeglądarka, bez parametrów", f"{BAZA}/v1/rest/station/findAll",
+     PRZEGLADARKA),
+    ("tylko kompresja", f"{BAZA}/v1/rest/station/findAll?page=0&size=500",
+     {"Accept": "application/json", "Accept-Encoding": "gzip, deflate"}),
     ("v1 z paginacją", f"{BAZA}/v1/rest/station/findAll?page=0&size=500",
      {"Accept": "application/json"}),
-    ("v1 bez parametrów", f"{BAZA}/v1/rest/station/findAll",
-     {"Accept": "application/json"}),
-    ("v1 z nagłówkami przeglądarki", f"{BAZA}/v1/rest/station/findAll?page=0&size=500",
-     {"Accept": "application/json, text/plain, */*",
-      "Accept-Language": "pl-PL,pl;q=0.9",
-      "Referer": "https://powietrze.gios.gov.pl/"}),
     ("v1 bez nagłówka Accept", f"{BAZA}/v1/rest/station/findAll?page=0&size=500",
      {"Accept": "*/*"}),
     ("starsze API", f"{BAZA}/rest/station/findAll",
-     {"Accept": "application/json"}),
+     {"Accept": "application/json", "Accept-Encoding": "gzip, deflate"}),
 ]
 
 SKALA = {
@@ -74,18 +86,24 @@ def _rozpakuj(dane: Any) -> dict:
     return dane if isinstance(dane, dict) else {}
 
 
+# Nagłówki wariantu, który zadziałał — używamy ich potem do pobrania indeksu.
+NAGLOWKI_UDANE: dict[str, str] | None = None
+
+
 def _lista_stacji() -> tuple[list, str, list[str]]:
     """Zwraca (stacje, nazwa udanego wariantu, komunikaty błędów)."""
+    global NAGLOWKI_UDANE
     bledy: list[str] = []
     for opis, url, naglowki in WARIANTY:
         try:
             stacje = pierwsza_lista(pobierz_json(url, naglowki, proby=1))
         except BladPobierania as e:
-            bledy.append(f"{opis}: {e}")
+            bledy.append(f"{opis} → {e}")
             continue
         if stacje:
+            NAGLOWKI_UDANE = naglowki
             return stacje, opis, bledy
-        bledy.append(f"{opis}: odpowiedź bez listy stacji")
+        bledy.append(f"{opis} → odpowiedź bez listy stacji")
     return [], "", bledy
 
 
@@ -94,7 +112,7 @@ def jakosc_powietrza() -> Wynik:
 
     stacje, wariant, bledy = _lista_stacji()
     if not stacje:
-        status.blad = " | ".join(bledy)[:400]
+        status.blad = " ;; ".join(bledy)[:900]
         return Wynik(status=status)
 
     blisko: list[tuple[float, dict]] = []
@@ -121,7 +139,7 @@ def jakosc_powietrza() -> Wynik:
         if ident is None:
             continue
         try:
-            indeks = _rozpakuj(pobierz_json(URL_INDEKS.format(ident), proby=1))
+            indeks = _rozpakuj(pobierz_json(URL_INDEKS.format(ident), NAGLOWKI_UDANE or PRZEGLADARKA, proby=1))
         except BladPobierania:
             continue
 
