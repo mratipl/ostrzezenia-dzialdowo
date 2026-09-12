@@ -81,11 +81,15 @@ def przygotuj(
     niedostepne = [z.nazwa for z in statusy if not z.ok]
     nigdy_nie_pobrane = [z.nazwa for z in statusy if not z.pobrano]
 
-    if zdarzenia:
-        naglowek = NAZWY_STOPNI[najwyzszy] if najwyzszy else "Komunikaty w toku"
-        if najwyzszy:
-            naglowek += " — " + zdarzenia[0]["tytul"].lower()
+    # Nagłówek napędzają tylko zdarzenia ze stopniem co najmniej 1. Zapowiedź
+    # treningu syren jest informacją, nie ostrzeżeniem, i nie może zajmować
+    # miejsca zarezerwowanego dla realnego zagrożenia.
+    if najwyzszy >= 1:
+        naglowek = NAZWY_STOPNI[najwyzszy] + " — " + zdarzenia[0]["tytul"].lower()
         klasa = f"s{najwyzszy}"
+    elif zdarzenia:
+        naglowek = "Brak ostrzeżeń"
+        klasa = "s0"
     elif not any(z.ok for z in statusy):
         naglowek = "Brak danych"
         klasa = "sbrak"

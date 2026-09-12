@@ -63,22 +63,60 @@ GMINY: list[tuple[str, str]] = [
     ("Gmina Rybno", "https://www.gminarybno.pl/"),
 ]
 
-GMINY_DNI_WSTECZ = 21
+# Skrócone z 21 dni: zapowiedź treningu syren z 1 września trafiła do nagłówka
+# 12 września jako "ostrzeżenie". Tablica ostrzegawcza ma pokazywać stan
+# bieżący, nie archiwum.
+GMINY_DNI_WSTECZ = 10
 
 # Serwisy gmin to głównie treści niezwiązane z kryzysówką — dożynki, konkursy,
 # inwestycje. Filtr jest tu ostrzejszy niż przy RCB: przepuszczamy tylko to,
 # co ma znaczenie operacyjne albo dotyczy bezpieczeństwa mieszkańców.
-SLOWA_KRYZYSOWE = [
-    "ostrzeżeni", "ostrzega", "alarm", "alert", "zagrożeni",
-    "awari", "przerw w dostaw", "przerwa w dostaw", "brak wody", "wyłączeni prądu",
-    "wyłączenia prądu", "bez prądu", "jakość wody", "woda niezdatna", "skażeni",
-    "syren", "trening systemu", "ćwiczeni obron", "ewakuacj",
+# Słowa dzielone na trzy wagi. Wcześniej wszystkie wpisy gminne dostawały
+# stopień 1, więc zapowiedź treningu syren wyglądała jak ostrzeżenie i trafiała
+# do nagłówka strony. Zapowiedź czegoś zaplanowanego to informacja, awaria to
+# utrudnienie, a dopiero zagrożenie zdrowia lub życia to ostrzeżenie.
+
+# Stopień 0 — informacja, nie wpływa na nagłówek.
+# Te frazy rozstrzygają jako pierwsze: zapowiedź czegoś zaplanowanego jest
+# informacją, nawet jeśli w treści pojawia się słowo o brzmieniu alarmowym.
+SLOWA_ZAPOWIEDZI = [
+    "trening", "ćwiczeni", "cwiczeni", "próbn", "probn", "planowan",
+    "zapowiedź", "szkoleni", "kampani", "poradnik",
+]
+
+SLOWA_INFORMACYJNE = [
+    "syren", "trening systemu", "trening wykrywani", "ćwiczeni obron",
+    "ćwiczenia obron", "kwalifikacj wojskow", "obrona cywilna",
+    "zarządzanie kryzysow", "kampani", "poradnik", "bądź gotowy",
+    "próbny", "probny", "szkoleni",
+]
+
+# Stopień 1 — utrudnienie, realna niedogodność.
+# Uwaga na odmianę: fraza "wyłączeni prądu" NIE pasuje do "wyłączenie prądu"
+# ani "wyłączeniu prądu". Ten sam zestaw służy też jako filtr istotności, więc
+# taka literówka wycinała komunikaty o wyłączeniach prądu z całej tablicy.
+# Dlatego stosujemy rdzenie wyrazów, nie pełne formy.
+SLOWA_UTRUDNIENIA = [
+    "awari", "przerw", "brak wody", "brak prądu", "brak pradu",
+    "wyłączen", "wylaczen", "bez prądu", "bez pradu",
+    "utrudnieni", "objazd", "zamknięci", "zamkniet", "remont drogi",
+    "wypadek", "kolizj", "zderzeni",
+]
+
+# Stopień 2 — ostrzeżenie: zagrożenie zdrowia, życia lub mienia.
+# Uwaga: świadomie BEZ samego "alarm". To słowo występuje w "systemie
+# wykrywania i alarmowania" oraz w "stopniu alarmowym", więc podnosiło
+# zapowiedź treningu syren do rangi ostrzeżenia drugiego stopnia.
+SLOWA_OSTRZEZENIA = [
+    "ostrzeżeni", "ostrzega", "alert rcb", "zagrożeni", "alarm bombow",
+    "woda niezdatna", "nieprzydatn do spożyci", "skażeni", "sinic",
+    "zakaz kąpiel", "zakaz pobor", "ewakuacj",
     "pożar", "wichur", "burz", "podtopien", "powodz", "susz", "upał", "mróz",
     "asf", "ptasia gryp", "grypa ptak", "wścieklizn", "kwarantann",
-    "zakaz", "utrudnieni", "objazd", "zamknięci drogi", "zamknięcie drogi",
-    "wypadek", "kolizj", "zarządzanie kryzysow", "obrona cywilna",
-    "stopień alarmow", "stopnie alarmow", "rcb",
+    "stopień alarmow", "stopnie alarmow",
 ]
+
+SLOWA_KRYZYSOWE = SLOWA_INFORMACYJNE + SLOWA_UTRUDNIENIA + SLOWA_OSTRZEZENIA
 
 # Nazwa strefy prognostycznej zagrożenia pożarowego lasu.
 LASY_STREFA = "Olsztyn"
