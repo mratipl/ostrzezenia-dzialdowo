@@ -1,7 +1,7 @@
 {
   "powiat": "powiat działdowski",
-  "wygenerowano": "12.09.2026, 23:13",
-  "wygenerowano_iso": "2026-09-12T21:13:23+00:00",
+  "wygenerowano": "12.09.2026, 23:23",
+  "wygenerowano_iso": "2026-09-12T21:23:03+00:00",
   "naglowek": "Brak ostrzeżeń",
   "klasa_statusu": "s0",
   "najwyzszy_stopien": 0,
@@ -144,33 +144,33 @@
       "nazwa": "IMGW – ostrzeżenia meteorologiczne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-12T21:13:25+00:00",
+      "pobrano": "2026-09-12T21:23:05+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "API odpowiada, endpoint zwrócił 404 — brak ostrzeżeń tego typu",
-      "pobrano_ladnie": "12.09.2026, 23:13"
+      "pobrano_ladnie": "12.09.2026, 23:23"
     },
     {
       "id": "imgw-hydro",
       "nazwa": "IMGW – ostrzeżenia hydrologiczne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-12T21:13:25+00:00",
+      "pobrano": "2026-09-12T21:23:06+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": null,
-      "pobrano_ladnie": "12.09.2026, 23:13"
+      "pobrano_ladnie": "12.09.2026, 23:23"
     },
     {
       "id": "gios",
       "nazwa": "GIOŚ – jakość powietrza",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-12T21:13:29+00:00",
+      "pobrano": "2026-09-12T21:23:11+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "wariant zapytania: pełne nagłówki przeglądarki",
-      "pobrano_ladnie": "12.09.2026, 23:13"
+      "pobrano_ladnie": "12.09.2026, 23:23"
     },
     {
       "id": "airly",
@@ -178,7 +178,7 @@
       "ok": true,
       "blad": null,
       "pobrano": "2026-09-12T20:31:20+00:00",
-      "wiek_minut": 42,
+      "wiek_minut": 51,
       "nieaktualne": false,
       "uwaga": "z pamięci — odpytywane co 55 min (limit dobowy)",
       "pobrano_ladnie": "12.09.2026, 22:31"
@@ -188,11 +188,11 @@
       "nazwa": "Open-Meteo – prognoza 24 h",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-12T21:13:30+00:00",
+      "pobrano": "2026-09-12T21:23:11+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": null,
-      "pobrano_ladnie": "12.09.2026, 23:13"
+      "pobrano_ladnie": "12.09.2026, 23:23"
     },
     {
       "id": "rcb",
@@ -200,7 +200,7 @@
       "ok": true,
       "blad": null,
       "pobrano": "2026-09-12T20:58:36+00:00",
-      "wiek_minut": 14,
+      "wiek_minut": 24,
       "nieaktualne": false,
       "uwaga": "z pamięci — odpytywane co 40 min (limit dobowy)",
       "pobrano_ladnie": "12.09.2026, 22:58"
@@ -222,9 +222,9 @@
       "ok": true,
       "blad": null,
       "pobrano": "2026-09-12T21:13:39+00:00",
-      "wiek_minut": 0,
+      "wiek_minut": 9,
       "nieaktualne": false,
-      "uwaga": "źródło: www.traxelektronik.pl (komórka tabeli)",
+      "uwaga": "z pamięci — odpytywane co 180 min (limit dobowy)",
       "pobrano_ladnie": "12.09.2026, 23:13"
     },
     {
@@ -232,11 +232,11 @@
       "nazwa": "PSE – bilans mocy",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-12T21:13:40+00:00",
+      "pobrano": "2026-09-12T21:23:17+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "wariant: plan koordynacyjny dobowy",
-      "pobrano_ladnie": "12.09.2026, 23:13"
+      "pobrano_ladnie": "12.09.2026, 23:23"
     }
   ],
   "zrodla_niedostepne": [
