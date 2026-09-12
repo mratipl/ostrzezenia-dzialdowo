@@ -25,6 +25,23 @@ FILTR_DROGOWY = [
     "lidzbark",
 ]
 
+# --- Airly -------------------------------------------------------------
+# Klucz przekazuje się zmienną środowiskową AIRLY_KLUCZ (sekret w GitHubie).
+# Identyfikator instalacji ustala się RAZ: python -m kolektor.main --airly
+# i wpisuje poniżej. Powód jest twardy: limit 100 zapytań na dobę, a kolektor
+# chodzi 72 razy — na szukanie instalacji w każdym cyklu nie ma budżetu.
+# Wybrane czujniki: (identyfikator, etykieta na stronie).
+# W powiecie stoi 17 instalacji, ale limit 100 zapytań na dobę pozwala na trzy
+# przy odpytywaniu raz na godzinę. Wybór celowo pokrywa różny charakter terenu:
+# centrum miasta, wieś pod miastem i drugą stronę powiatu.
+# Pełną listę z odległościami daje: python -m kolektor.main --airly
+AIRLY_INSTALACJE: list[tuple[int, str]] = [
+    (10303, "Działdowo, Plac Mickiewicza"),
+    (10343, "Księży Dwór"),
+    (10349, "Iłowo-Osada, Wyzwolenia"),
+]
+AIRLY_PROMIEN_KM = 30
+
 # Źródła chwilowo wyłączone — nie będą odpytywane ani pokazywane.
 # GDDKiA: plik XML zniknął po przeniesieniu serwisu na drogi.gddkia.gov.pl.
 ZRODLA_WYLACZONE = ["gddkia"]
@@ -37,10 +54,18 @@ PROGI_SWIEZOSCI_MIN = {
     "imgw-hydro": 90,
     "imgw-synop": 120,
     "gios": 180,
+    "airly": 120,
     "open-meteo": 180,
     "gddkia": 120,
 }
 PROG_DOMYSLNY_MIN = 120
+
+# Minimalny odstęp między pobraniami danego źródła. Źródło odpytane niedawno
+# jest pomijane, a jego poprzednie dane przenoszone jako aktualne — bez tego
+# Airly wyczerpałoby dobowy limit przed południem.
+MIN_ODSTEP_MIN = {
+    "airly": 55,
+}
 
 # --- Sieć --------------------------------------------------------------
 UA = (
