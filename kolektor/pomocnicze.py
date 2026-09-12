@@ -41,6 +41,30 @@ def pole(slownik: dict[str, Any], *kandydaci: str, domyslnie: Any = None) -> Any
     return domyslnie
 
 
+def pole_w_glab(obiekt: Any, *kandydaci: str, glebokosc: int = 4) -> Any:
+    """Szuka pola rekurencyjnie, nie tylko na wierzchu struktury.
+
+    Potrzebne, bo GIOŚ zagnieżdża kategorię indeksu w podobiekcie
+    (np. stIndexLevel.indexLevelName), a poziom zagnieżdżenia zmieniał się
+    między wersjami API.
+    """
+    if glebokosc < 0:
+        return None
+
+    trafienie = pole(obiekt, *kandydaci) if isinstance(obiekt, dict) else None
+    if trafienie not in (None, "") and not isinstance(trafienie, (dict, list)):
+        return trafienie
+
+    dzieci = obiekt.values() if isinstance(obiekt, dict) else (
+        obiekt if isinstance(obiekt, (list, tuple)) else ())
+    for dziecko in dzieci:
+        if isinstance(dziecko, (dict, list, tuple)):
+            wynik = pole_w_glab(dziecko, *kandydaci, glebokosc=glebokosc - 1)
+            if wynik not in (None, ""):
+                return wynik
+    return None
+
+
 def pierwsza_lista(dane: Any) -> list:
     """GIOŚ pakuje wyniki w obiekt z polską nazwą klucza. Wyciągamy pierwszą listę."""
     if isinstance(dane, list):
