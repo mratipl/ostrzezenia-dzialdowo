@@ -52,6 +52,34 @@ FRAZY_TERENU = [
     "całej polsce", "całego kraju", "cały kraj", "obszar kraju",
 ]
 
+# Serwisy starostwa i gmin powiatu. Kolejność bez znaczenia.
+GMINY: list[tuple[str, str]] = [
+    ("Starostwo Działdowo", "https://powiatdzialdowski.pl/"),
+    ("Miasto Działdowo", "https://www.dzialdowo.pl/"),
+    ("Gmina Działdowo", "https://www.gminadzialdowo.pl/"),
+    ("Gmina Lidzbark", "https://www.lidzbark.pl/"),
+    ("Gmina Iłowo-Osada", "https://ilowo-osada.pl/"),
+    ("Gmina Płośnica", "https://www.plosnica.pl/"),
+    ("Gmina Rybno", "https://www.gminarybno.pl/"),
+]
+
+GMINY_DNI_WSTECZ = 21
+
+# Serwisy gmin to głównie treści niezwiązane z kryzysówką — dożynki, konkursy,
+# inwestycje. Filtr jest tu ostrzejszy niż przy RCB: przepuszczamy tylko to,
+# co ma znaczenie operacyjne albo dotyczy bezpieczeństwa mieszkańców.
+SLOWA_KRYZYSOWE = [
+    "ostrzeżeni", "ostrzega", "alarm", "alert", "zagrożeni",
+    "awari", "przerw w dostaw", "przerwa w dostaw", "brak wody", "wyłączeni prądu",
+    "wyłączenia prądu", "bez prądu", "jakość wody", "woda niezdatna", "skażeni",
+    "syren", "trening systemu", "ćwiczeni obron", "ewakuacj",
+    "pożar", "wichur", "burz", "podtopien", "powodz", "susz", "upał", "mróz",
+    "asf", "ptasia gryp", "grypa ptak", "wścieklizn", "kwarantann",
+    "zakaz", "utrudnieni", "objazd", "zamknięci drogi", "zamknięcie drogi",
+    "wypadek", "kolizj", "zarządzanie kryzysow", "obrona cywilna",
+    "stopień alarmow", "stopnie alarmow", "rcb",
+]
+
 # Nazwa strefy prognostycznej zagrożenia pożarowego lasu.
 LASY_STREFA = "Olsztyn"
 
@@ -72,6 +100,8 @@ PROGI_SWIEZOSCI_MIN = {
     "stopnie-alarmowe": 24 * 60,
     "lasy": 24 * 60,
     "pse": 180,
+    "gminy": 180,
+    "wlasne": 60,
     "open-meteo": 180,
     "gddkia": 120,
 }
@@ -88,6 +118,9 @@ MIN_ODSTEP_MIN = {
     "stopnie-alarmowe": 180,
     "lasy": 180,
     "rcb": 40,
+    # Siedem serwisów po maksymalnie dwa żądania — nie ma powodu robić tego
+    # częściej niż raz na godzinę.
+    "gminy": 55,
 }
 
 # --- Sieć --------------------------------------------------------------
