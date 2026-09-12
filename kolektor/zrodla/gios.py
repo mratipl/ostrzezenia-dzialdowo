@@ -16,11 +16,17 @@ from typing import Any
 
 from ..konfiguracja import DLUGOSC, MAKS_STACJI, PROMIEN_STACJI_KM, SZEROKOSC
 from ..model import Pozycja, StatusZrodla, Wynik, teraz
-from ..pomocnicze import jako_float, odleglosc_km, pierwsza_lista, pole, znormalizuj
+from ..pomocnicze import (
+    jako_float, odleglosc_km, pierwsza_lista, pole, pole_w_glab, znormalizuj,
+)
 from ..siec import BladPobierania, pobierz_json
 
 BAZA = "https://api.gios.gov.pl/pjp-api"
-URL_INDEKS = f"{BAZA}/v1/rest/aqindex/getIndex/{{}}"
+# Warianty endpointu indeksu — jak przy liście stacji, pierwszy działający wygrywa.
+WARIANTY_INDEKSU = [
+    ("v1 getIndex", f"{BAZA}/v1/rest/aqindex/getIndex/{{}}"),
+    ("starsze getIndex", f"{BAZA}/rest/aqindex/getIndex/{{}}"),
+]
 
 # Pełny zestaw nagłówków przeglądarki. Brak Accept-Encoding jest częstym
 # powodem odrzucenia żądania przez zaporę aplikacyjną jako ruch automatyczny —
@@ -53,6 +59,9 @@ WARIANTY: list[tuple[str, str, dict[str, str]]] = [
 SKALA = {
     "bardzodobry": 0, "dobry": 0, "umiarkowany": 1,
     "dostateczny": 2, "zly": 3, "bardzozly": 3,
+    # API bywa dwujęzyczne zależnie od wariantu zapytania
+    "verygood": 0, "good": 0, "moderate": 1,
+    "sufficient": 2, "bad": 3, "verybad": 3,
 }
 
 
@@ -134,17 +143,34 @@ def jakosc_powietrza() -> Wynik:
         return Wynik(status=status)
 
     pozycje: list[Pozycja] = []
+    kłopoty: list[str] = []
+    naglowki = NAGLOWKI_UDANE or PRZEGLADARKA
+
     for dystans, stacja in blisko:
         ident = pole(stacja, "identyfikator stacji", "id", "stationId")
         if ident is None:
-            continue
-        try:
-            indeks = _rozpakuj(pobierz_json(URL_INDEKS.format(ident), NAGLOWKI_UDANE or PRZEGLADARKA, proby=1))
-        except BladPobierania:
+            kłopoty.append(f"stacja bez identyfikatora: {sorted(stacja)[:4]}")
             continue
 
-        kategoria = pole(indeks, "nazwa kategorii indeksu", "indexLevelName")
+        indeks: dict = {}
+        for opis_wariantu, wzor in WARIANTY_INDEKSU:
+            try:
+                indeks = _rozpakuj(pobierz_json(wzor.format(ident), naglowki, proby=1))
+            except BladPobierania as e:
+                kłopoty.append(f"id={ident} {opis_wariantu} → {e}")
+                continue
+            if indeks:
+                break
+
+        if not indeks:
+            continue
+
+        kategoria = pole_w_glab(
+            indeks, "nazwa kategorii indeksu", "indexLevelName", "indexLevel")
         if not kategoria:
+            # Najczęstsza przyczyna: pole nazywa się inaczej niż zakładamy.
+            # Wypisujemy realne klucze, żeby nie zgadywać po raz kolejny.
+            kłopoty.append(f"id={ident} brak kategorii; klucze: {sorted(indeks)[:8]}")
             continue
 
         nazwa = str(pole(stacja, "nazwa stacji", "stationName", "nazwa", domyslnie="stacja"))
@@ -165,10 +191,13 @@ def jakosc_powietrza() -> Wynik:
         )
 
     if not pozycje:
-        status.blad = f"Stacje znalezione, żadna nie zwróciła indeksu (wariant: {wariant})"
+        status.blad = (f"Stacje znalezione (wariant: {wariant}), brak indeksu. "
+                       + " ;; ".join(kłopoty)[:700])
         return Wynik(status=status)
 
     status.ok = True
     status.pobrano = teraz().isoformat(timespec="seconds")
     status.uwaga = f"wariant zapytania: {wariant}"
+    if kłopoty:
+        print(f"  [uwaga GIOŚ] {' ;; '.join(kłopoty)[:400]}")
     return Wynik(status=status, pozycje=pozycje)
