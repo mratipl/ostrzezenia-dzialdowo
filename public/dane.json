@@ -1,7 +1,7 @@
 {
   "powiat": "powiat działdowski",
-  "wygenerowano": "12.09.2026, 22:13",
-  "wygenerowano_iso": "2026-09-12T20:13:46+00:00",
+  "wygenerowano": "12.09.2026, 22:26",
+  "wygenerowano_iso": "2026-09-12T20:26:01+00:00",
   "naglowek": "Brak ostrzeżeń",
   "klasa_statusu": "s0",
   "najwyzszy_stopien": 0,
@@ -33,22 +33,22 @@
       "nazwa": "IMGW – ostrzeżenia meteorologiczne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-12T20:13:49+00:00",
+      "pobrano": "2026-09-12T20:26:03+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "API odpowiada, endpoint zwrócił 404 — brak ostrzeżeń tego typu",
-      "pobrano_ladnie": "12.09.2026, 22:13"
+      "pobrano_ladnie": "12.09.2026, 22:26"
     },
     {
       "id": "imgw-hydro",
       "nazwa": "IMGW – ostrzeżenia hydrologiczne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-12T20:13:52+00:00",
+      "pobrano": "2026-09-12T20:26:04+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": null,
-      "pobrano_ladnie": "12.09.2026, 22:13"
+      "pobrano_ladnie": "12.09.2026, 22:26"
     },
     {
       "id": "gios",
@@ -66,11 +66,11 @@
       "nazwa": "Open-Meteo – prognoza 24 h",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-12T20:13:54+00:00",
+      "pobrano": "2026-09-12T20:26:07+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": null,
-      "pobrano_ladnie": "12.09.2026, 22:13"
+      "pobrano_ladnie": "12.09.2026, 22:26"
     }
   ],
   "zrodla_niedostepne": [
