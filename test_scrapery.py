@@ -130,6 +130,11 @@ assert w.status.ok, f"nie doszło do artykułu: {w.status.blad}"
 assert any("CHARLIE" in p.tytul for p in w.pozycje)
 
 print("\n== Stopnie: brak wpisu na liście → błąd z przykładami tytułów ==")
+# Na czas tego testu opróżniamy konfigurację, żeby sprawdzić ścieżkę
+# diagnostyczną, a nie rezerwę.
+import kolektor.konfiguracja as _K
+_ZAPAS = _K.STOPNIE_ALARMOWE
+_K.STOPNIE_ALARMOWE = []
 def bez_wpisu(url, naglowki=None, proby=None, zapasowy_ua=True):
     if "komunikaty" in url:
         return """<html><body><main><ul>
@@ -145,6 +150,7 @@ html_pomoc.pobierz_tekst = bez_wpisu
 w = rcb.stopnie_alarmowe()
 print("   blad:", (w.status.blad or "")[:180])
 assert not w.status.ok and "Przykłady" in w.status.blad, "brak próbki tytułów w diagnostyce"
+_K.STOPNIE_ALARMOWE = _ZAPAS
 
 print("\nDodatkowe kontrole przeszły.")
 
@@ -208,3 +214,34 @@ print("   blad:", (w.status.blad or "")[:110])
 assert not w.status.ok and ("opisowa" in w.status.blad or "za mało" in w.status.blad)
 
 print("\nKontrole poprawek przeszły.")
+
+print("\n== Stopnie z konfiguracji, gdy scraping zawiedzie ==")
+html_pomoc.pobierz_tekst = lambda url, naglowki=None, proby=None, zapasowy_ua=True: \
+    "<html><body><p>strona bez treści</p></body></html>"
+import kolektor.konfiguracja as K
+K.STOPNIE_OBOWIAZUJA_DO = "2026-11-30T23:59:00"
+w = rcb.stopnie_alarmowe()
+print("   ok:", w.status.ok, "|", w.status.uwaga)
+for p in w.pozycje:
+    print(f"   [{p.stopien}] {p.tytul} — {p.opis[:56]}")
+assert w.status.ok and len(w.pozycje) == 4
+assert any("CHARLIE" in p.tytul for p in w.pozycje)
+assert all(p.charakter == "stan" for p in w.pozycje)
+assert "za 79 dni" in w.status.uwaga
+
+print("\n== Przypomnienie na 14 dni przed terminem ==")
+from datetime import timedelta as TD
+from kolektor.model import teraz as T
+K.STOPNIE_OBOWIAZUJA_DO = (T() + TD(days=9)).isoformat()
+w = rcb.stopnie_alarmowe()
+print("   uwaga:", w.status.uwaga)
+assert "SPRAWDŹ PRZEDŁUŻENIE" in w.status.uwaga
+
+print("\n== Wygasłe stopnie to błąd, nie obowiązujący stan ==")
+K.STOPNIE_OBOWIAZUJA_DO = "2025-02-28T23:59:00"
+w = rcb.stopnie_alarmowe()
+print("   blad:", (w.status.blad or "")[:100])
+assert not w.status.ok and not w.pozycje, "wygasłe stopnie nie mogą się wyświetlać"
+
+K.STOPNIE_OBOWIAZUJA_DO = "2026-11-30T23:59:00"
+print("\nKontrole stopni z konfiguracji przeszły.")
