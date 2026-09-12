@@ -130,9 +130,14 @@ def _przez_liste_komunikatow() -> tuple[str, str | None]:
         return "", str(e)
 
     wpisy, _ = wpisy_z_listy(dokument)
+
+    # Dopasowanie po treści łapało elementy nawigacji: pierwszy przebieg wybrał
+    # wpis o tytule "Co robimy", bo w jego bloku menu pojawiało się słowo
+    # "stopnie". Wymagamy więc słowa w TYTULE i odrzucamy krótkie tytuły
+    # typowe dla pozycji menu.
     kandydaci = [
         w for w in wpisy
-        if "stopni" in w["tytul"].lower() or "stopnie alarmowe" in w["tekst"].lower()
+        if "stopni" in w["tytul"].lower() and len(w["tytul"]) > 20
     ]
     if not kandydaci:
         przyklady = " | ".join(w["tytul"][:60] for w in wpisy[:5])

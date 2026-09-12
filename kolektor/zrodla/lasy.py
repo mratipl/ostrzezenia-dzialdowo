@@ -18,10 +18,23 @@ from ..model import Pozycja, StatusZrodla, Wynik, teraz
 from ..siec import BladPobierania
 from .html_pomoc import czysty, zupa
 
+# Kolejność ma znaczenie: bazapozarow.ibles.pl/zagrozenie/ zwróciło 1180 znaków
+# samego opisu metody IBL, bez danych — to strona wprowadzająca, właściwa mapa
+# ładowana jest osobno. Dlatego najpierw tabela zbiorcza Traxa, a przyjmujemy
+# tylko odpowiedź, w której faktycznie są dane stref.
 ADRESY = [
-    "https://bazapozarow.ibles.pl/zagrozenie/",
     "https://www.traxelektronik.pl/pogoda/las/zbiorcza.php",
+    "https://bazapozarow.ibles.pl/zagrozenie/mapa",
+    "https://bazapozarow.ibles.pl/zagrozenie/",
 ]
+
+# Bez któregoś z tych słów strona jest opisem, nie danymi — nie ma sensu
+# szukać w niej stopnia.
+SYGNALY_DANYCH = ["strefa", "nadleśnictwo", "nadlesnictwo", "rdlp", "stopień", "stopien"]
+# Próg celowo niski: głównym filtrem są słowa kluczowe, nie długość.
+# Strona wprowadzająca IBL miała 1180 znaków, ale nie zawierała ani nazwy
+# strefy, ani słowa "stopień" — i to ją odrzuca, a nie rozmiar.
+MIN_ZNAKOW = 600
 
 OPISY = {
     0: "brak zagrożenia",
@@ -29,6 +42,43 @@ OPISY = {
     2: "duże zagrożenie",
     3: "katastrofalne zagrożenie",
 }
+
+
+def _stopien_z_tabeli(dokument, nazwy: list[str]) -> tuple[int | None, str]:
+    """Stopień z komórek tabeli — precyzyjniej niż wyrażenie regularne na tekście.
+
+    Powód zmiany: w wierszu tabeli jest wiele liczb (numer strefy, wilgotność
+    ściółki), a szukanie "pierwszej cyfry 0-3 po nazwie" trafiało w numer
+    strefy zamiast w stopień. Tutaj wymagamy komórki, której CAŁA treść to
+    jedna cyfra 0-3 — numer strefy siedzi w komórce z tekstem, stopień nie.
+    """
+    if dokument is None:
+        return None, ""
+
+    male = [n.lower() for n in nazwy]
+    for wiersz in dokument.find_all("tr"):
+        komorki = [czysty(k.get_text(" ")) for k in wiersz.find_all(["td", "th"])]
+        if not komorki:
+            continue
+        polaczone = " ".join(komorki).lower()
+        if not any(n in polaczone for n in male):
+            continue
+        for komorka in komorki:
+            if re.fullmatch(r"[0-3]", komorka):
+                return int(komorka), "komórka tabeli"
+    return None, ""
+
+
+def _stopien_z_tekstu(tekst: str, nazwy: list[str]) -> tuple[int | None, str]:
+    """Rezerwa, gdy strona nie używa tabeli."""
+    for nazwa in nazwy:
+        m = re.search(
+            rf"{re.escape(nazwa)}\D{{0,40}}?stopie\w*\D{{0,10}}?([0-3])\b",
+            tekst, re.IGNORECASE,
+        )
+        if m:
+            return int(m.group(1)), "tekst, przy słowie stopień"
+    return None, ""
 
 
 def _w_sezonie() -> bool:
@@ -44,45 +94,56 @@ def zagrozenie_pozarowe() -> Wynik:
         status.uwaga = "poza sezonem (stopnie ustalane od 1 marca do 30 września)"
         return Wynik(status=status)
 
+    dokument = None
     tekst = ""
+    zrodlo_tekstu = ""
     bledy = []
     for url in ADRESY:
         try:
-            tekst = czysty(zupa(url).get_text(" "))
-            break
+            kandydat_dokument = zupa(url)
+            kandydat = czysty(kandydat_dokument.get_text(" "))
         except BladPobierania as e:
             bledy.append(str(e))
+            continue
+
+        maly = kandydat.lower()
+        brakujace = not any(s in maly for s in SYGNALY_DANYCH)
+        if len(kandydat) < MIN_ZNAKOW:
+            bledy.append(f"{url}: tylko {len(kandydat)} znaków (za mało na tabelę)")
+            continue
+        if brakujace:
+            bledy.append(f"{url}: {len(kandydat)} znaków, ale bez słów {SYGNALY_DANYCH[:3]} "
+                         "— to strona opisowa, nie dane")
+            continue
+
+        tekst, dokument, zrodlo_tekstu = kandydat, kandydat_dokument, url
+        break
 
     if not tekst:
-        status.blad = " ;; ".join(bledy)[:400]
+        status.blad = " ;; ".join(bledy)[:500]
         return Wynik(status=status)
 
-    # Kilka wariantów zapisu nazwy strefy — serwisy LP używają różnych form.
     warianty_nazwy = [
         LASY_STREFA, f"RDLP {LASY_STREFA}", f"RDLP w {LASY_STREFA}ie",
         f"{LASY_STREFA}ie", "Lidzbark", "Dwukoły",
     ]
-    dopasowanie = None
-    for nazwa in warianty_nazwy:
-        dopasowanie = re.search(
-            rf"{re.escape(nazwa)}\D{{0,80}}?([0-3])\b", tekst, re.IGNORECASE
-        )
-        if dopasowanie:
-            break
 
-    if not dopasowanie:
-        # Bez próbki tekstu kolejna iteracja byłaby znowu zgadywaniem.
+    stopien, skad = _stopien_z_tabeli(dokument, warianty_nazwy)
+
+    if stopien is None:
+        stopien, skad = _stopien_z_tekstu(tekst, warianty_nazwy)
+
+    if stopien is None:
         probka = tekst[:300] if tekst else "(pusto)"
         status.blad = (
-            f"strona pobrana ({len(tekst)} znaków), nie znaleziono żadnego z wariantów "
+            f"strona pobrana ({len(tekst)} znaków), nie ustalono stopnia dla "
             f"{warianty_nazwy[:3]}. Początek treści: {probka}"
         )
         return Wynik(status=status)
 
-    stopien = int(dopasowanie.group(1))
-
     status.ok = True
     status.pobrano = teraz().isoformat(timespec="seconds")
+    status.uwaga = f"źródło: {zrodlo_tekstu.split('/')[2]} ({skad})"
     return Wynik(status=status, pozycje=[Pozycja(
         zrodlo="lasy",
         charakter="stan",
