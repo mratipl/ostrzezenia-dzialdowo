@@ -17,7 +17,7 @@ antyterrorystycznych), a nie Rada Ministrów.
 from __future__ import annotations
 
 import re
-from datetime import timedelta
+from datetime import datetime, timedelta
 
 from ..konfiguracja import FRAZY_TERENU
 from ..model import Pozycja, StatusZrodla, Wynik, teraz
@@ -197,6 +197,64 @@ def _przez_serwisy_gmin() -> tuple[str, str | None]:
     return "", "w żadnym serwisie gminnym nie ma wpisu o stopniach"
 
 
+def _z_konfiguracji(status: StatusZrodla, bledy: list[str]) -> Wynik:
+    """Stopnie z konfiguracji, gdy żadne źródło automatyczne nie zadziałało.
+
+    Lepsze niż czerwona kafelka: stopnie zmieniają się raz na kwartał, więc
+    dane wpisane ręcznie są pewniejsze od odgadywanych z treści strony.
+    Kolektor pilnuje terminu i sam przypomina o przedłużeniu.
+    """
+    from ..konfiguracja import STOPNIE_ALARMOWE, STOPNIE_OBOWIAZUJA_DO
+
+    if not STOPNIE_ALARMOWE:
+        status.blad = " ;; ".join(bledy)[:500]
+        return Wynik(status=status)
+
+    do_kiedy = None
+    if STOPNIE_OBOWIAZUJA_DO:
+        try:
+            do_kiedy = datetime.fromisoformat(STOPNIE_OBOWIAZUJA_DO)
+            if do_kiedy.tzinfo is None:
+                do_kiedy = do_kiedy.replace(tzinfo=teraz().tzinfo)
+        except ValueError:
+            do_kiedy = None
+
+    moment = teraz()
+
+    # Termin minął — wpis w konfiguracji jest nieaktualny i nie wolno go
+    # pokazywać jako obowiązującego stanu.
+    if do_kiedy and do_kiedy < moment:
+        status.blad = (
+            f"wpisane stopnie wygasły {do_kiedy:%d.%m.%Y} — zaktualizuj "
+            "STOPNIE_ALARMOWE i STOPNIE_OBOWIAZUJA_DO w konfiguracji"
+        )
+        return Wynik(status=status)
+
+    pozycje = [
+        Pozycja(
+            zrodlo="stopnie-alarmowe",
+            charakter="stan",
+            typ="Stopień alarmowy",
+            tytul=f"Stopień {etykieta}",
+            opis=f"Obowiązuje na obszarze: {obszar}.",
+            stopien=waga,
+            obowiazuje_do=do_kiedy.isoformat() if do_kiedy else None,
+            link=URL_STOPNIE[0],
+        )
+        for etykieta, waga, obszar in STOPNIE_ALARMOWE
+    ]
+
+    status.ok = True
+    status.pobrano = moment.isoformat(timespec="seconds")
+    status.uwaga = "z konfiguracji (aktualizacja ręczna)"
+    if do_kiedy:
+        zostalo = (do_kiedy.date() - moment.date()).days
+        status.uwaga += f", termin {do_kiedy:%d.%m.%Y} — za {zostalo} dni"
+        if zostalo <= 14:
+            status.uwaga += " — SPRAWDŹ PRZEDŁUŻENIE"
+    return Wynik(status=status, pozycje=pozycje)
+
+
 def stopnie_alarmowe() -> Wynik:
     status = StatusZrodla(id="stopnie-alarmowe", nazwa="Stopnie alarmowe")
 
@@ -224,8 +282,8 @@ def stopnie_alarmowe() -> Wynik:
             bledy.append(f"przez serwisy gmin: {blad}")
 
     if not tekst:
-        status.blad = " ;; ".join(bledy)[:600]
-        return Wynik(status=status)
+        # Scraping wyczerpany — korzystamy z konfiguracji wpisanej ręcznie.
+        return _z_konfiguracji(status, bledy)
 
     trafienia = _wytnij_stopnie(tekst)
     if not trafienia:
