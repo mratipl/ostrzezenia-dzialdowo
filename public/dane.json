@@ -1,7 +1,7 @@
 {
   "powiat": "powiat działdowski",
-  "wygenerowano": "12.09.2026, 23:03",
-  "wygenerowano_iso": "2026-09-12T21:03:21+00:00",
+  "wygenerowano": "12.09.2026, 23:13",
+  "wygenerowano_iso": "2026-09-12T21:13:23+00:00",
   "naglowek": "Brak ostrzeżeń",
   "klasa_statusu": "s0",
   "najwyzszy_stopien": 0,
@@ -120,6 +120,22 @@
       "przestarzale": false,
       "wiek": null,
       "okres": ""
+    },
+    {
+      "zrodlo": "lasy",
+      "charakter": "stan",
+      "typ": "Zagrożenie pożarowe lasu",
+      "tytul": "Olsztyn: 0. stopień — brak zagrożenia",
+      "opis": "Stopień ustalany codziennie na podstawie pomiarów o 9:00 i 13:00.",
+      "stopien": 0,
+      "obowiazuje_od": null,
+      "obowiazuje_do": null,
+      "link": null,
+      "dodatkowe": {},
+      "klucz": "e5d251e37c2c0673",
+      "przestarzale": false,
+      "wiek": null,
+      "okres": ""
     }
   ],
   "zrodla": [
@@ -128,33 +144,33 @@
       "nazwa": "IMGW – ostrzeżenia meteorologiczne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-12T21:03:22+00:00",
+      "pobrano": "2026-09-12T21:13:25+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "API odpowiada, endpoint zwrócił 404 — brak ostrzeżeń tego typu",
-      "pobrano_ladnie": "12.09.2026, 23:03"
+      "pobrano_ladnie": "12.09.2026, 23:13"
     },
     {
       "id": "imgw-hydro",
       "nazwa": "IMGW – ostrzeżenia hydrologiczne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-12T21:03:23+00:00",
+      "pobrano": "2026-09-12T21:13:25+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": null,
-      "pobrano_ladnie": "12.09.2026, 23:03"
+      "pobrano_ladnie": "12.09.2026, 23:13"
     },
     {
       "id": "gios",
       "nazwa": "GIOŚ – jakość powietrza",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-12T21:03:26+00:00",
+      "pobrano": "2026-09-12T21:13:29+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "wariant zapytania: pełne nagłówki przeglądarki",
-      "pobrano_ladnie": "12.09.2026, 23:03"
+      "pobrano_ladnie": "12.09.2026, 23:13"
     },
     {
       "id": "airly",
@@ -162,7 +178,7 @@
       "ok": true,
       "blad": null,
       "pobrano": "2026-09-12T20:31:20+00:00",
-      "wiek_minut": 32,
+      "wiek_minut": 42,
       "nieaktualne": false,
       "uwaga": "z pamięci — odpytywane co 55 min (limit dobowy)",
       "pobrano_ladnie": "12.09.2026, 22:31"
@@ -172,11 +188,11 @@
       "nazwa": "Open-Meteo – prognoza 24 h",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-12T21:03:26+00:00",
+      "pobrano": "2026-09-12T21:13:30+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": null,
-      "pobrano_ladnie": "12.09.2026, 23:03"
+      "pobrano_ladnie": "12.09.2026, 23:13"
     },
     {
       "id": "rcb",
@@ -184,7 +200,7 @@
       "ok": true,
       "blad": null,
       "pobrano": "2026-09-12T20:58:36+00:00",
-      "wiek_minut": 4,
+      "wiek_minut": 14,
       "nieaktualne": false,
       "uwaga": "z pamięci — odpytywane co 40 min (limit dobowy)",
       "pobrano_ladnie": "12.09.2026, 22:58"
@@ -193,7 +209,7 @@
       "id": "stopnie-alarmowe",
       "nazwa": "Stopnie alarmowe",
       "ok": false,
-      "blad": "https://www.gov.pl/web/rcb/stopnie-alarmowe: brak wzmianki o stopniach ;; https://www.gov.pl/web/rcb/komunikaty: brak wzmianki o stopniach ;; https://www.gov.pl/web/premier/stopnie-alarmowe: brak wzmianki o stopniach ;; przez listę komunikatów: wpis znaleziony ('Co robimy'), ale bez nazw stopni w treści",
+      "blad": "https://www.gov.pl/web/rcb/stopnie-alarmowe: brak wzmianki o stopniach ;; https://www.gov.pl/web/rcb/komunikaty: brak wzmianki o stopniach ;; https://www.gov.pl/web/premier/stopnie-alarmowe: brak wzmianki o stopniach ;; przez listę komunikatów: na liście 32 komunikatów brak wpisu o stopniach. Przykłady: Przejdź do sekcji Stopka gov.pl | Logowanie do panelumObywatel | Urzędy, instytucjei placówki RP | Сайт для громадян України –Serwis dla obywateli Ukrainy | Otwórz okno z tłumaczem języka migowego",
       "pobrano": null,
       "wiek_minut": null,
       "nieaktualne": true,
@@ -203,33 +219,31 @@
     {
       "id": "lasy",
       "nazwa": "Zagrożenie pożarowe lasu",
-      "ok": false,
-      "blad": "strona pobrana (1180 znaków), nie znaleziono żadnego z wariantów ['Olsztyn', 'RDLP Olsztyn', 'RDLP w Olsztynie']. Początek treści: Mapa zagro�enia po�arowego Mapa zagro�enia po�arowego lasu ustalanego zgodnie z metod� IBL obowiuzuj�c� w Polsce na podstawie Rozporz�dzenia Ministra �rodowiska w sprawie szczeg�owych zasad zabezpieczenia przeciwpo�arowego las�w przez jednostki organizacyjne Las�w Pa�stwowych w 60 strefach prognosty",
-      "pobrano": null,
-      "wiek_minut": null,
-      "nieaktualne": true,
-      "uwaga": null,
-      "pobrano_ladnie": null
+      "ok": true,
+      "blad": null,
+      "pobrano": "2026-09-12T21:13:39+00:00",
+      "wiek_minut": 0,
+      "nieaktualne": false,
+      "uwaga": "źródło: www.traxelektronik.pl (komórka tabeli)",
+      "pobrano_ladnie": "12.09.2026, 23:13"
     },
     {
       "id": "pse",
       "nazwa": "PSE – bilans mocy",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-12T21:03:33+00:00",
+      "pobrano": "2026-09-12T21:13:40+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "wariant: plan koordynacyjny dobowy",
-      "pobrano_ladnie": "12.09.2026, 23:03"
+      "pobrano_ladnie": "12.09.2026, 23:13"
     }
   ],
   "zrodla_niedostepne": [
-    "Stopnie alarmowe",
-    "Zagrożenie pożarowe lasu"
+    "Stopnie alarmowe"
   ],
   "zrodla_bez_danych": [
-    "Stopnie alarmowe",
-    "Zagrożenie pożarowe lasu"
+    "Stopnie alarmowe"
   ],
   "atrybucja": [
     "Źródłem pochodzenia danych jest Instytut Meteorologii i Gospodarki Wodnej – Państwowy Instytut Badawczy.",
