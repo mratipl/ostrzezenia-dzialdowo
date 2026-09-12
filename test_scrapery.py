@@ -102,11 +102,11 @@ LISTA_Z_WPISEM = """
 <html><body><ul>
  <li><a href="/web/rcb/stopnie-alarmowe-przedluzone">Przedłużenie obowiązywania
      stopni alarmowych na terytorium RP</a><span>29 sierpnia 2026</span>
-     <p>Premier podpisał zarządzenia.</p></li>
- <li><a href="/web/rcb/cos-innego">Bezpieczne wakacje nad wodą</a>
-     <span>1 sierpnia 2026</span><p>Porady dla wypoczywających.</p></li>
- <li><a href="/web/rcb/trzecie">Komunikat o burzach</a>
-     <span>2 sierpnia 2026</span><p>Treść komunikatu.</p></li>
+     <p>Premier podpisał zarządzenia przedłużające obowiązywanie stopni.</p></li>
+ <li><a href="/web/rcb/cos-innego">Bezpieczne wakacje nad wodą — poradnik</a>
+     <span>1 sierpnia 2026</span><p>Porady dla wypoczywających nad jeziorami.</p></li>
+ <li><a href="/web/rcb/trzecie">Komunikat o burzach z gradem</a>
+     <span>2 sierpnia 2026</span><p>Treść komunikatu o zjawiskach burzowych.</p></li>
 </ul></body></html>
 """
 
@@ -132,11 +132,14 @@ assert any("CHARLIE" in p.tytul for p in w.pozycje)
 print("\n== Stopnie: brak wpisu na liście → błąd z przykładami tytułów ==")
 def bez_wpisu(url, naglowki=None, proby=None, zapasowy_ua=True):
     if "komunikaty" in url:
-        return """<html><body><ul>
-          <li><a href="/a">Bezpieczne wakacje nad wodą</a><p>Porady dla osób.</p></li>
-          <li><a href="/b">Czad i ogień. Obudź czujność</a><p>Kampania informacyjna.</p></li>
-          <li><a href="/c">Jak przygotować plecak ewakuacyjny</a><p>Lista rzeczy.</p></li>
-        </ul></body></html>"""
+        return """<html><body><main><ul>
+          <li><a href="/a">Bezpieczne wakacje nad wodą — poradnik</a>
+              <span>1 sierpnia 2026</span><p>Porady dla osób wypoczywających.</p></li>
+          <li><a href="/b">Czad i ogień. Obudź czujność</a>
+              <span>2 sierpnia 2026</span><p>Kampania informacyjna o zatruciach.</p></li>
+          <li><a href="/c">Jak przygotować plecak ewakuacyjny</a>
+              <span>3 sierpnia 2026</span><p>Lista rzeczy niezbędnych w drodze.</p></li>
+        </ul></main></body></html>"""
     return "<html><body><p>nic</p></body></html>"
 html_pomoc.pobierz_tekst = bez_wpisu
 w = rcb.stopnie_alarmowe()
@@ -156,8 +159,11 @@ LISTA_Z_MENU = """
 <ul>
   <li><a href="/web/rcb/przedluzenie">Przedłużenie obowiązywania stopni alarmowych
       na terytorium Rzeczypospolitej</a><span>29 sierpnia 2026</span>
-      <p>Premier podpisał zarządzenia.</p></li>
-  <li><a href="/web/rcb/inne">Bezpieczne wakacje nad wodą</a><p>Porady.</p></li>
+      <p>Premier podpisał zarządzenia przedłużające obowiązywanie stopni.</p></li>
+  <li><a href="/web/rcb/inne">Bezpieczne wakacje nad wodą — poradnik</a>
+      <span>28 sierpnia 2026</span><p>Porady dla wypoczywających nad wodą.</p></li>
+  <li><a href="/web/rcb/czad">Czad i ogień — obudź czujność</a>
+      <span>27 sierpnia 2026</span><p>Kampania informacyjna o zatruciach.</p></li>
 </ul></body></html>
 """
 def dwustopniowo_z_menu(url, naglowki=None, proby=None, zapasowy_ua=True):

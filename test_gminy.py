@@ -30,20 +30,31 @@ KANAL = """<?xml version="1.0" encoding="UTF-8"?>
 </channel></rss>
 """
 
+# Realistyczna lista aktualności: data przy KAŻDYM wpisie. To właśnie datami
+# odróżniamy aktualności od menu, więc dane testowe muszą je mieć.
 STRONA_BEZ_RSS = """
-<html><body><ul>
+<html><body><main><ul>
  <li><a href="/a">Ostrzeżenie o silnym wiatrze dla gminy</a>
-     <p>Prosimy o zachowanie ostrożności, 11 września 2026.</p></li>
- <li><a href="/b">Nowy plac zabaw otwarty</a><p>Uroczyste otwarcie placu zabaw.</p></li>
- <li><a href="/c">Zebranie wiejskie w sprawie funduszu</a><p>Porządek obrad zebrania.</p></li>
-</ul></body></html>
+     <time>11 września 2026</time>
+     <p>Prosimy o zachowanie ostrożności i zabezpieczenie przedmiotów.</p></li>
+ <li><a href="/b">Nowy plac zabaw otwarty przy szkole</a>
+     <time>10 września 2026</time>
+     <p>Uroczyste otwarcie placu zabaw dla najmłodszych mieszkańców.</p></li>
+ <li><a href="/c">Zebranie wiejskie w sprawie funduszu sołeckiego</a>
+     <time>9 września 2026</time>
+     <p>Porządek obrad zebrania oraz projekt podziału środków.</p></li>
+</ul></main></body></html>
 """
 
 def fałszywy(url, naglowki=None, proby=None, zapasowy_ua=True):
+    # Serwisy bez kanału: żadna ścieżka RSS nie odpowiada, zostaje HTML.
+    if "plosnica" in url or "gminarybno" in url:
+        if url.rstrip("/").endswith((".xml", "rss", "feed", "feed/", "rss=1")) \
+           or "feed" in url.split("/")[-1] or "rss" in url.split("/")[-1]:
+            raise siec.BladPobierania("HTTP Error 404: Not Found", 404)
+        return STRONA_BEZ_RSS
     if "feed" in url:
         return KANAL
-    if "plosnica" in url or "gminarybno" in url:
-        return STRONA_BEZ_RSS
     if "powiatdzialdowski" in url:
         raise siec.BladPobierania("HTTP Error 503 — Service Unavailable", 503)
     return STRONA_Z_RSS
@@ -105,3 +116,51 @@ assert w.status.ok and not w.pozycje
 wlasne.PLIK.write_text("[]", encoding="utf-8")
 
 print("\nWszystkie kontrole przeszły.")
+
+print("\n== Nawigacja gov.pl nie może udawać listy komunikatów ==")
+MENU_GOVPL = """
+<html><body>
+<nav class="main-nav"><ul>
+  <li><a href="#stopka">Przejdź do sekcji Stopka gov.pl</a></li>
+  <li><a href="/mobywatel">Logowanie do panelu mObywatel</a></li>
+  <li><a href="/urzedy">Urzędy, instytucje i placówki RP</a></li>
+  <li><a href="/ua">Сайт для громадян України – Serwis dla obywateli Ukrainy</a></li>
+  <li><a href="/migowy">Otwórz okno z tłumaczem języka migowego</a></li>
+</ul></nav>
+<footer><ul>
+  <li><a href="/dostepnosc">Deklaracja dostępności serwisu</a></li>
+  <li><a href="/prywatnosc">Polityka prywatności i cookies</a></li>
+</ul></footer>
+<div class="content"><p>Treść bez listy aktualności.</p></div>
+</body></html>
+"""
+wpisy, strategia = html_pomoc.wpisy_z_listy(
+    html_pomoc.BeautifulSoup(MENU_GOVPL, "html.parser"))
+print(f"   rozpoznanych wpisów: {len(wpisy)} (strategia: {strategia or 'brak'})")
+assert not wpisy, f"nawigacja nadal przechodzi jako komunikaty: {[w['tytul'] for w in wpisy]}"
+
+print("\n== Prawdziwa lista aktualności nadal przechodzi ==")
+PRAWDZIWA = """
+<html><body>
+<nav><ul><li><a href="/x">Przejdź do treści</a></li></ul></nav>
+<main><ul class="news">
+ <li><a href="/a">Przerwa w dostawie wody w Burkacie i Księżym Dworze</a>
+     <time>11 września 2026</time>
+     <p>W dniu 12 września nastąpi przerwa w dostawie wody dla mieszkańców.</p></li>
+ <li><a href="/b">Trening systemu wykrywania i alarmowania</a>
+     <time>10 września 2026</time>
+     <p>W piątek zostaną uruchomione syreny alarmowe na terenie gminy.</p></li>
+ <li><a href="/c">Otwarcie nowego placu zabaw przy szkole</a>
+     <time>9 września 2026</time>
+     <p>Zapraszamy mieszkańców na uroczyste otwarcie placu zabaw.</p></li>
+</ul></main></body></html>
+"""
+wpisy, strategia = html_pomoc.wpisy_z_listy(
+    html_pomoc.BeautifulSoup(PRAWDZIWA, "html.parser"))
+print(f"   rozpoznanych wpisów: {len(wpisy)} (strategia: {strategia})")
+for w in wpisy:
+    print("   -", w["tytul"][:60])
+assert len(wpisy) == 3, f"zgubiono prawdziwe aktualności: {len(wpisy)}"
+assert not any("Przejdź" in w["tytul"] for w in wpisy)
+
+print("\nKontrole filtra nawigacji przeszły.")
