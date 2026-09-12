@@ -155,6 +155,48 @@ def _przez_liste_komunikatow() -> tuple[str, str | None]:
     return "", f"wpis znaleziony ('{kandydaci[0]['tytul'][:60]}'), ale bez nazw stopni w treści"
 
 
+def _przez_serwisy_gmin() -> tuple[str, str | None]:
+    """Ostatnia droga: komunikat RCB przepisany przez gminę.
+
+    gov.pl/web/rcb nie udostępnia listy komunikatów w surowym HTML-u —
+    renderuje ją skryptem, więc nie ma czego parsować. Ale kanały RSS gmin
+    działają, a gminy przepisują treść zarządzeń dosłownie, razem z nazwami
+    stopni i terminem obowiązywania. Korzystamy więc z infrastruktury, która
+    już udowodniła, że działa.
+    """
+    from ..konfiguracja import GMINY
+    from .gminy import _wpisy_serwisu
+
+    napotkane = []
+    for nazwa, url in GMINY:
+        try:
+            wpisy, _ = _wpisy_serwisu(url)
+        except BladPobierania:
+            continue
+
+        for wpis in wpisy[:30]:
+            tytul = wpis.get("tytul", "")
+            if "stopni" not in tytul.lower():
+                continue
+            napotkane.append(f"{nazwa}: {tytul[:60]}")
+
+            # Najpierw opis z kanału — często zawiera całą treść zarządzenia.
+            opis = wpis.get("tekst") or ""
+            if any(n in opis.upper() for n in NAZWY_STOPNI):
+                return czysty(opis), None
+
+            adres = pelny_adres(wpis.get("link"), url)
+            if not adres:
+                continue
+            tresc, _ = _tekst_ze_strony(adres)
+            if tresc and any(n in tresc.upper() for n in NAZWY_STOPNI):
+                return tresc, None
+
+    if napotkane:
+        return "", f"znaleziono wpisy, ale bez nazw stopni: {' ;; '.join(napotkane[:3])}"
+    return "", "w żadnym serwisie gminnym nie ma wpisu o stopniach"
+
+
 def stopnie_alarmowe() -> Wynik:
     status = StatusZrodla(id="stopnie-alarmowe", nazwa="Stopnie alarmowe")
 
@@ -175,6 +217,11 @@ def stopnie_alarmowe() -> Wynik:
         tekst, blad = _przez_liste_komunikatow()
         if blad:
             bledy.append(f"przez listę komunikatów: {blad}")
+
+    if not tekst:
+        tekst, blad = _przez_serwisy_gmin()
+        if blad:
+            bledy.append(f"przez serwisy gmin: {blad}")
 
     if not tekst:
         status.blad = " ;; ".join(bledy)[:600]

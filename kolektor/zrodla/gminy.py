@@ -20,7 +20,10 @@ from __future__ import annotations
 
 from datetime import timedelta
 
-from ..konfiguracja import GMINY, GMINY_DNI_WSTECZ, SLOWA_KRYZYSOWE
+from ..konfiguracja import (
+    GMINY, GMINY_DNI_WSTECZ, SLOWA_INFORMACYJNE, SLOWA_KRYZYSOWE,
+    SLOWA_OSTRZEZENIA, SLOWA_UTRUDNIENIA, SLOWA_ZAPOWIEDZI,
+)
 from ..model import Pozycja, StatusZrodla, Wynik, teraz
 from ..siec import BladPobierania, pobierz_tekst
 from .html_pomoc import (
@@ -49,6 +52,43 @@ def _sprobuj_kanaly(url: str) -> tuple[list[dict], str]:
         if wpisy:
             return wpisy, f"RSS ({sciezka})"
     return [], ""
+
+
+def _waga(tresc: str) -> int:
+    """Stopień wpisu na podstawie jego treści.
+
+    Kolejność sprawdzania ma znaczenie: najpierw ostrzeżenia, bo komunikat
+    o awarii wodociągu POŁĄCZONY z informacją o wodzie niezdatnej do spożycia
+    jest ostrzeżeniem, nie utrudnieniem.
+    """
+    maly = tresc.lower()
+
+    # Zapowiedź rozstrzyga pierwsza, ale tylko gdy nie ma mowy o realnym
+    # zagrożeniu: "planowane wyłączenie prądu" to utrudnienie, nie informacja.
+    zapowiedz = any(s in maly for s in SLOWA_ZAPOWIEDZI)
+    if zapowiedz and any(s in maly for s in SLOWA_INFORMACYJNE) \
+       and not any(s in maly for s in SLOWA_UTRUDNIENIA):
+        return 0
+
+    if any(s in maly for s in SLOWA_OSTRZEZENIA):
+        return 2
+    if any(s in maly for s in SLOWA_UTRUDNIENIA):
+        return 1
+    return 0
+
+
+def _minela_data_w_tytule(tytul: str, moment) -> bool:
+    """Czy wydarzenie z tytułu już się odbyło.
+
+    Zapowiedzi mają datę w tytule ("uruchomienie syren w dniu 01.09.2026").
+    Po tym dniu wpis jest historią i nie ma czego ogłaszać.
+    """
+    data = data_z_tekstu(tytul)
+    if not data:
+        return False
+    if data.tzinfo is None:
+        data = data.replace(tzinfo=moment.tzinfo)
+    return data.date() < moment.date()
 
 
 def _wpisy_serwisu(url: str) -> tuple[list[dict], str]:
@@ -110,13 +150,17 @@ def komunikaty_gmin() -> Wynik:
                 if data < granica:
                     continue
 
+            tytul = wpis.get("tytul", "")[:200]
+            if _minela_data_w_tytule(tytul, teraz()):
+                continue
+
             pozycje.append(Pozycja(
                 zrodlo="gminy",
                 charakter="zdarzenie",
                 typ=f"Komunikat — {nazwa}",
-                tytul=wpis.get("tytul", "")[:200],
+                tytul=tytul,
                 opis=(wpis.get("tekst") or "")[:400],
-                stopien=1,
+                stopien=_waga(tresc),
                 obowiazuje_od=data.isoformat() if data else None,
                 link=pelny_adres(wpis.get("link"), url),
             ))
