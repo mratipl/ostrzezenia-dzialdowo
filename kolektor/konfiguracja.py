@@ -118,12 +118,41 @@ SLOWA_OSTRZEZENIA = [
 
 SLOWA_KRYZYSOWE = SLOWA_INFORMACYJNE + SLOWA_UTRUDNIENIA + SLOWA_OSTRZEZENIA
 
+# --- Stopnie alarmowe --------------------------------------------------
+# Wpisywane ręcznie i to jest świadoma decyzja, nie kapitulacja.
+#
+# Dlaczego nie automatycznie: gov.pl/web/rcb renderuje listę komunikatów
+# skryptem, więc w surowym HTML-u nie ma czego parsować. Kanały RSS gmin
+# pokazują kilkanaście najnowszych wpisów, a zarządzenia wychodzą raz na
+# kwartał — po kilku tygodniach wpis wypada z kanału.
+#
+# Koszt aktualizacji: cztery razy w roku. Za to dane są pewne, bo przepisane
+# wprost z zarządzenia, a nie odgadnięte z treści strony. Kolektor sam
+# przypomni o przedłużeniu na 14 dni przed terminem.
+#
+# Źródło: gov.pl/web/rcb → komunikaty. Po przedłużeniu zmień OBOWIAZUJE_DO
+# i w razie potrzeby listę.
+STOPNIE_OBOWIAZUJA_DO = "2026-11-30T23:59:00"
+STOPNIE_ALARMOWE: list[tuple[str, int, str]] = [
+    ("CHARLIE", 2, "obszary linii kolejowych zarządzanych przez PKP PLK oraz PKP LHS"),
+    ("BRAVO", 1, "cały obszar Rzeczypospolitej Polskiej"),
+    ("BRAVO-CRP", 1, "cały obszar RP — cyberprzestrzeń"),
+    ("BRAVO", 1, "polska infrastruktura energetyczna poza granicami RP"),
+]
+
 # Nazwa strefy prognostycznej zagrożenia pożarowego lasu.
 LASY_STREFA = "Olsztyn"
 
 # Źródła chwilowo wyłączone — nie będą odpytywane ani pokazywane.
 # GDDKiA: plik XML zniknął po przeniesieniu serwisu na drogi.gddkia.gov.pl.
-ZRODLA_WYLACZONE = ["gddkia"]
+ZRODLA_WYLACZONE = [
+    "gddkia",
+    # gov.pl/web/rcb renderuje listę komunikatów skryptem — w surowym HTML-u
+    # są tylko elementy nawigacji. Treści RCB i tak docierają przez serwisy
+    # gmin, które je przepisują. Do włączenia, jeśli gov.pl kiedyś zacznie
+    # serwować listę statycznie albo udostępni kanał RSS.
+    "rcb",
+]
 
 # --- Świeżość danych ---------------------------------------------------
 # Po ilu minutach od ostatniego udanego pobrania źródło uznajemy za nieaktualne.
