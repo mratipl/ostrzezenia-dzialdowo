@@ -54,7 +54,9 @@ def komunikaty() -> Wynik:
 
     wpisy, strategia = wpisy_z_listy(dokument)
     if not wpisy:
-        status.blad = "nie rozpoznano układu listy komunikatów (zmiana strony?)"
+        status.blad = ("nie rozpoznano listy komunikatów — strona pobrana, ale żaden "
+                       "zbiór elementów nie wygląda na aktualności (same elementy "
+                       "nawigacji?)")
         return Wynik(status=status)
 
     granica = teraz() - timedelta(days=14)

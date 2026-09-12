@@ -40,13 +40,70 @@ def czysty(tekst: str) -> str:
     return " ".join((tekst or "").split())
 
 
+# Kontenery, w których nie ma aktualności — nawigacja, stopka, okruszki.
+SMIECI = re.compile(
+    r"(nav|menu|footer|header|breadcrumb|skip|search|social|cookie|lang|"
+    r"sidebar|banner|toolbar|pagination)", re.I
+)
+
+# Frazy typowe dla elementów interfejsu, nie dla komunikatów.
+FRAZY_INTERFEJSU = [
+    "przejdź do", "przejdz do", "logowanie", "zaloguj", "wyszukaj", "szukaj",
+    "otwórz okno", "otworz okno", "język migowy", "jezyk migowy", "deklaracja dostępności",
+    "mapa strony", "polityka prywatności", "bip", "kontakt", "menu", "wersja kontrastowa",
+    "powiększ czcionkę", "rozmiar czcionki", "nawigacja", "stopka", "pomiń",
+]
+
+
+def _w_smietniku(element) -> bool:
+    """Czy element siedzi w nawigacji, stopce albo innym kontenerze interfejsu."""
+    rodzic = element
+    for _ in range(6):
+        if rodzic is None or not getattr(rodzic, "name", None):
+            return False
+        if rodzic.name in ("nav", "footer", "header", "aside"):
+            return True
+        atrybuty = " ".join(
+            (rodzic.get("class") or []) + [rodzic.get("id") or "", rodzic.get("role") or ""]
+        )
+        if atrybuty and SMIECI.search(atrybuty):
+            return True
+        rodzic = rodzic.parent
+    return False
+
+
+def _element_interfejsu(tytul: str) -> bool:
+    maly = tytul.lower()
+    return any(f in maly for f in FRAZY_INTERFEJSU)
+
+
+def _wiarygodne(wpisy: list[dict]) -> bool:
+    """Czy zbiór wygląda na listę aktualności, a nie na menu.
+
+    Kluczowy test, wprowadzony po tym, jak parser zwrócił 32 "komunikaty",
+    z których wszystkie były pozycjami nawigacji gov.pl. Najmocniejszy
+    wyróżnik jest prosty: wpis aktualności ma datę, pozycja menu nie.
+    """
+    if len(wpisy) < 2:
+        return False
+    z_data = sum(1 for w in wpisy if data_z_tekstu(w.get("tekst", "")))
+    dlugie = sum(1 for w in wpisy if len(w.get("tekst", "")) > 80)
+    return z_data >= max(2, len(wpisy) // 4) or dlugie >= max(2, len(wpisy) // 2)
+
+
 def wpisy_z_listy(dokument: BeautifulSoup, minimum_znakow: int = 25) -> tuple[list[dict], str]:
     """Wyciąga wpisy listy aktualności. Zwraca (wpisy, nazwa strategii).
 
     Każdy wpis to {'tytul', 'link', 'tekst'}. Kolejne strategie odpowiadają
-    typowym układom serwisów rządowych i samorządowych.
+    typowym układom serwisów rządowych i samorządowych. Odrzucamy elementy
+    nawigacji i zbiory, które nie przypominają aktualności.
     """
     strategie = [
+        ("wpisy z datą", lambda d: [
+            e for e in d.find_all(["article", "li", "div"])
+            if (e.find("time") or data_z_tekstu(czysty(e.get_text(" "))[:300]))
+            and e.find("a") and len(czysty(e.get_text(" "))) > minimum_znakow
+        ]),
         ("article", lambda d: d.find_all("article")),
         ("li z linkiem", lambda d: [
             e for e in d.find_all("li") if e.find("a") and len(czysty(e.get_text())) > minimum_znakow
@@ -64,12 +121,16 @@ def wpisy_z_listy(dokument: BeautifulSoup, minimum_znakow: int = 25) -> tuple[li
         wpisy = []
         widziane = set()
         for element in pobierz(dokument):
+            if _w_smietniku(element):
+                continue
             tekst = czysty(element.get_text(" "))
             if len(tekst) < minimum_znakow:
                 continue
             odnosnik = element.find("a")
             tytul = czysty(odnosnik.get_text()) if odnosnik else tekst[:120]
-            if not tytul or tytul in widziane:
+            if not tytul or len(tytul) < 12 or tytul in widziane:
+                continue
+            if _element_interfejsu(tytul):
                 continue
             widziane.add(tytul)
             wpisy.append({
@@ -77,7 +138,8 @@ def wpisy_z_listy(dokument: BeautifulSoup, minimum_znakow: int = 25) -> tuple[li
                 "link": odnosnik.get("href") if odnosnik else None,
                 "tekst": tekst[:600],
             })
-        if len(wpisy) >= 2:
+
+        if _wiarygodne(wpisy):
             return wpisy, nazwa
 
     return [], ""

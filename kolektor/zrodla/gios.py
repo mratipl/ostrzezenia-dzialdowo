@@ -198,6 +198,8 @@ def jakosc_powietrza() -> Wynik:
     status.ok = True
     status.pobrano = teraz().isoformat(timespec="seconds")
     status.uwaga = f"wariant zapytania: {wariant}"
-    if kłopoty:
+    # Część stacji nie liczy indeksu (mierzą tylko wybrane wskaźniki) — to
+    # normalne, więc nie zaśmiecamy logu, dopóki mamy choć jeden odczyt.
+    if kłopoty and len(pozycje) < 1:
         print(f"  [uwaga GIOŚ] {' ;; '.join(kłopoty)[:400]}")
     return Wynik(status=status, pozycje=pozycje)

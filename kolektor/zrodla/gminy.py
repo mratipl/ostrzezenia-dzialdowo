@@ -29,6 +29,28 @@ from .html_pomoc import (
 )
 
 
+# Ścieżki kanałów sprawdzane, gdy strona nie ogłasza RSS-u znacznikiem link.
+# Wiele serwisów gminnych działa na CMS-ach bez autodetekcji, ale kanał ma.
+SCIEZKI_RSS = [
+    "feed/", "rss", "rss.xml", "feed.xml", "?feed=rss2",
+    "aktualnosci/rss", "rss/aktualnosci", "index.php?rss=1",
+]
+
+
+def _sprobuj_kanaly(url: str) -> tuple[list[dict], str]:
+    """Kanał pod typową ścieżką. Wywoływane tylko, gdy autodetekcja zawiodła."""
+    for sciezka in SCIEZKI_RSS:
+        adres = url.rstrip("/") + "/" + sciezka if not sciezka.startswith("?") \
+            else url.rstrip("/") + "/" + sciezka
+        try:
+            wpisy = wpisy_z_rss(pobierz_tekst(adres, PRZEGLADARKA, proby=1))
+        except BladPobierania:
+            continue
+        if wpisy:
+            return wpisy, f"RSS ({sciezka})"
+    return [], ""
+
+
 def _wpisy_serwisu(url: str) -> tuple[list[dict], str]:
     """Zwraca (wpisy, opis użytej metody). Podnosi BladPobierania."""
     dokument = zupa(url, proby=1)
@@ -43,9 +65,14 @@ def _wpisy_serwisu(url: str) -> tuple[list[dict], str]:
             return wpisy, "RSS"
 
     wpisy, strategia = wpisy_z_listy(dokument)
-    for wpis in wpisy:
-        wpis.setdefault("data", data_z_tekstu(wpis.get("tekst", "")))
-    return wpisy, f"HTML ({strategia})" if wpisy else ""
+    if wpisy:
+        for wpis in wpisy:
+            wpis.setdefault("data", data_z_tekstu(wpis.get("tekst", "")))
+        return wpisy, f"HTML ({strategia})"
+
+    # Parsowanie HTML-a nie dało wiarygodnej listy — sprawdzamy typowe
+    # ścieżki kanałów, zanim uznamy serwis za nieobsługiwany.
+    return _sprobuj_kanaly(url)
 
 
 def komunikaty_gmin() -> Wynik:
