@@ -1,7 +1,7 @@
 {
   "powiat": "powiat działdowski",
-  "wygenerowano": "13.09.2026, 13:14",
-  "wygenerowano_iso": "2026-09-13T11:14:53+00:00",
+  "wygenerowano": "13.09.2026, 16:27",
+  "wygenerowano_iso": "2026-09-13T14:27:34+00:00",
   "naglowek": "Ostrzeżenie 2. stopnia — 100 lat osp jeleń - wspólna historia, służba i tradycja",
   "klasa_statusu": "s2",
   "najwyzszy_stopien": 2,
@@ -115,9 +115,9 @@
       "obowiazuje_do": null,
       "link": null,
       "dodatkowe": {
-        "pm25": 0.23,
-        "pm10": 0.28,
-        "caqi": 0.4
+        "pm25": 0.1,
+        "pm10": 0.13,
+        "caqi": 0.18
       },
       "klucz": "9bdc7a08e6cd0367",
       "przestarzale": false,
@@ -128,8 +128,8 @@
       "zrodlo": "airly",
       "charakter": "stan",
       "typ": "Jakość powietrza (czujnik lokalny)",
-      "tytul": "Księży Dwór",
-      "opis": "O rany! Ten czujnik jest wyłączony! Nasz serwis już nad tym pracuje.",
+      "tytul": "Burkat",
+      "opis": "Z powodu niedziałającego czujnika nie możesz sprawdzić jakości powietrza w tej lokalizacji. Skorzystaj z innego, najbliższego czujnika!",
       "stopien": 0,
       "obowiazuje_od": null,
       "obowiazuje_do": null,
@@ -139,7 +139,7 @@
         "pm10": null,
         "caqi": null
       },
-      "klucz": "96a9ff3ac5b2377d",
+      "klucz": "44992585c8cd4b38",
       "przestarzale": false,
       "wiek": null,
       "okres": ""
@@ -155,9 +155,9 @@
       "obowiazuje_do": null,
       "link": null,
       "dodatkowe": {
-        "pm25": 8.05,
-        "pm10": 9.2,
-        "caqi": 13.43
+        "pm25": 7.65,
+        "pm10": 8.82,
+        "caqi": 12.75
       },
       "klucz": "8839ac39f003b80b",
       "przestarzale": false,
@@ -188,14 +188,14 @@
       "charakter": "stan",
       "typ": "Prognoza",
       "tytul": "Najbliższe 24 godziny",
-      "opis": "Najsilniejszy prognozowany poryw 21 km/h, suma opadów 2.9 mm. Temperatura od 11 do 15 °C.",
+      "opis": "Najsilniejszy prognozowany poryw 24 km/h, suma opadów 2.6 mm. Temperatura od 11 do 15 °C.",
       "stopien": 0,
       "obowiazuje_od": null,
       "obowiazuje_do": null,
       "link": null,
       "dodatkowe": {
-        "maks_poryw_kmh": 21,
-        "suma_opadow_mm": 2.9
+        "maks_poryw_kmh": 24,
+        "suma_opadow_mm": 2.6
       },
       "klucz": "8c15ed19d97c626d",
       "przestarzale": false,
@@ -241,110 +241,110 @@
       "nazwa": "IMGW – ostrzeżenia meteorologiczne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-13T11:14:54+00:00",
+      "pobrano": "2026-09-13T14:27:36+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "API odpowiada, endpoint zwrócił 404 — brak ostrzeżeń tego typu",
-      "pobrano_ladnie": "13.09.2026, 13:14"
+      "pobrano_ladnie": "13.09.2026, 16:27"
     },
     {
       "id": "imgw-hydro",
       "nazwa": "IMGW – ostrzeżenia hydrologiczne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-13T11:14:55+00:00",
+      "pobrano": "2026-09-13T14:27:37+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": null,
-      "pobrano_ladnie": "13.09.2026, 13:14"
+      "pobrano_ladnie": "13.09.2026, 16:27"
     },
     {
       "id": "gios",
       "nazwa": "GIOŚ – jakość powietrza",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-13T11:14:58+00:00",
+      "pobrano": "2026-09-13T14:27:41+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "wariant zapytania: pełne nagłówki przeglądarki",
-      "pobrano_ladnie": "13.09.2026, 13:14"
+      "pobrano_ladnie": "13.09.2026, 16:27"
     },
     {
       "id": "airly",
       "nazwa": "Airly – czujniki lokalne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-13T11:14:59+00:00",
+      "pobrano": "2026-09-13T14:27:43+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "czujniki niskokosztowe (nie referencyjne), 3 z 3",
-      "pobrano_ladnie": "13.09.2026, 13:14"
+      "pobrano_ladnie": "13.09.2026, 16:27"
     },
     {
       "id": "open-meteo",
       "nazwa": "Open-Meteo – prognoza 24 h",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-13T11:15:00+00:00",
+      "pobrano": "2026-09-13T14:27:44+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": null,
-      "pobrano_ladnie": "13.09.2026, 13:15"
+      "pobrano_ladnie": "13.09.2026, 16:27"
     },
     {
       "id": "stopnie-alarmowe",
       "nazwa": "Stopnie alarmowe",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-13T10:07:38+00:00",
-      "wiek_minut": 67,
+      "pobrano": "2026-09-13T14:28:16+00:00",
+      "wiek_minut": 0,
       "nieaktualne": false,
-      "uwaga": "z pamięci — odpytywane co 180 min (limit dobowy)",
-      "pobrano_ladnie": "13.09.2026, 12:07"
+      "uwaga": "z konfiguracji (aktualizacja ręczna), termin 30.11.2026 — za 78 dni",
+      "pobrano_ladnie": "13.09.2026, 16:28"
     },
     {
       "id": "lasy",
       "nazwa": "Zagrożenie pożarowe lasu",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-13T10:07:46+00:00",
-      "wiek_minut": 67,
+      "pobrano": "2026-09-13T14:28:24+00:00",
+      "wiek_minut": 0,
       "nieaktualne": false,
-      "uwaga": "z pamięci — odpytywane co 180 min (limit dobowy)",
-      "pobrano_ladnie": "13.09.2026, 12:07"
+      "uwaga": "źródło: www.traxelektronik.pl (komórka tabeli)",
+      "pobrano_ladnie": "13.09.2026, 16:28"
     },
     {
       "id": "pse",
       "nazwa": "PSE – bilans mocy",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-13T11:15:01+00:00",
+      "pobrano": "2026-09-13T14:28:25+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "wariant: plan koordynacyjny dobowy",
-      "pobrano_ladnie": "13.09.2026, 13:15"
+      "pobrano_ladnie": "13.09.2026, 16:28"
     },
     {
       "id": "gminy",
       "nazwa": "Serwisy starostwa i gmin",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-13T11:15:24+00:00",
+      "pobrano": "2026-09-13T14:28:48+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "6 z 7 serwisów — bez: Gmina Płośnica",
-      "pobrano_ladnie": "13.09.2026, 13:15"
+      "pobrano_ladnie": "13.09.2026, 16:28"
     },
     {
       "id": "wlasne",
       "nazwa": "Komunikaty własne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-13T11:15:24+00:00",
+      "pobrano": "2026-09-13T14:28:48+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "0 aktywnych z 0 w pliku",
-      "pobrano_ladnie": "13.09.2026, 13:15"
+      "pobrano_ladnie": "13.09.2026, 16:28"
     }
   ],
   "zrodla_niedostepne": [],
