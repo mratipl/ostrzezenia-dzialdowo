@@ -18,6 +18,7 @@ do limitu.
 from __future__ import annotations
 
 import os
+from datetime import datetime
 from typing import Any
 
 from ..konfiguracja import (
@@ -47,6 +48,36 @@ def _naglowki(klucz: str) -> dict[str, str]:
 
 def _pobierz(url: str, klucz: str) -> Any:
     return pobierz_json(url, _naglowki(klucz), proby=1, zapasowy_ua=False)
+
+
+# Po ilu godzinach odczyt przestaje opisywać stan bieżący.
+MAKS_WIEK_GODZIN = 3
+
+
+def _swiezy(biezace: dict) -> tuple[bool, str]:
+    """Czy pomiar jest aktualny.
+
+    Czujnik Airly potrafi przestać działać, a API nadal zwraca strukturę
+    z ostatnim znanym odczytem. Bez tej kontroli martwy czujnik pokazywałby
+    dane sprzed dni jako stan bieżący — dokładnie ta cicha dezinformacja,
+    której unikamy na poziomie źródeł.
+    """
+    znacznik = biezace.get("tillDateTime") or biezace.get("fromDateTime")
+    if not znacznik:
+        return False, "odpowiedź bez znacznika czasu"
+
+    try:
+        czas = datetime.fromisoformat(str(znacznik).replace("Z", "+00:00"))
+    except ValueError:
+        return False, f"nieczytelny znacznik czasu: {znacznik}"
+
+    if czas.tzinfo is None:
+        czas = czas.replace(tzinfo=teraz().tzinfo)
+
+    godziny = (teraz() - czas).total_seconds() / 3600
+    if godziny > MAKS_WIEK_GODZIN:
+        return False, f"ostatni odczyt sprzed {godziny:.0f} h (czujnik nie działa?)"
+    return True, ""
 
 
 def _na_pozycje(dane: dict, etykieta: str) -> Pozycja | None:
@@ -102,6 +133,11 @@ def pomiar() -> Wynik:
         except BladPobierania as e:
             bledy.append(f"{etykieta}: {e}")
             continue
+        swiezy, powod = _swiezy((dane or {}).get("current") or {})
+        if not swiezy:
+            bledy.append(f"{etykieta}: {powod}")
+            continue
+
         pozycja = _na_pozycje(dane, etykieta)
         if pozycja:
             pozycje.append(pozycja)
