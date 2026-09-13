@@ -1,7 +1,7 @@
 {
   "powiat": "powiat działdowski",
-  "wygenerowano": "13.09.2026, 02:17",
-  "wygenerowano_iso": "2026-09-13T00:17:03+00:00",
+  "wygenerowano": "13.09.2026, 06:57",
+  "wygenerowano_iso": "2026-09-13T04:57:57+00:00",
   "naglowek": "Ostrzeżenie 2. stopnia — 100 lat osp jeleń - wspólna historia, służba i tradycja",
   "klasa_statusu": "s2",
   "najwyzszy_stopien": 2,
@@ -109,15 +109,15 @@
       "charakter": "stan",
       "typ": "Jakość powietrza (czujnik lokalny)",
       "tytul": "Działdowo, Plac Mickiewicza",
-      "opis": "PM2,5: 0 µg/m³, PM10: 1 µg/m³. Wspaniałe powietrze!",
+      "opis": "PM2,5: 7 µg/m³, PM10: 8 µg/m³. Wspaniałe powietrze!",
       "stopien": 0,
       "obowiazuje_od": null,
       "obowiazuje_do": null,
       "link": null,
       "dodatkowe": {
-        "pm25": 0.47,
-        "pm10": 0.51,
-        "caqi": 0.79
+        "pm25": 7.08,
+        "pm10": 8.36,
+        "caqi": 11.8
       },
       "klucz": "9bdc7a08e6cd0367",
       "przestarzale": false,
@@ -129,7 +129,7 @@
       "charakter": "stan",
       "typ": "Jakość powietrza (czujnik lokalny)",
       "tytul": "Księży Dwór",
-      "opis": "Niestety... Sensor w tej lokalizacji najprawdopodobniej został odłączony od zasilania.",
+      "opis": "Z powodu niedziałającego czujnika nie możesz sprawdzić jakości powietrza w tej lokalizacji. Skorzystaj z innego, najbliższego czujnika!",
       "stopien": 0,
       "obowiazuje_od": null,
       "obowiazuje_do": null,
@@ -149,15 +149,15 @@
       "charakter": "stan",
       "typ": "Jakość powietrza (czujnik lokalny)",
       "tytul": "Iłowo-Osada, Wyzwolenia",
-      "opis": "PM2,5: 13 µg/m³, PM10: 16 µg/m³. Wspaniałe powietrze!",
+      "opis": "PM2,5: 12 µg/m³, PM10: 14 µg/m³. Wspaniałe powietrze!",
       "stopien": 0,
       "obowiazuje_od": null,
       "obowiazuje_do": null,
       "link": null,
       "dodatkowe": {
-        "pm25": 13.47,
-        "pm10": 15.6,
-        "caqi": 22.46
+        "pm25": 12.09,
+        "pm10": 13.95,
+        "caqi": 20.15
       },
       "klucz": "8839ac39f003b80b",
       "przestarzale": false,
@@ -168,7 +168,7 @@
       "zrodlo": "gios",
       "charakter": "stan",
       "typ": "Jakość powietrza (stacja referencyjna)",
-      "tytul": "Ciechanów, ul. Kraszewskiego — Dobry",
+      "tytul": "Ciechanów, ul. Kraszewskiego — Bardzo dobry",
       "opis": "Najbliższa stacja GIOŚ, około 48 km od Działdowa. W powiecie nie ma stanowiska pomiarowego, więc odczyt nie odzwierciedla lokalnego zadymienia z palenisk domowych.",
       "stopien": 0,
       "obowiazuje_od": null,
@@ -178,7 +178,7 @@
         "odleglosc_km": 48,
         "stacja": "Ciechanów, ul. Kraszewskiego"
       },
-      "klucz": "4faed7d1b48aeb95",
+      "klucz": "4d4b835a6a980ba6",
       "przestarzale": false,
       "wiek": null,
       "okres": ""
@@ -188,14 +188,14 @@
       "charakter": "stan",
       "typ": "Prognoza",
       "tytul": "Najbliższe 24 godziny",
-      "opis": "Najsilniejszy prognozowany poryw 23 km/h, suma opadów 0.0 mm. Temperatura od 12 do 14 °C.",
+      "opis": "Najsilniejszy prognozowany poryw 20 km/h, suma opadów 0.6 mm. Temperatura od 11 do 15 °C.",
       "stopien": 0,
       "obowiazuje_od": null,
       "obowiazuje_do": null,
       "link": null,
       "dodatkowe": {
-        "maks_poryw_kmh": 23,
-        "suma_opadow_mm": 0.0
+        "maks_poryw_kmh": 20,
+        "suma_opadow_mm": 0.6
       },
       "klucz": "8c15ed19d97c626d",
       "przestarzale": false,
@@ -241,110 +241,110 @@
       "nazwa": "IMGW – ostrzeżenia meteorologiczne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-13T00:17:04+00:00",
+      "pobrano": "2026-09-13T04:58:01+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "API odpowiada, endpoint zwrócił 404 — brak ostrzeżeń tego typu",
-      "pobrano_ladnie": "13.09.2026, 02:17"
+      "pobrano_ladnie": "13.09.2026, 06:58"
     },
     {
       "id": "imgw-hydro",
       "nazwa": "IMGW – ostrzeżenia hydrologiczne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-13T00:17:05+00:00",
+      "pobrano": "2026-09-13T04:58:02+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": null,
-      "pobrano_ladnie": "13.09.2026, 02:17"
+      "pobrano_ladnie": "13.09.2026, 06:58"
     },
     {
       "id": "gios",
       "nazwa": "GIOŚ – jakość powietrza",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-13T00:17:10+00:00",
+      "pobrano": "2026-09-13T04:58:09+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "wariant zapytania: pełne nagłówki przeglądarki",
-      "pobrano_ladnie": "13.09.2026, 02:17"
+      "pobrano_ladnie": "13.09.2026, 06:58"
     },
     {
       "id": "airly",
       "nazwa": "Airly – czujniki lokalne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-13T00:17:12+00:00",
+      "pobrano": "2026-09-13T04:58:11+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "czujniki niskokosztowe (nie referencyjne), 3 z 3",
-      "pobrano_ladnie": "13.09.2026, 02:17"
+      "pobrano_ladnie": "13.09.2026, 06:58"
     },
     {
       "id": "open-meteo",
       "nazwa": "Open-Meteo – prognoza 24 h",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-13T00:17:12+00:00",
+      "pobrano": "2026-09-13T04:58:11+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": null,
-      "pobrano_ladnie": "13.09.2026, 02:17"
+      "pobrano_ladnie": "13.09.2026, 06:58"
     },
     {
       "id": "stopnie-alarmowe",
       "nazwa": "Stopnie alarmowe",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-12T22:24:06+00:00",
-      "wiek_minut": 112,
+      "pobrano": "2026-09-13T04:58:43+00:00",
+      "wiek_minut": 0,
       "nieaktualne": false,
-      "uwaga": "z pamięci — odpytywane co 180 min (limit dobowy)",
-      "pobrano_ladnie": "13.09.2026, 00:24"
+      "uwaga": "z konfiguracji (aktualizacja ręczna), termin 30.11.2026 — za 78 dni",
+      "pobrano_ladnie": "13.09.2026, 06:58"
     },
     {
       "id": "lasy",
       "nazwa": "Zagrożenie pożarowe lasu",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-13T00:17:19+00:00",
+      "pobrano": "2026-09-13T04:58:51+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "źródło: www.traxelektronik.pl (komórka tabeli)",
-      "pobrano_ladnie": "13.09.2026, 02:17"
+      "pobrano_ladnie": "13.09.2026, 06:58"
     },
     {
       "id": "pse",
       "nazwa": "PSE – bilans mocy",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-13T00:17:20+00:00",
+      "pobrano": "2026-09-13T04:58:52+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "wariant: plan koordynacyjny dobowy",
-      "pobrano_ladnie": "13.09.2026, 02:17"
+      "pobrano_ladnie": "13.09.2026, 06:58"
     },
     {
       "id": "gminy",
       "nazwa": "Serwisy starostwa i gmin",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-13T00:17:43+00:00",
+      "pobrano": "2026-09-13T04:59:18+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "6 z 7 serwisów — bez: Gmina Płośnica",
-      "pobrano_ladnie": "13.09.2026, 02:17"
+      "pobrano_ladnie": "13.09.2026, 06:59"
     },
     {
       "id": "wlasne",
       "nazwa": "Komunikaty własne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-13T00:17:43+00:00",
+      "pobrano": "2026-09-13T04:59:18+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "0 aktywnych z 0 w pliku",
-      "pobrano_ladnie": "13.09.2026, 02:17"
+      "pobrano_ladnie": "13.09.2026, 06:59"
     }
   ],
   "zrodla_niedostepne": [],
