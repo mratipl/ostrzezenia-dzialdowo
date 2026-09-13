@@ -1,7 +1,7 @@
 {
   "powiat": "powiat działdowski",
-  "wygenerowano": "13.09.2026, 19:03",
-  "wygenerowano_iso": "2026-09-13T17:03:47+00:00",
+  "wygenerowano": "13.09.2026, 19:37",
+  "wygenerowano_iso": "2026-09-13T17:37:39+00:00",
   "naglowek": "Ostrzeżenie 2. stopnia — 100 lat osp jeleń - wspólna historia, służba i tradycja",
   "klasa_statusu": "s2",
   "najwyzszy_stopien": 2,
@@ -180,7 +180,7 @@
       },
       "klucz": "7e5c3d8d0fbc3701",
       "przestarzale": true,
-      "wiek": "2 godz.",
+      "wiek": "3 godz.",
       "okres": ""
     },
     {
@@ -241,22 +241,22 @@
       "nazwa": "IMGW – ostrzeżenia meteorologiczne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-13T17:03:49+00:00",
+      "pobrano": "2026-09-13T17:37:41+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "API odpowiada, endpoint zwrócił 404 — brak ostrzeżeń tego typu",
-      "pobrano_ladnie": "13.09.2026, 19:03"
+      "pobrano_ladnie": "13.09.2026, 19:37"
     },
     {
       "id": "imgw-hydro",
       "nazwa": "IMGW – ostrzeżenia hydrologiczne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-13T17:03:50+00:00",
+      "pobrano": "2026-09-13T17:37:42+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": null,
-      "pobrano_ladnie": "13.09.2026, 19:03"
+      "pobrano_ladnie": "13.09.2026, 19:37"
     },
     {
       "id": "gios",
@@ -264,8 +264,8 @@
       "ok": false,
       "blad": "Stacje znalezione (wariant: pełne nagłówki przeglądarki), brak indeksu. id=875 brak kategorii; klucze: ['@context', 'AqIndex', 'links', 'meta', 'totalPages']",
       "pobrano": "2026-09-13T14:27:41+00:00",
-      "wiek_minut": 156,
-      "nieaktualne": false,
+      "wiek_minut": 189,
+      "nieaktualne": true,
       "uwaga": null,
       "pobrano_ladnie": "13.09.2026, 16:27"
     },
@@ -275,7 +275,7 @@
       "ok": true,
       "blad": null,
       "pobrano": "2026-09-13T16:57:13+00:00",
-      "wiek_minut": 6,
+      "wiek_minut": 40,
       "nieaktualne": false,
       "uwaga": "z pamięci — odpytywane co 55 min (limit dobowy)",
       "pobrano_ladnie": "13.09.2026, 18:57"
@@ -285,44 +285,44 @@
       "nazwa": "Open-Meteo – prognoza 24 h",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-13T17:03:53+00:00",
+      "pobrano": "2026-09-13T17:37:45+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": null,
-      "pobrano_ladnie": "13.09.2026, 19:03"
+      "pobrano_ladnie": "13.09.2026, 19:37"
     },
     {
       "id": "stopnie-alarmowe",
       "nazwa": "Stopnie alarmowe",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-13T14:28:16+00:00",
-      "wiek_minut": 155,
+      "pobrano": "2026-09-13T17:38:18+00:00",
+      "wiek_minut": 0,
       "nieaktualne": false,
-      "uwaga": "z pamięci — odpytywane co 180 min (limit dobowy)",
-      "pobrano_ladnie": "13.09.2026, 16:28"
+      "uwaga": "z konfiguracji (aktualizacja ręczna), termin 30.11.2026 — za 78 dni",
+      "pobrano_ladnie": "13.09.2026, 19:38"
     },
     {
       "id": "lasy",
       "nazwa": "Zagrożenie pożarowe lasu",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-13T14:28:24+00:00",
-      "wiek_minut": 155,
+      "pobrano": "2026-09-13T17:38:25+00:00",
+      "wiek_minut": 0,
       "nieaktualne": false,
-      "uwaga": "z pamięci — odpytywane co 180 min (limit dobowy)",
-      "pobrano_ladnie": "13.09.2026, 16:28"
+      "uwaga": "źródło: www.traxelektronik.pl (komórka tabeli)",
+      "pobrano_ladnie": "13.09.2026, 19:38"
     },
     {
       "id": "pse",
       "nazwa": "PSE – bilans mocy",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-13T17:03:54+00:00",
+      "pobrano": "2026-09-13T17:38:27+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "wariant: plan koordynacyjny dobowy",
-      "pobrano_ladnie": "13.09.2026, 19:03"
+      "pobrano_ladnie": "13.09.2026, 19:38"
     },
     {
       "id": "gminy",
@@ -330,7 +330,7 @@
       "ok": true,
       "blad": null,
       "pobrano": "2026-09-13T16:57:43+00:00",
-      "wiek_minut": 6,
+      "wiek_minut": 39,
       "nieaktualne": false,
       "uwaga": "z pamięci — odpytywane co 55 min (limit dobowy)",
       "pobrano_ladnie": "13.09.2026, 18:57"
@@ -340,11 +340,11 @@
       "nazwa": "Komunikaty własne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-13T17:03:54+00:00",
+      "pobrano": "2026-09-13T17:38:27+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "0 aktywnych z 0 w pliku",
-      "pobrano_ladnie": "13.09.2026, 19:03"
+      "pobrano_ladnie": "13.09.2026, 19:38"
     }
   ],
   "zrodla_niedostepne": [
