@@ -9,8 +9,12 @@ SZEROKOSC = 53.2373
 DLUGOSC = 20.1806
 
 # Promień, w jakim szukamy stacji pomiarowych GIOŚ (km).
-PROMIEN_STACJI_KM = 60
-MAKS_STACJI = 3
+# Zawężone z 60 km: przy tamtym promieniu na stronie pokazał się Ciechanów
+# z odległości 48 km, czyli inny powiat i inne województwo. Odczyt z takiego
+# dystansu nie mówi nic o powietrzu w Działdowie. Mława leży około 17 km,
+# więc 30 km wystarcza, a resztę pokrywają czujniki Airly w powiecie.
+PROMIEN_STACJI_KM = 30
+MAKS_STACJI = 2
 
 # Frazy wyłapujące utrudnienia istotne dla terenu z ogólnopolskiego pliku GDDKiA.
 # Do skorygowania po pierwszym uruchomieniu, gdy zobaczysz realną treść wpisów.
@@ -77,6 +81,21 @@ GMINY_DNI_WSTECZ = 10
 # stopień 1, więc zapowiedź treningu syren wyglądała jak ostrzeżenie i trafiała
 # do nagłówka strony. Zapowiedź czegoś zaplanowanego to informacja, awaria to
 # utrudnienie, a dopiero zagrożenie zdrowia lub życia to ostrzeżenie.
+
+# Wpisy odrzucane CAŁKOWICIE, jeszcze przed ważeniem.
+#
+# Powód: jubileusz 100-lecia OSP trafił do nagłówka jako "Ostrzeżenie
+# 2. stopnia", bo "Ochotniczej Straży Pożarnej" zawiera słowo "pożar".
+# Klasyczne fałszywe trafienie na rdzeniu wyrazu. Uroczystości, zawody
+# i konkursy nie mają czego szukać na tablicy ostrzegawczej — nie wystarczy
+# obniżyć im wagi, trzeba je usunąć.
+SLOWA_WYKLUCZAJACE = [
+    "jubileusz", "lecie", "uroczyst", "obchod", "święto", "swieto",
+    "zawody", "turniej", "konkurs", "festiwal", "festyn", "piknik",
+    "koncert", "wystaw", "dożynk", "dozynk", "wspólna historia",
+    "gratulacj", "odznaczeni", "medal", "podziękowani", "życzeni",
+    "przedszkol", "wycieczk", "warsztat", "spotkanie autorskie",
+]
 
 # Stopień 0 — informacja, nie wpływa na nagłówek.
 # Te frazy rozstrzygają jako pierwsze: zapowiedź czegoś zaplanowanego jest
