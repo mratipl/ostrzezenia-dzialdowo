@@ -1,26 +1,26 @@
 {
   "powiat": "powiat działdowski",
-  "wygenerowano": "13.09.2026, 00:23",
-  "wygenerowano_iso": "2026-09-12T22:23:32+00:00",
-  "naglowek": "Ostrzeżenie 1. stopnia — komunikat dla mieszkańców - uruchomienie syren w dniu 01.09.2026",
-  "klasa_statusu": "s1",
-  "najwyzszy_stopien": 1,
+  "wygenerowano": "13.09.2026, 02:17",
+  "wygenerowano_iso": "2026-09-13T00:17:03+00:00",
+  "naglowek": "Ostrzeżenie 2. stopnia — 100 lat osp jeleń - wspólna historia, służba i tradycja",
+  "klasa_statusu": "s2",
+  "najwyzszy_stopien": 2,
   "zdarzenia": [
     {
       "zrodlo": "gminy",
       "charakter": "zdarzenie",
-      "typ": "Komunikat — Gmina Iłowo-Osada",
-      "tytul": "Komunikat dla mieszkańców - Uruchomienie syren w dniu 01.09.2026",
-      "opis": "Drodzy Mieszkańcy! W ramach treningu doskonalącego system alarmowania, celem jednoczesnego upamiętnienia 87 rocznicy wybuchu II Wojny Światowej w dniu 1 września 2026r. o godz. 12.00 nadany zostanie akustyczny sygnał alarmowy (syrena) trwający 1 min. Podstawę prawną włączenia syren stanowi § 9 ust. 4 i 5 rozporządzenia Rady Ministrów z dnia 23 lutego 2024 r. w sprawie systemów wykrywania skażeń i ",
-      "stopien": 1,
-      "obowiazuje_od": "2026-08-31T12:49:30+02:00",
+      "typ": "Komunikat — Gmina Lidzbark",
+      "tytul": "100 lat OSP Jeleń - wspólna historia, służba i tradycja",
+      "opis": "W sobotnie przedpołudnie w Jeleniu świętowaliśmy wyjątkowy jubileusz -100-lecie Ochotniczej Straży Pożarnej w Jeleniu. To piękny wiek historii, zapisany odwagą, poświęceniem i gotowością do niesienia pomocy mieszkańcom. Uroczystości rozpoczęła polowa Ms...",
+      "stopien": 2,
+      "obowiazuje_od": "2026-09-07T00:00:00+00:00",
       "obowiazuje_do": null,
-      "link": "https://www.ilowo-osada.pl/asp/pl_start.asp?typ=13&menu=1&artykul=1448&akcja=artykul",
+      "link": "https://lidzbark.pl/images/article/57afe5107f9f9b4d4df49eb526043a79b4738f47.jpeg",
       "dodatkowe": {},
-      "klucz": "ea7e449ccb5c7d7e",
+      "klucz": "3557160b6c16e654",
       "przestarzale": false,
       "wiek": null,
-      "okres": "od 31.08.2026, 12:49"
+      "okres": "od 07.09.2026, 02:00"
     },
     {
       "zrodlo": "gminy",
@@ -37,54 +37,6 @@
       "przestarzale": false,
       "wiek": null,
       "okres": "od 11.09.2026, 02:00"
-    },
-    {
-      "zrodlo": "gminy",
-      "charakter": "zdarzenie",
-      "typ": "Komunikat — Gmina Lidzbark",
-      "tytul": "100 lat OSP Jeleń - wspólna historia, służba i tradycja",
-      "opis": "W sobotnie przedpołudnie w Jeleniu świętowaliśmy wyjątkowy jubileusz -100-lecie Ochotniczej Straży Pożarnej w Jeleniu. To piękny wiek historii, zapisany odwagą, poświęceniem i gotowością do niesienia pomocy mieszkańcom. Uroczystości rozpoczęła polowa Ms...",
-      "stopien": 1,
-      "obowiazuje_od": "2026-09-07T00:00:00+00:00",
-      "obowiazuje_do": null,
-      "link": "https://lidzbark.pl/images/article/57afe5107f9f9b4d4df49eb526043a79b4738f47.jpeg",
-      "dodatkowe": {},
-      "klucz": "5b2a3e88b037504f",
-      "przestarzale": false,
-      "wiek": null,
-      "okres": "od 07.09.2026, 02:00"
-    },
-    {
-      "zrodlo": "gminy",
-      "charakter": "zdarzenie",
-      "typ": "Komunikat — Gmina Lidzbark",
-      "tytul": "100-lecie OSP Jeleń",
-      "opis": "W tym roku Ochotnicza Straż Pożarna w Jeleniu świętuje wyjątkowy jubileusz - 100 lat działalności! Z tej wraz z Zarządem OSP JELEŃ zapraszamy na weekend pełen strażackiej tradycji, sportowych emocji i wspólnego świętowania. Sobota, 5 września 2026 r. Bois...",
-      "stopien": 1,
-      "obowiazuje_od": "2026-09-02T00:00:00+00:00",
-      "obowiazuje_do": null,
-      "link": "https://lidzbark.pl/images/article/83930aa92b1dff5ac9045495a856e4b2d5c4e024.jpeg",
-      "dodatkowe": {},
-      "klucz": "55734a7135d35d2f",
-      "przestarzale": false,
-      "wiek": null,
-      "okres": "od 02.09.2026, 02:00"
-    },
-    {
-      "zrodlo": "gminy",
-      "charakter": "zdarzenie",
-      "typ": "Komunikat — Gmina Lidzbark",
-      "tytul": "Młodzieżowe Drużyny Pożarnicze rywalizowały w Lidzbarku",
-      "opis": "30 sierpnia 2026 roku Stadion Miejski w Lidzbarku stał się areną sportowej rywalizacji młodych adeptów pożarnictwa z terenu całego powiatu działdowskiego. Odbyły się tam zawody sportowo-pożarnicze Młodzieżowych Drużyn Pożarniczych. Młode druhny i druhow...",
-      "stopien": 1,
-      "obowiazuje_od": "2026-09-01T00:00:00+00:00",
-      "obowiazuje_do": null,
-      "link": "https://lidzbark.pl/images/article/a0e5e0f01b273d4e95f51efea2dc8664fc60003c.jpeg",
-      "dodatkowe": {},
-      "klucz": "6882f6e01e4763cd",
-      "przestarzale": false,
-      "wiek": null,
-      "okres": "od 01.09.2026, 02:00"
     }
   ],
   "stany": [
@@ -157,15 +109,15 @@
       "charakter": "stan",
       "typ": "Jakość powietrza (czujnik lokalny)",
       "tytul": "Działdowo, Plac Mickiewicza",
-      "opis": "PM2,5: 0 µg/m³, PM10: 0 µg/m³. Wspaniałe powietrze!",
+      "opis": "PM2,5: 0 µg/m³, PM10: 1 µg/m³. Wspaniałe powietrze!",
       "stopien": 0,
       "obowiazuje_od": null,
       "obowiazuje_do": null,
       "link": null,
       "dodatkowe": {
-        "pm25": 0.32,
-        "pm10": 0.36,
-        "caqi": 0.55
+        "pm25": 0.47,
+        "pm10": 0.51,
+        "caqi": 0.79
       },
       "klucz": "9bdc7a08e6cd0367",
       "przestarzale": false,
@@ -177,7 +129,7 @@
       "charakter": "stan",
       "typ": "Jakość powietrza (czujnik lokalny)",
       "tytul": "Księży Dwór",
-      "opis": "Z powodu niedziałającego czujnika nie możesz sprawdzić jakości powietrza w tej lokalizacji. Skorzystaj z innego, najbliższego czujnika!",
+      "opis": "Niestety... Sensor w tej lokalizacji najprawdopodobniej został odłączony od zasilania.",
       "stopien": 0,
       "obowiazuje_od": null,
       "obowiazuje_do": null,
@@ -197,15 +149,15 @@
       "charakter": "stan",
       "typ": "Jakość powietrza (czujnik lokalny)",
       "tytul": "Iłowo-Osada, Wyzwolenia",
-      "opis": "PM2,5: 16 µg/m³, PM10: 19 µg/m³. Cóż... Bywało lepiej.",
+      "opis": "PM2,5: 13 µg/m³, PM10: 16 µg/m³. Wspaniałe powietrze!",
       "stopien": 0,
       "obowiazuje_od": null,
       "obowiazuje_do": null,
       "link": null,
       "dodatkowe": {
-        "pm25": 16.15,
-        "pm10": 19.37,
-        "caqi": 26.92
+        "pm25": 13.47,
+        "pm10": 15.6,
+        "caqi": 22.46
       },
       "klucz": "8839ac39f003b80b",
       "przestarzale": false,
@@ -236,14 +188,14 @@
       "charakter": "stan",
       "typ": "Prognoza",
       "tytul": "Najbliższe 24 godziny",
-      "opis": "Najsilniejszy prognozowany poryw 23 km/h, suma opadów 0.2 mm. Temperatura od 12 do 15 °C.",
+      "opis": "Najsilniejszy prognozowany poryw 23 km/h, suma opadów 0.0 mm. Temperatura od 12 do 14 °C.",
       "stopien": 0,
       "obowiazuje_od": null,
       "obowiazuje_do": null,
       "link": null,
       "dodatkowe": {
         "maks_poryw_kmh": 23,
-        "suma_opadow_mm": 0.2
+        "suma_opadow_mm": 0.0
       },
       "klucz": "8c15ed19d97c626d",
       "przestarzale": false,
@@ -289,55 +241,55 @@
       "nazwa": "IMGW – ostrzeżenia meteorologiczne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-12T22:23:33+00:00",
+      "pobrano": "2026-09-13T00:17:04+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "API odpowiada, endpoint zwrócił 404 — brak ostrzeżeń tego typu",
-      "pobrano_ladnie": "13.09.2026, 00:23"
+      "pobrano_ladnie": "13.09.2026, 02:17"
     },
     {
       "id": "imgw-hydro",
       "nazwa": "IMGW – ostrzeżenia hydrologiczne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-12T22:23:34+00:00",
+      "pobrano": "2026-09-13T00:17:05+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": null,
-      "pobrano_ladnie": "13.09.2026, 00:23"
+      "pobrano_ladnie": "13.09.2026, 02:17"
     },
     {
       "id": "gios",
       "nazwa": "GIOŚ – jakość powietrza",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-12T22:23:38+00:00",
+      "pobrano": "2026-09-13T00:17:10+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "wariant zapytania: pełne nagłówki przeglądarki",
-      "pobrano_ladnie": "13.09.2026, 00:23"
+      "pobrano_ladnie": "13.09.2026, 02:17"
     },
     {
       "id": "airly",
       "nazwa": "Airly – czujniki lokalne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-12T21:32:11+00:00",
-      "wiek_minut": 51,
+      "pobrano": "2026-09-13T00:17:12+00:00",
+      "wiek_minut": 0,
       "nieaktualne": false,
-      "uwaga": "z pamięci — odpytywane co 55 min (limit dobowy)",
-      "pobrano_ladnie": "12.09.2026, 23:32"
+      "uwaga": "czujniki niskokosztowe (nie referencyjne), 3 z 3",
+      "pobrano_ladnie": "13.09.2026, 02:17"
     },
     {
       "id": "open-meteo",
       "nazwa": "Open-Meteo – prognoza 24 h",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-12T22:23:38+00:00",
+      "pobrano": "2026-09-13T00:17:12+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": null,
-      "pobrano_ladnie": "13.09.2026, 00:23"
+      "pobrano_ladnie": "13.09.2026, 02:17"
     },
     {
       "id": "stopnie-alarmowe",
@@ -345,9 +297,9 @@
       "ok": true,
       "blad": null,
       "pobrano": "2026-09-12T22:24:06+00:00",
-      "wiek_minut": 0,
+      "wiek_minut": 112,
       "nieaktualne": false,
-      "uwaga": "z konfiguracji (aktualizacja ręczna), termin 30.11.2026 — za 79 dni",
+      "uwaga": "z pamięci — odpytywane co 180 min (limit dobowy)",
       "pobrano_ladnie": "13.09.2026, 00:24"
     },
     {
@@ -355,44 +307,44 @@
       "nazwa": "Zagrożenie pożarowe lasu",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-12T21:13:39+00:00",
-      "wiek_minut": 69,
+      "pobrano": "2026-09-13T00:17:19+00:00",
+      "wiek_minut": 0,
       "nieaktualne": false,
-      "uwaga": "z pamięci — odpytywane co 180 min (limit dobowy)",
-      "pobrano_ladnie": "12.09.2026, 23:13"
+      "uwaga": "źródło: www.traxelektronik.pl (komórka tabeli)",
+      "pobrano_ladnie": "13.09.2026, 02:17"
     },
     {
       "id": "pse",
       "nazwa": "PSE – bilans mocy",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-12T22:24:07+00:00",
+      "pobrano": "2026-09-13T00:17:20+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "wariant: plan koordynacyjny dobowy",
-      "pobrano_ladnie": "13.09.2026, 00:24"
+      "pobrano_ladnie": "13.09.2026, 02:17"
     },
     {
       "id": "gminy",
       "nazwa": "Serwisy starostwa i gmin",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-12T21:32:43+00:00",
-      "wiek_minut": 50,
+      "pobrano": "2026-09-13T00:17:43+00:00",
+      "wiek_minut": 0,
       "nieaktualne": false,
-      "uwaga": "z pamięci — odpytywane co 55 min (limit dobowy)",
-      "pobrano_ladnie": "12.09.2026, 23:32"
+      "uwaga": "6 z 7 serwisów — bez: Gmina Płośnica",
+      "pobrano_ladnie": "13.09.2026, 02:17"
     },
     {
       "id": "wlasne",
       "nazwa": "Komunikaty własne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-12T22:24:07+00:00",
+      "pobrano": "2026-09-13T00:17:43+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "0 aktywnych z 0 w pliku",
-      "pobrano_ladnie": "13.09.2026, 00:24"
+      "pobrano_ladnie": "13.09.2026, 02:17"
     }
   ],
   "zrodla_niedostepne": [],
