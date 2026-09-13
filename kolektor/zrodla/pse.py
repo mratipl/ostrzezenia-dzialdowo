@@ -50,9 +50,12 @@ def bilans_mocy() -> Wynik:
             zrodlo="pse",
             charakter="stan",
             typ="System elektroenergetyczny",
-            tytul="Brak ogłoszonych stopni zasilania",
-            opis="Dane operacyjne PSE dostępne. Stopnie zasilania ogłasza się "
-                 "odrębnym komunikatem operatora.",
+            # Poprzedni tytuł brzmiał "Brak ogłoszonych stopni zasilania",
+            # czyli stwierdzał fakt, którego kolektor w ogóle nie sprawdza.
+            # Pobieramy plan koordynacyjny, nie listę ogłoszeń.
+            tytul="Dane operacyjne PSE dostępne",
+            opis="System raportowy operatora odpowiada. Stopnie zasilania "
+                 "ogłaszane są odrębnym komunikatem PSE i nie są tu sprawdzane.",
             stopien=0,
         )])
 

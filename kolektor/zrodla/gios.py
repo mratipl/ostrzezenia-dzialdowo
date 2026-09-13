@@ -167,6 +167,13 @@ def jakosc_powietrza() -> Wynik:
 
         kategoria = pole_w_glab(
             indeks, "nazwa kategorii indeksu", "indexLevelName", "indexLevel")
+
+        # "Brak indeksu" to informacja o BRAKU danych, nie ocena jakości.
+        # Wcześniej mapowało się cicho na stopień 0, czyli "w porządku".
+        if kategoria and znormalizuj(str(kategoria)).startswith("brak"):
+            kłopoty.append(f"id={ident} stacja zwróciła: {kategoria}")
+            continue
+
         if not kategoria:
             # Najczęstsza przyczyna: pole nazywa się inaczej niż zakładamy.
             # Wypisujemy realne klucze, żeby nie zgadywać po raz kolejny.

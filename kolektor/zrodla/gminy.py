@@ -22,7 +22,7 @@ from datetime import timedelta
 
 from ..konfiguracja import (
     GMINY, GMINY_DNI_WSTECZ, SLOWA_INFORMACYJNE, SLOWA_KRYZYSOWE,
-    SLOWA_OSTRZEZENIA, SLOWA_UTRUDNIENIA, SLOWA_ZAPOWIEDZI,
+    SLOWA_OSTRZEZENIA, SLOWA_UTRUDNIENIA, SLOWA_WYKLUCZAJACE, SLOWA_ZAPOWIEDZI,
 )
 from ..model import Pozycja, StatusZrodla, Wynik, teraz
 from ..siec import BladPobierania, pobierz_tekst
@@ -52,6 +52,12 @@ def _sprobuj_kanaly(url: str) -> tuple[list[dict], str]:
         if wpisy:
             return wpisy, f"RSS ({sciezka})"
     return [], ""
+
+
+def _odrzucic(tresc: str) -> bool:
+    """Czy wpis to uroczystość, zawody albo inna treść okolicznościowa."""
+    maly = tresc.lower()
+    return any(s in maly for s in SLOWA_WYKLUCZAJACE)
 
 
 def _waga(tresc: str) -> int:
@@ -141,6 +147,8 @@ def komunikaty_gmin() -> Wynik:
         for wpis in wpisy[:30]:
             tresc = f"{wpis.get('tytul', '')} {wpis.get('tekst', '')}"
             if not dotyczy_terenu(tresc, SLOWA_KRYZYSOWE):
+                continue
+            if _odrzucic(tresc):
                 continue
 
             data = wpis.get("data")

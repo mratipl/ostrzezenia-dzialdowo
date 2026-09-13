@@ -88,7 +88,17 @@ def _na_pozycje(dane: dict, etykieta: str) -> Pozycja | None:
 
     pm25 = jako_float(wartosci.get("PM25"))
     pm10 = jako_float(wartosci.get("PM10"))
-    if pm25 is None and pm10 is None and not caqi:
+
+    # Wymagamy liczby, nie samego opisu. Airly dla zepsutego czujnika zwraca
+    # strukturę z tekstem w rodzaju "Pracujemy nad tym, aby przywrócić ten
+    # czujnik do pełnej sprawności" — bez wartości pomiarowych. Wcześniej
+    # przechodziło to jako kafelka jakości powietrza bez żadnego pomiaru.
+    if pm25 is None and pm10 is None:
+        return None
+
+    # Oba wskaźniki dokładnie zerowe to fizycznie niemożliwy odczyt,
+    # w praktyce sygnał uszkodzonego czujnika.
+    if (pm25 or 0) == 0 and (pm10 or 0) == 0:
         return None
 
     czesci = []
