@@ -1,7 +1,7 @@
 {
   "powiat": "powiat działdowski",
-  "wygenerowano": "13.09.2026, 12:06",
-  "wygenerowano_iso": "2026-09-13T10:06:59+00:00",
+  "wygenerowano": "13.09.2026, 13:14",
+  "wygenerowano_iso": "2026-09-13T11:14:53+00:00",
   "naglowek": "Ostrzeżenie 2. stopnia — 100 lat osp jeleń - wspólna historia, służba i tradycja",
   "klasa_statusu": "s2",
   "najwyzszy_stopien": 2,
@@ -115,9 +115,9 @@
       "obowiazuje_do": null,
       "link": null,
       "dodatkowe": {
-        "pm25": 0.08,
-        "pm10": 0.1,
-        "caqi": 0.14
+        "pm25": 0.23,
+        "pm10": 0.28,
+        "caqi": 0.4
       },
       "klucz": "9bdc7a08e6cd0367",
       "przestarzale": false,
@@ -129,7 +129,7 @@
       "charakter": "stan",
       "typ": "Jakość powietrza (czujnik lokalny)",
       "tytul": "Księży Dwór",
-      "opis": "Pracujemy nad tym, aby przywrócić ten czujnik do pełnej sprawności!",
+      "opis": "O rany! Ten czujnik jest wyłączony! Nasz serwis już nad tym pracuje.",
       "stopien": 0,
       "obowiazuje_od": null,
       "obowiazuje_do": null,
@@ -149,15 +149,15 @@
       "charakter": "stan",
       "typ": "Jakość powietrza (czujnik lokalny)",
       "tytul": "Iłowo-Osada, Wyzwolenia",
-      "opis": "PM2,5: 9 µg/m³, PM10: 10 µg/m³. Wspaniałe powietrze!",
+      "opis": "PM2,5: 8 µg/m³, PM10: 9 µg/m³. Wspaniałe powietrze!",
       "stopien": 0,
       "obowiazuje_od": null,
       "obowiazuje_do": null,
       "link": null,
       "dodatkowe": {
-        "pm25": 8.84,
-        "pm10": 10.17,
-        "caqi": 14.75
+        "pm25": 8.05,
+        "pm10": 9.2,
+        "caqi": 13.43
       },
       "klucz": "8839ac39f003b80b",
       "przestarzale": false,
@@ -168,7 +168,7 @@
       "zrodlo": "gios",
       "charakter": "stan",
       "typ": "Jakość powietrza (stacja referencyjna)",
-      "tytul": "Ciechanów, ul. Kraszewskiego — Bardzo dobry",
+      "tytul": "Ciechanów, ul. Kraszewskiego — Brak indeksu",
       "opis": "Najbliższa stacja GIOŚ, około 48 km od Działdowa. W powiecie nie ma stanowiska pomiarowego, więc odczyt nie odzwierciedla lokalnego zadymienia z palenisk domowych.",
       "stopien": 0,
       "obowiazuje_od": null,
@@ -178,7 +178,7 @@
         "odleglosc_km": 48,
         "stacja": "Ciechanów, ul. Kraszewskiego"
       },
-      "klucz": "4d4b835a6a980ba6",
+      "klucz": "7e5c3d8d0fbc3701",
       "przestarzale": false,
       "wiek": null,
       "okres": ""
@@ -241,55 +241,55 @@
       "nazwa": "IMGW – ostrzeżenia meteorologiczne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-13T10:07:01+00:00",
+      "pobrano": "2026-09-13T11:14:54+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "API odpowiada, endpoint zwrócił 404 — brak ostrzeżeń tego typu",
-      "pobrano_ladnie": "13.09.2026, 12:07"
+      "pobrano_ladnie": "13.09.2026, 13:14"
     },
     {
       "id": "imgw-hydro",
       "nazwa": "IMGW – ostrzeżenia hydrologiczne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-13T10:07:01+00:00",
+      "pobrano": "2026-09-13T11:14:55+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": null,
-      "pobrano_ladnie": "13.09.2026, 12:07"
+      "pobrano_ladnie": "13.09.2026, 13:14"
     },
     {
       "id": "gios",
       "nazwa": "GIOŚ – jakość powietrza",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-13T10:07:07+00:00",
+      "pobrano": "2026-09-13T11:14:58+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "wariant zapytania: pełne nagłówki przeglądarki",
-      "pobrano_ladnie": "13.09.2026, 12:07"
+      "pobrano_ladnie": "13.09.2026, 13:14"
     },
     {
       "id": "airly",
       "nazwa": "Airly – czujniki lokalne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-13T10:07:09+00:00",
+      "pobrano": "2026-09-13T11:14:59+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "czujniki niskokosztowe (nie referencyjne), 3 z 3",
-      "pobrano_ladnie": "13.09.2026, 12:07"
+      "pobrano_ladnie": "13.09.2026, 13:14"
     },
     {
       "id": "open-meteo",
       "nazwa": "Open-Meteo – prognoza 24 h",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-13T10:07:09+00:00",
+      "pobrano": "2026-09-13T11:15:00+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": null,
-      "pobrano_ladnie": "13.09.2026, 12:07"
+      "pobrano_ladnie": "13.09.2026, 13:15"
     },
     {
       "id": "stopnie-alarmowe",
@@ -297,9 +297,9 @@
       "ok": true,
       "blad": null,
       "pobrano": "2026-09-13T10:07:38+00:00",
-      "wiek_minut": 0,
+      "wiek_minut": 67,
       "nieaktualne": false,
-      "uwaga": "z konfiguracji (aktualizacja ręczna), termin 30.11.2026 — za 78 dni",
+      "uwaga": "z pamięci — odpytywane co 180 min (limit dobowy)",
       "pobrano_ladnie": "13.09.2026, 12:07"
     },
     {
@@ -308,9 +308,9 @@
       "ok": true,
       "blad": null,
       "pobrano": "2026-09-13T10:07:46+00:00",
-      "wiek_minut": 0,
+      "wiek_minut": 67,
       "nieaktualne": false,
-      "uwaga": "źródło: www.traxelektronik.pl (komórka tabeli)",
+      "uwaga": "z pamięci — odpytywane co 180 min (limit dobowy)",
       "pobrano_ladnie": "13.09.2026, 12:07"
     },
     {
@@ -318,33 +318,33 @@
       "nazwa": "PSE – bilans mocy",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-13T10:07:47+00:00",
+      "pobrano": "2026-09-13T11:15:01+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "wariant: plan koordynacyjny dobowy",
-      "pobrano_ladnie": "13.09.2026, 12:07"
+      "pobrano_ladnie": "13.09.2026, 13:15"
     },
     {
       "id": "gminy",
       "nazwa": "Serwisy starostwa i gmin",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-13T10:08:05+00:00",
+      "pobrano": "2026-09-13T11:15:24+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "6 z 7 serwisów — bez: Gmina Płośnica",
-      "pobrano_ladnie": "13.09.2026, 12:08"
+      "pobrano_ladnie": "13.09.2026, 13:15"
     },
     {
       "id": "wlasne",
       "nazwa": "Komunikaty własne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-13T10:08:05+00:00",
+      "pobrano": "2026-09-13T11:15:24+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "0 aktywnych z 0 w pliku",
-      "pobrano_ladnie": "13.09.2026, 12:08"
+      "pobrano_ladnie": "13.09.2026, 13:15"
     }
   ],
   "zrodla_niedostepne": [],
