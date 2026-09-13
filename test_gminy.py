@@ -210,3 +210,50 @@ print("   nagłówek:", dane["naglowek"], "| klasa:", dane["klasa_statusu"])
 assert "2. stopnia" in dane["naglowek"] and "woda niezdatna" in dane["naglowek"]
 
 print("\nKontrole wagi i nagłówka przeszły.")
+
+print("\n== Treści okolicznościowe wypadają całkowicie ==")
+OKOLICZNOSCIOWE = [
+    ("100 lat OSP Jeleń - wspólna historia, służba i tradycja",
+     "Świętowaliśmy jubileusz 100-lecie Ochotniczej Straży Pożarnej. "
+     "Uroczystości rozpoczęła polowa Msza Święta.", True),
+    ("Zawody sportowo-pożarnicze jednostek OSP gminy",
+     "Rozegrano gminne zawody strażackie z udziałem dziesięciu drużyn.", True),
+    ("Gratulacje dla druhów z jednostki", "Odznaczenia i medale za służbę.", True),
+    ("Pożar budynku mieszkalnego w Uzdowie",
+     "Strażacy gasili pożar domu, ewakuowano mieszkańców.", False),
+    ("Ostrzeżenie o silnym wiatrze dla powiatu",
+     "IMGW ostrzega przed porywami do 100 km/h.", False),
+]
+for tytul, opis, ma_wypasc in OKOLICZNOSCIOWE:
+    tresc = f"{tytul} {opis}"
+    odrzucony = gminy._odrzucic(tresc)
+    stan = "odrzucony" if odrzucony else f"stopień {gminy._waga(tresc)}"
+    znak = "✓" if odrzucony == ma_wypasc else "✗"
+    print(f"   {znak} {stan:<12} {tytul[:50]}")
+    assert odrzucony == ma_wypasc, tytul
+
+print("\n== Jubileusz nie może trafić do nagłówka ==")
+JUBILEUSZ_RSS = """<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"><channel>
+ <item><title>100 lat OSP Jeleń - wspólna historia, służba i tradycja</title>
+   <link>https://example.pl/osp</link>
+   <pubDate>Sun, 07 Sep 2026 12:00:00 +0200</pubDate>
+   <description>Świętowaliśmy jubileusz 100-lecie Ochotniczej Straży Pożarnej.</description></item>
+ <item><title>Przerwa w dostawie wody w Lidzbarku</title>
+   <link>https://example.pl/woda</link>
+   <pubDate>Thu, 11 Sep 2026 08:00:00 +0200</pubDate>
+   <description>W związku z pracami sieciowymi nastąpi przerwa w dostawie wody.</description></item>
+</channel></rss>
+"""
+def tylko_jubileusz(url, naglowki=None, proby=None, zapasowy_ua=True):
+    return JUBILEUSZ_RSS if "feed" in url else STRONA_Z_RSS
+html_pomoc.pobierz_tekst = tylko_jubileusz
+gminy.pobierz_tekst = tylko_jubileusz
+w = gminy.komunikaty_gmin()
+tytuly = [p.tytul for p in w.pozycje]
+print("   na tablicy:", tytuly)
+assert not any("100 lat" in x for x in tytuly), "jubileusz nadal przechodzi"
+assert any("Przerwa" in x for x in tytuly), "zgubiono realny komunikat"
+assert all(p.stopien <= 1 for p in w.pozycje)
+
+print("\nKontrole treści okolicznościowych przeszły.")
