@@ -37,7 +37,9 @@ FILTR_DROGOWY = [
 # Pełną listę z odległościami daje: python -m kolektor.main --airly
 AIRLY_INSTALACJE: list[tuple[int, str]] = [
     (10303, "Działdowo, Plac Mickiewicza"),
-    (10343, "Księży Dwór"),
+    # Księży Dwór (10343) wypadł — czujnik nie działa. Burkat to ta sama
+    # gmina i ten sam charakter terenu, 4,8 km od Działdowa.
+    (10304, "Burkat"),
     (10349, "Iłowo-Osada, Wyzwolenia"),
 ]
 AIRLY_PROMIEN_KM = 30
