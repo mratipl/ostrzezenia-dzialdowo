@@ -1,27 +1,11 @@
 {
   "powiat": "powiat działdowski",
-  "wygenerowano": "13.09.2026, 19:37",
-  "wygenerowano_iso": "2026-09-13T17:37:39+00:00",
-  "naglowek": "Ostrzeżenie 2. stopnia — 100 lat osp jeleń - wspólna historia, służba i tradycja",
-  "klasa_statusu": "s2",
-  "najwyzszy_stopien": 2,
+  "wygenerowano": "13.09.2026, 21:46",
+  "wygenerowano_iso": "2026-09-13T19:46:46+00:00",
+  "naglowek": "Ostrzeżenie 1. stopnia — przerwa w dostawie wody",
+  "klasa_statusu": "s1",
+  "najwyzszy_stopien": 1,
   "zdarzenia": [
-    {
-      "zrodlo": "gminy",
-      "charakter": "zdarzenie",
-      "typ": "Komunikat — Gmina Lidzbark",
-      "tytul": "100 lat OSP Jeleń - wspólna historia, służba i tradycja",
-      "opis": "W sobotnie przedpołudnie w Jeleniu świętowaliśmy wyjątkowy jubileusz -100-lecie Ochotniczej Straży Pożarnej w Jeleniu. To piękny wiek historii, zapisany odwagą, poświęceniem i gotowością do niesienia pomocy mieszkańcom. Uroczystości rozpoczęła polowa Ms...",
-      "stopien": 2,
-      "obowiazuje_od": "2026-09-07T00:00:00+00:00",
-      "obowiazuje_do": null,
-      "link": "https://lidzbark.pl/images/article/57afe5107f9f9b4d4df49eb526043a79b4738f47.jpeg",
-      "dodatkowe": {},
-      "klucz": "3557160b6c16e654",
-      "przestarzale": false,
-      "wiek": null,
-      "okres": "od 07.09.2026, 02:00"
-    },
     {
       "zrodlo": "gminy",
       "charakter": "zdarzenie",
@@ -115,9 +99,9 @@
       "obowiazuje_do": null,
       "link": null,
       "dodatkowe": {
-        "pm25": 0.09,
-        "pm10": 0.1,
-        "caqi": 0.16
+        "pm25": 0.05,
+        "pm10": 0.05,
+        "caqi": 0.09
       },
       "klucz": "9bdc7a08e6cd0367",
       "przestarzale": false,
@@ -128,36 +112,16 @@
       "zrodlo": "airly",
       "charakter": "stan",
       "typ": "Jakość powietrza (czujnik lokalny)",
-      "tytul": "Burkat",
-      "opis": "Z powodu niedziałającego czujnika nie możesz sprawdzić jakości powietrza w tej lokalizacji. Skorzystaj z innego, najbliższego czujnika!",
-      "stopien": 0,
-      "obowiazuje_od": null,
-      "obowiazuje_do": null,
-      "link": null,
-      "dodatkowe": {
-        "pm25": null,
-        "pm10": null,
-        "caqi": null
-      },
-      "klucz": "44992585c8cd4b38",
-      "przestarzale": false,
-      "wiek": null,
-      "okres": ""
-    },
-    {
-      "zrodlo": "airly",
-      "charakter": "stan",
-      "typ": "Jakość powietrza (czujnik lokalny)",
       "tytul": "Iłowo-Osada, Wyzwolenia",
-      "opis": "PM2,5: 13 µg/m³, PM10: 15 µg/m³. Wspaniałe powietrze!",
+      "opis": "PM2,5: 17 µg/m³, PM10: 21 µg/m³. Cóż... Bywało lepiej.",
       "stopien": 0,
       "obowiazuje_od": null,
       "obowiazuje_do": null,
       "link": null,
       "dodatkowe": {
-        "pm25": 12.55,
-        "pm10": 14.6,
-        "caqi": 20.92
+        "pm25": 17.03,
+        "pm10": 20.74,
+        "caqi": 28.4
       },
       "klucz": "8839ac39f003b80b",
       "przestarzale": false,
@@ -180,7 +144,7 @@
       },
       "klucz": "7e5c3d8d0fbc3701",
       "przestarzale": true,
-      "wiek": "3 godz.",
+      "wiek": "5 godz.",
       "okres": ""
     },
     {
@@ -241,22 +205,22 @@
       "nazwa": "IMGW – ostrzeżenia meteorologiczne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-13T17:37:41+00:00",
+      "pobrano": "2026-09-13T19:46:48+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "API odpowiada, endpoint zwrócił 404 — brak ostrzeżeń tego typu",
-      "pobrano_ladnie": "13.09.2026, 19:37"
+      "pobrano_ladnie": "13.09.2026, 21:46"
     },
     {
       "id": "imgw-hydro",
       "nazwa": "IMGW – ostrzeżenia hydrologiczne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-13T17:37:42+00:00",
+      "pobrano": "2026-09-13T19:46:49+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": null,
-      "pobrano_ladnie": "13.09.2026, 19:37"
+      "pobrano_ladnie": "13.09.2026, 21:46"
     },
     {
       "id": "gios",
@@ -264,7 +228,7 @@
       "ok": false,
       "blad": "Stacje znalezione (wariant: pełne nagłówki przeglądarki), brak indeksu. id=875 brak kategorii; klucze: ['@context', 'AqIndex', 'links', 'meta', 'totalPages']",
       "pobrano": "2026-09-13T14:27:41+00:00",
-      "wiek_minut": 189,
+      "wiek_minut": 319,
       "nieaktualne": true,
       "uwaga": null,
       "pobrano_ladnie": "13.09.2026, 16:27"
@@ -274,22 +238,22 @@
       "nazwa": "Airly – czujniki lokalne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-13T16:57:13+00:00",
-      "wiek_minut": 40,
+      "pobrano": "2026-09-13T19:46:53+00:00",
+      "wiek_minut": 0,
       "nieaktualne": false,
-      "uwaga": "z pamięci — odpytywane co 55 min (limit dobowy)",
-      "pobrano_ladnie": "13.09.2026, 18:57"
+      "uwaga": "czujniki niskokosztowe (nie referencyjne), 2 z 3 — część niedostępna",
+      "pobrano_ladnie": "13.09.2026, 21:46"
     },
     {
       "id": "open-meteo",
       "nazwa": "Open-Meteo – prognoza 24 h",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-13T17:37:45+00:00",
+      "pobrano": "2026-09-13T19:46:53+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": null,
-      "pobrano_ladnie": "13.09.2026, 19:37"
+      "pobrano_ladnie": "13.09.2026, 21:46"
     },
     {
       "id": "stopnie-alarmowe",
@@ -297,9 +261,9 @@
       "ok": true,
       "blad": null,
       "pobrano": "2026-09-13T17:38:18+00:00",
-      "wiek_minut": 0,
+      "wiek_minut": 128,
       "nieaktualne": false,
-      "uwaga": "z konfiguracji (aktualizacja ręczna), termin 30.11.2026 — za 78 dni",
+      "uwaga": "z pamięci — odpytywane co 180 min (limit dobowy)",
       "pobrano_ladnie": "13.09.2026, 19:38"
     },
     {
@@ -308,9 +272,9 @@
       "ok": true,
       "blad": null,
       "pobrano": "2026-09-13T17:38:25+00:00",
-      "wiek_minut": 0,
+      "wiek_minut": 128,
       "nieaktualne": false,
-      "uwaga": "źródło: www.traxelektronik.pl (komórka tabeli)",
+      "uwaga": "z pamięci — odpytywane co 180 min (limit dobowy)",
       "pobrano_ladnie": "13.09.2026, 19:38"
     },
     {
@@ -318,33 +282,33 @@
       "nazwa": "PSE – bilans mocy",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-13T17:38:27+00:00",
+      "pobrano": "2026-09-13T19:46:54+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "wariant: plan koordynacyjny dobowy",
-      "pobrano_ladnie": "13.09.2026, 19:38"
+      "pobrano_ladnie": "13.09.2026, 21:46"
     },
     {
       "id": "gminy",
       "nazwa": "Serwisy starostwa i gmin",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-13T16:57:43+00:00",
-      "wiek_minut": 39,
+      "pobrano": "2026-09-13T19:47:19+00:00",
+      "wiek_minut": 0,
       "nieaktualne": false,
-      "uwaga": "z pamięci — odpytywane co 55 min (limit dobowy)",
-      "pobrano_ladnie": "13.09.2026, 18:57"
+      "uwaga": "6 z 7 serwisów — bez: Gmina Płośnica",
+      "pobrano_ladnie": "13.09.2026, 21:47"
     },
     {
       "id": "wlasne",
       "nazwa": "Komunikaty własne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-13T17:38:27+00:00",
+      "pobrano": "2026-09-13T19:47:19+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "0 aktywnych z 0 w pliku",
-      "pobrano_ladnie": "13.09.2026, 19:38"
+      "pobrano_ladnie": "13.09.2026, 21:47"
     }
   ],
   "zrodla_niedostepne": [
