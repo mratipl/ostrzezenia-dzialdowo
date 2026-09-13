@@ -195,6 +195,16 @@ PROGI_SWIEZOSCI_MIN = {
 }
 PROG_DOMYSLNY_MIN = 120
 
+# Jak długo wolno przenosić dane z niedziałającego źródła.
+#
+# Przy awarii pokazujemy ostatnie znane informacje oznaczone szrafowaniem —
+# to celowe, bo przy wichurze lepiej widzieć ostrzeżenie sprzed godziny niż
+# pustą stronę. Ale bez górnej granicy odczyt przenosi się bez końca: po
+# zawężeniu promienia stacji GIOŚ na tablicy została kafelka Ciechanowa,
+# której źródło nigdy już nie odświeży. Po tym czasie pozycje znikają,
+# a źródło zostaje oznaczone jako niedostępne.
+MAKS_WIEK_PRZENOSZENIA_MIN = 360
+
 # Minimalny odstęp między pobraniami danego źródła. Źródło odpytane niedawno
 # jest pomijane, a jego poprzednie dane przenoszone jako aktualne — bez tego
 # Airly wyczerpałoby dobowy limit przed południem.

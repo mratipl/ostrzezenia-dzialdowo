@@ -17,8 +17,8 @@ from pathlib import Path
 from typing import Any, Callable
 
 from .konfiguracja import (
-    KATALOG_WYJSCIA, MIN_ODSTEP_MIN, PROGI_SWIEZOSCI_MIN,
-    PROG_DOMYSLNY_MIN, ZRODLA_WYLACZONE,
+    KATALOG_WYJSCIA, MAKS_WIEK_PRZENOSZENIA_MIN, MIN_ODSTEP_MIN,
+    PROGI_SWIEZOSCI_MIN, PROG_DOMYSLNY_MIN, ZRODLA_WYLACZONE,
 )
 from .model import StatusZrodla, Wynik, teraz
 from .render import przygotuj, wzbogac, zapisz
@@ -142,10 +142,19 @@ def zbierz() -> int:
             bledy += 1
             print(f"  [BŁĄD] {status.nazwa}: {status.blad}", file=sys.stderr)
             status.pobrano = wczesniej.get("pobrano")
-            surowe = [
-                p for p in poprzednie_pozycje(poprzednie, status.id)
-                if not czy_wygaslo(p, moment)
-            ]
+            wiek = minuty_od(status.pobrano, moment)
+
+            if wiek is not None and wiek <= MAKS_WIEK_PRZENOSZENIA_MIN:
+                surowe = [
+                    p for p in poprzednie_pozycje(poprzednie, status.id)
+                    if not czy_wygaslo(p, moment)
+                ]
+            else:
+                # Za stare, żeby cokolwiek opisywać. Źródło zostaje czerwone,
+                # ale nie ciągnie za sobą odczytu z zamierzchłej przeszłości.
+                surowe = []
+                if wiek is not None:
+                    print(f"         dane sprzed {wiek} min — usunięte z tablicy")
         else:
             dopisek = f" ({status.uwaga})" if status.uwaga else ""
             print(f"  [OK]   {status.nazwa}: {len(surowe)} poz.{dopisek}")
