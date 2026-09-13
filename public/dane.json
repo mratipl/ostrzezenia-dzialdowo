@@ -1,7 +1,7 @@
 {
   "powiat": "powiat działdowski",
-  "wygenerowano": "13.09.2026, 16:27",
-  "wygenerowano_iso": "2026-09-13T14:27:34+00:00",
+  "wygenerowano": "13.09.2026, 18:57",
+  "wygenerowano_iso": "2026-09-13T16:57:01+00:00",
   "naglowek": "Ostrzeżenie 2. stopnia — 100 lat osp jeleń - wspólna historia, służba i tradycja",
   "klasa_statusu": "s2",
   "najwyzszy_stopien": 2,
@@ -115,9 +115,9 @@
       "obowiazuje_do": null,
       "link": null,
       "dodatkowe": {
-        "pm25": 0.1,
-        "pm10": 0.13,
-        "caqi": 0.18
+        "pm25": 0.09,
+        "pm10": 0.1,
+        "caqi": 0.16
       },
       "klucz": "9bdc7a08e6cd0367",
       "przestarzale": false,
@@ -149,15 +149,15 @@
       "charakter": "stan",
       "typ": "Jakość powietrza (czujnik lokalny)",
       "tytul": "Iłowo-Osada, Wyzwolenia",
-      "opis": "PM2,5: 8 µg/m³, PM10: 9 µg/m³. Wspaniałe powietrze!",
+      "opis": "PM2,5: 13 µg/m³, PM10: 15 µg/m³. Wspaniałe powietrze!",
       "stopien": 0,
       "obowiazuje_od": null,
       "obowiazuje_do": null,
       "link": null,
       "dodatkowe": {
-        "pm25": 7.65,
-        "pm10": 8.82,
-        "caqi": 12.75
+        "pm25": 12.55,
+        "pm10": 14.6,
+        "caqi": 20.92
       },
       "klucz": "8839ac39f003b80b",
       "przestarzale": false,
@@ -179,8 +179,8 @@
         "stacja": "Ciechanów, ul. Kraszewskiego"
       },
       "klucz": "7e5c3d8d0fbc3701",
-      "przestarzale": false,
-      "wiek": null,
+      "przestarzale": true,
+      "wiek": "2 godz.",
       "okres": ""
     },
     {
@@ -188,14 +188,14 @@
       "charakter": "stan",
       "typ": "Prognoza",
       "tytul": "Najbliższe 24 godziny",
-      "opis": "Najsilniejszy prognozowany poryw 24 km/h, suma opadów 2.6 mm. Temperatura od 11 do 15 °C.",
+      "opis": "Najsilniejszy prognozowany poryw 24 km/h, suma opadów 3.4 mm. Temperatura od 11 do 15 °C.",
       "stopien": 0,
       "obowiazuje_od": null,
       "obowiazuje_do": null,
       "link": null,
       "dodatkowe": {
         "maks_poryw_kmh": 24,
-        "suma_opadow_mm": 2.6
+        "suma_opadow_mm": 3.4
       },
       "klucz": "8c15ed19d97c626d",
       "przestarzale": false,
@@ -241,32 +241,32 @@
       "nazwa": "IMGW – ostrzeżenia meteorologiczne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-13T14:27:36+00:00",
+      "pobrano": "2026-09-13T16:57:04+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "API odpowiada, endpoint zwrócił 404 — brak ostrzeżeń tego typu",
-      "pobrano_ladnie": "13.09.2026, 16:27"
+      "pobrano_ladnie": "13.09.2026, 18:57"
     },
     {
       "id": "imgw-hydro",
       "nazwa": "IMGW – ostrzeżenia hydrologiczne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-13T14:27:37+00:00",
+      "pobrano": "2026-09-13T16:57:05+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": null,
-      "pobrano_ladnie": "13.09.2026, 16:27"
+      "pobrano_ladnie": "13.09.2026, 18:57"
     },
     {
       "id": "gios",
       "nazwa": "GIOŚ – jakość powietrza",
-      "ok": true,
-      "blad": null,
+      "ok": false,
+      "blad": "Stacje znalezione (wariant: pełne nagłówki przeglądarki), brak indeksu. id=875 brak kategorii; klucze: ['@context', 'AqIndex', 'links', 'meta', 'totalPages']",
       "pobrano": "2026-09-13T14:27:41+00:00",
-      "wiek_minut": 0,
+      "wiek_minut": 149,
       "nieaktualne": false,
-      "uwaga": "wariant zapytania: pełne nagłówki przeglądarki",
+      "uwaga": null,
       "pobrano_ladnie": "13.09.2026, 16:27"
     },
     {
@@ -274,22 +274,22 @@
       "nazwa": "Airly – czujniki lokalne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-13T14:27:43+00:00",
+      "pobrano": "2026-09-13T16:57:13+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "czujniki niskokosztowe (nie referencyjne), 3 z 3",
-      "pobrano_ladnie": "13.09.2026, 16:27"
+      "pobrano_ladnie": "13.09.2026, 18:57"
     },
     {
       "id": "open-meteo",
       "nazwa": "Open-Meteo – prognoza 24 h",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-13T14:27:44+00:00",
+      "pobrano": "2026-09-13T16:57:13+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": null,
-      "pobrano_ladnie": "13.09.2026, 16:27"
+      "pobrano_ladnie": "13.09.2026, 18:57"
     },
     {
       "id": "stopnie-alarmowe",
@@ -297,9 +297,9 @@
       "ok": true,
       "blad": null,
       "pobrano": "2026-09-13T14:28:16+00:00",
-      "wiek_minut": 0,
+      "wiek_minut": 148,
       "nieaktualne": false,
-      "uwaga": "z konfiguracji (aktualizacja ręczna), termin 30.11.2026 — za 78 dni",
+      "uwaga": "z pamięci — odpytywane co 180 min (limit dobowy)",
       "pobrano_ladnie": "13.09.2026, 16:28"
     },
     {
@@ -308,9 +308,9 @@
       "ok": true,
       "blad": null,
       "pobrano": "2026-09-13T14:28:24+00:00",
-      "wiek_minut": 0,
+      "wiek_minut": 148,
       "nieaktualne": false,
-      "uwaga": "źródło: www.traxelektronik.pl (komórka tabeli)",
+      "uwaga": "z pamięci — odpytywane co 180 min (limit dobowy)",
       "pobrano_ladnie": "13.09.2026, 16:28"
     },
     {
@@ -318,36 +318,38 @@
       "nazwa": "PSE – bilans mocy",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-13T14:28:25+00:00",
+      "pobrano": "2026-09-13T16:57:15+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "wariant: plan koordynacyjny dobowy",
-      "pobrano_ladnie": "13.09.2026, 16:28"
+      "pobrano_ladnie": "13.09.2026, 18:57"
     },
     {
       "id": "gminy",
       "nazwa": "Serwisy starostwa i gmin",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-13T14:28:48+00:00",
+      "pobrano": "2026-09-13T16:57:43+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "6 z 7 serwisów — bez: Gmina Płośnica",
-      "pobrano_ladnie": "13.09.2026, 16:28"
+      "pobrano_ladnie": "13.09.2026, 18:57"
     },
     {
       "id": "wlasne",
       "nazwa": "Komunikaty własne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-13T14:28:48+00:00",
+      "pobrano": "2026-09-13T16:57:43+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "0 aktywnych z 0 w pliku",
-      "pobrano_ladnie": "13.09.2026, 16:28"
+      "pobrano_ladnie": "13.09.2026, 18:57"
     }
   ],
-  "zrodla_niedostepne": [],
+  "zrodla_niedostepne": [
+    "GIOŚ – jakość powietrza"
+  ],
   "zrodla_bez_danych": [],
   "atrybucja": [
     "Źródłem pochodzenia danych jest Instytut Meteorologii i Gospodarki Wodnej – Państwowy Instytut Badawczy.",
