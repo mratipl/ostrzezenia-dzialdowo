@@ -227,7 +227,10 @@ for p in w.pozycje:
 assert w.status.ok and len(w.pozycje) == 4
 assert any("CHARLIE" in p.tytul for p in w.pozycje)
 assert all(p.charakter == "stan" for p in w.pozycje)
-assert "za 79 dni" in w.status.uwaga
+# Bez zaszytej liczby: test nie może psuć się z upływem doby.
+import re as _re
+assert _re.search(r"za \d+ dni", w.status.uwaga), w.status.uwaga
+assert "30.11.2026" in w.status.uwaga
 
 print("\n== Przypomnienie na 14 dni przed terminem ==")
 from datetime import timedelta as TD

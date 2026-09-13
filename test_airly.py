@@ -4,15 +4,20 @@ from kolektor import siec
 
 N = {"zapytania": 0}
 
-def pomiar_dla(pm25, pm10, poziom, opis):
-    return {"current": {"values": [{"name": "PM25", "value": pm25},
+from datetime import timedelta
+from kolektor.model import teraz as _teraz
+
+def pomiar_dla(pm25, pm10, poziom, opis, godzin_temu=0):
+    znacznik = (_teraz() - timedelta(hours=godzin_temu)).isoformat()
+    return {"current": {"fromDateTime": znacznik, "tillDateTime": znacznik,
+                        "values": [{"name": "PM25", "value": pm25},
                                    {"name": "PM10", "value": pm10}],
                         "indexes": [{"name": "AIRLY_CAQI", "value": pm25 * 2,
                                      "level": poziom, "description": opis}]}}
 
 ODPOWIEDZI = {
     "10303": pomiar_dla(41.0, 58.0, "HIGH", "Powietrze jest złej jakości."),
-    "10343": pomiar_dla(12.0, 18.0, "LOW", "Powietrze jest dobrej jakości."),
+    "10304": pomiar_dla(12.0, 18.0, "LOW", "Powietrze jest dobrej jakości."),
     "10349": pomiar_dla(23.0, 34.0, "MEDIUM", "Powietrze jest średniej jakości."),
 }
 
@@ -46,6 +51,37 @@ assert w.pozycje[0].stopien == 2, "najgorszy odczyt musi być pierwszy"
 assert N["zapytania"] == 3, f"budżet: oczekiwano 3 zapytań, było {N['zapytania']}"
 print("   zapytań:", N["zapytania"], "| uwaga:", w.status.uwaga)
 
+print("\n== martwy czujnik nie może udawać stanu bieżącego ==")
+MARTWY = dict(ODPOWIEDZI)
+MARTWY["10304"] = pomiar_dla(9.0, 14.0, "LOW", "Dane sprzed dni.", godzin_temu=72)
+def z_martwym(url, naglowki=None, proby=None, zapasowy_ua=True):
+    N["zapytania"] += 1
+    for ident, odp in MARTWY.items():
+        if ident in url:
+            return odp
+    raise siec.BladPobierania("nieobsłużony adres")
+airly.pobierz_json = z_martwym
+w = airly.pomiar()
+etykiety = [p.tytul for p in w.pozycje]
+print("   pokazane:", ", ".join(e[:30] for e in etykiety))
+print("   uwaga:   ", w.status.uwaga)
+assert w.status.ok, "pozostałe czujniki muszą działać dalej"
+assert len(w.pozycje) == 2, "odczyt sprzed 72 h nie może trafić na stronę"
+assert not any("Burkat" in e for e in etykiety)
+assert "2 z 3" in w.status.uwaga and "niedostępna" in w.status.uwaga
+
+print("\n== brak znacznika czasu też dyskwalifikuje ==")
+BEZ_CZASU = {"10303": {"current": {"values": [{"name": "PM25", "value": 10}],
+                                   "indexes": [{"level": "LOW", "description": "x"}]}}}
+def bez_czasu(url, naglowki=None, proby=None, zapasowy_ua=True):
+    N["zapytania"] += 1
+    return BEZ_CZASU["10303"]
+airly.pobierz_json = bez_czasu
+w = airly.pomiar()
+print("   blad:", (w.status.blad or "")[:90])
+assert not w.status.ok
+
+airly.pobierz_json = fałszywy
 print("\n== budżet dobowy ==")
 NA_CYKL, CYKLI = 3, 24
 print(f"   {NA_CYKL} zapytania × {CYKLI} cykli = {NA_CYKL*CYKLI} na dobę (limit 100)")
