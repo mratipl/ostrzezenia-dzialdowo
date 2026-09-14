@@ -1,7 +1,7 @@
 {
   "powiat": "powiat działdowski",
-  "wygenerowano": "14.09.2026, 00:08",
-  "wygenerowano_iso": "2026-09-13T22:08:16+00:00",
+  "wygenerowano": "14.09.2026, 02:15",
+  "wygenerowano_iso": "2026-09-14T00:15:37+00:00",
   "naglowek": "Ostrzeżenie 1. stopnia — przerwa w dostawie wody",
   "klasa_statusu": "s1",
   "najwyzszy_stopien": 1,
@@ -99,9 +99,9 @@
       "obowiazuje_do": null,
       "link": null,
       "dodatkowe": {
-        "pm25": 0.11,
-        "pm10": 0.12,
-        "caqi": 0.19
+        "pm25": 0.17,
+        "pm10": 0.19,
+        "caqi": 0.29
       },
       "klucz": "9bdc7a08e6cd0367",
       "przestarzale": false,
@@ -113,15 +113,15 @@
       "charakter": "stan",
       "typ": "Jakość powietrza (czujnik lokalny)",
       "tytul": "Iłowo-Osada, Wyzwolenia",
-      "opis": "PM2,5: 15 µg/m³, PM10: 18 µg/m³. Cóż... Bywało lepiej.",
+      "opis": "PM2,5: 15 µg/m³, PM10: 17 µg/m³. Wspaniałe powietrze!",
       "stopien": 0,
       "obowiazuje_od": null,
       "obowiazuje_do": null,
       "link": null,
       "dodatkowe": {
-        "pm25": 15.36,
-        "pm10": 17.62,
-        "caqi": 25.61
+        "pm25": 14.7,
+        "pm10": 16.88,
+        "caqi": 24.5
       },
       "klucz": "8839ac39f003b80b",
       "przestarzale": false,
@@ -133,14 +133,14 @@
       "charakter": "stan",
       "typ": "Prognoza",
       "tytul": "Najbliższe 24 godziny",
-      "opis": "Najsilniejszy prognozowany poryw 19 km/h, suma opadów 0.4 mm. Temperatura od 14 do 18 °C.",
+      "opis": "Najsilniejszy prognozowany poryw 20 km/h, suma opadów 0.9 mm. Temperatura od 13 do 18 °C.",
       "stopien": 0,
       "obowiazuje_od": null,
       "obowiazuje_do": null,
       "link": null,
       "dodatkowe": {
-        "maks_poryw_kmh": 19,
-        "suma_opadow_mm": 0.4
+        "maks_poryw_kmh": 20,
+        "suma_opadow_mm": 0.9
       },
       "klucz": "8c15ed19d97c626d",
       "przestarzale": false,
@@ -186,22 +186,22 @@
       "nazwa": "IMGW – ostrzeżenia meteorologiczne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-13T22:08:20+00:00",
+      "pobrano": "2026-09-14T00:15:40+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "API odpowiada, endpoint zwrócił 404 — brak ostrzeżeń tego typu",
-      "pobrano_ladnie": "14.09.2026, 00:08"
+      "pobrano_ladnie": "14.09.2026, 02:15"
     },
     {
       "id": "imgw-hydro",
       "nazwa": "IMGW – ostrzeżenia hydrologiczne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-13T22:08:21+00:00",
+      "pobrano": "2026-09-14T00:15:41+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": null,
-      "pobrano_ladnie": "14.09.2026, 00:08"
+      "pobrano_ladnie": "14.09.2026, 02:15"
     },
     {
       "id": "gios",
@@ -209,7 +209,7 @@
       "ok": false,
       "blad": "Stacje znalezione (wariant: pełne nagłówki przeglądarki), brak indeksu. id=875 brak kategorii; klucze: ['@context', 'AqIndex', 'links', 'meta', 'totalPages']",
       "pobrano": "2026-09-13T14:27:41+00:00",
-      "wiek_minut": 460,
+      "wiek_minut": 587,
       "nieaktualne": true,
       "uwaga": null,
       "pobrano_ladnie": "13.09.2026, 16:27"
@@ -219,22 +219,22 @@
       "nazwa": "Airly – czujniki lokalne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-13T22:08:26+00:00",
+      "pobrano": "2026-09-14T00:15:44+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "czujniki niskokosztowe (nie referencyjne), 2 z 3 — część niedostępna",
-      "pobrano_ladnie": "14.09.2026, 00:08"
+      "pobrano_ladnie": "14.09.2026, 02:15"
     },
     {
       "id": "open-meteo",
       "nazwa": "Open-Meteo – prognoza 24 h",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-13T22:08:26+00:00",
+      "pobrano": "2026-09-14T00:15:45+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": null,
-      "pobrano_ladnie": "14.09.2026, 00:08"
+      "pobrano_ladnie": "14.09.2026, 02:15"
     },
     {
       "id": "stopnie-alarmowe",
@@ -242,9 +242,9 @@
       "ok": true,
       "blad": null,
       "pobrano": "2026-09-13T22:08:58+00:00",
-      "wiek_minut": 0,
+      "wiek_minut": 126,
       "nieaktualne": false,
-      "uwaga": "z konfiguracji (aktualizacja ręczna), termin 30.11.2026 — za 78 dni",
+      "uwaga": "z pamięci — odpytywane co 180 min (limit dobowy)",
       "pobrano_ladnie": "14.09.2026, 00:08"
     },
     {
@@ -253,9 +253,9 @@
       "ok": true,
       "blad": null,
       "pobrano": "2026-09-13T22:09:05+00:00",
-      "wiek_minut": 0,
+      "wiek_minut": 126,
       "nieaktualne": false,
-      "uwaga": "źródło: www.traxelektronik.pl (komórka tabeli)",
+      "uwaga": "z pamięci — odpytywane co 180 min (limit dobowy)",
       "pobrano_ladnie": "14.09.2026, 00:09"
     },
     {
@@ -263,33 +263,33 @@
       "nazwa": "PSE – bilans mocy",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-13T22:09:07+00:00",
+      "pobrano": "2026-09-14T00:15:46+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "wariant: plan koordynacyjny dobowy",
-      "pobrano_ladnie": "14.09.2026, 00:09"
+      "pobrano_ladnie": "14.09.2026, 02:15"
     },
     {
       "id": "gminy",
       "nazwa": "Serwisy starostwa i gmin",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-13T22:09:34+00:00",
+      "pobrano": "2026-09-14T00:16:11+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
-      "uwaga": "4 z 7 serwisów — bez: Gmina Działdowo, Gmina Iłowo-Osada, Gmina Płośnica",
-      "pobrano_ladnie": "14.09.2026, 00:09"
+      "uwaga": "6 z 7 serwisów — bez: Gmina Płośnica",
+      "pobrano_ladnie": "14.09.2026, 02:16"
     },
     {
       "id": "wlasne",
       "nazwa": "Komunikaty własne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-13T22:09:34+00:00",
+      "pobrano": "2026-09-14T00:16:11+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "0 aktywnych z 0 w pliku",
-      "pobrano_ladnie": "14.09.2026, 00:09"
+      "pobrano_ladnie": "14.09.2026, 02:16"
     }
   ],
   "zrodla_niedostepne": [
