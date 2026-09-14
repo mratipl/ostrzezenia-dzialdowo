@@ -256,5 +256,8 @@ def data_po_frazie(tekst: str, *frazy: str) -> datetime | None:
 
 
 def dotyczy_terenu(tekst: str, frazy: list[str]) -> bool:
-    maly = (tekst or "").lower()
-    return any(f.lower() in maly for f in frazy)
+    """Dopasowanie odporne na brak polskich znaków po obu stronach."""
+    from ..pomocnicze import bez_ogonkow
+
+    plaski = bez_ogonkow(tekst)
+    return any(bez_ogonkow(f) in plaski for f in frazy)
