@@ -1,28 +1,11 @@
 {
   "powiat": "powiat działdowski",
-  "wygenerowano": "14.09.2026, 23:23",
-  "wygenerowano_iso": "2026-09-14T21:23:01+00:00",
-  "naglowek": "Ostrzeżenie 1. stopnia — przerwa w dostawie wody",
-  "klasa_statusu": "s1",
-  "najwyzszy_stopien": 1,
-  "zdarzenia": [
-    {
-      "zrodlo": "gminy",
-      "charakter": "zdarzenie",
-      "typ": "Komunikat — Gmina Lidzbark",
-      "tytul": "PRZERWA W DOSTAWIE WODY",
-      "opis": "Przedsiębiorstwo Gospodarki Komunalnej w Lidzbarku informuje, że dzisiaj, w godzinach 8:00–10:00, w związku z prowadzonymi pracami serwisowymi nastąpi czasowa przerwa w dostawie wody. Przerwa obejmie: • Wlewsk • Słup • Zalesie • Lidzbark – ul. Batorego • Li...",
-      "stopien": 1,
-      "obowiazuje_od": "2026-09-11T00:00:00+00:00",
-      "obowiazuje_do": null,
-      "link": "https://lidzbark.pl/images/article/a891a4c2fd72d5d96a448b579b2102d17899cab3.jpeg",
-      "dodatkowe": {},
-      "klucz": "c7bac721d9828735",
-      "przestarzale": false,
-      "wiek": null,
-      "okres": "od 11.09.2026, 02:00"
-    }
-  ],
+  "wygenerowano": "15.09.2026, 01:41",
+  "wygenerowano_iso": "2026-09-14T23:41:43+00:00",
+  "naglowek": "Brak ostrzeżeń",
+  "klasa_statusu": "s0",
+  "najwyzszy_stopien": 0,
+  "zdarzenia": [],
   "stany": [
     {
       "zrodlo": "stopnie-alarmowe",
@@ -92,18 +75,78 @@
       "zrodlo": "airly",
       "charakter": "stan",
       "typ": "Jakość powietrza (czujnik lokalny)",
-      "tytul": "Działdowo, Plac Mickiewicza",
+      "tytul": "Działdowo, Karłowicza",
+      "opis": "PM2,5: 7 µg/m³, PM10: 8 µg/m³. Wspaniałe powietrze!",
+      "stopien": 0,
+      "obowiazuje_od": null,
+      "obowiazuje_do": null,
+      "link": null,
+      "dodatkowe": {
+        "pm25": 6.96,
+        "pm10": 8.11,
+        "caqi": 11.6
+      },
+      "klucz": "2e29e490e7d89d48",
+      "przestarzale": false,
+      "wiek": null,
+      "okres": ""
+    },
+    {
+      "zrodlo": "airly",
+      "charakter": "stan",
+      "typ": "Jakość powietrza (czujnik lokalny)",
+      "tytul": "Lidzbark, Jeleńska",
+      "opis": "PM2,5: 11 µg/m³, PM10: 13 µg/m³. Wspaniałe powietrze!",
+      "stopien": 0,
+      "obowiazuje_od": null,
+      "obowiazuje_do": null,
+      "link": null,
+      "dodatkowe": {
+        "pm25": 11.06,
+        "pm10": 12.55,
+        "caqi": 18.43
+      },
+      "klucz": "20adfc0452bf8b12",
+      "przestarzale": false,
+      "wiek": null,
+      "okres": ""
+    },
+    {
+      "zrodlo": "airly",
+      "charakter": "stan",
+      "typ": "Jakość powietrza (czujnik lokalny)",
+      "tytul": "Płośnica, Kościelna",
+      "opis": "PM2,5: 8 µg/m³, PM10: 8 µg/m³. Wspaniałe powietrze!",
+      "stopien": 0,
+      "obowiazuje_od": null,
+      "obowiazuje_do": null,
+      "link": null,
+      "dodatkowe": {
+        "pm25": 7.53,
+        "pm10": 8.43,
+        "caqi": 12.55
+      },
+      "klucz": "6370cff9d031f209",
+      "przestarzale": false,
+      "wiek": null,
+      "okres": ""
+    },
+    {
+      "zrodlo": "airly",
+      "charakter": "stan",
+      "typ": "Jakość powietrza (czujnik lokalny)",
+      "tytul": "Rybno, Sportowa",
       "opis": "PM2,5: 0 µg/m³, PM10: 0 µg/m³. Wspaniałe powietrze!",
       "stopien": 0,
       "obowiazuje_od": null,
       "obowiazuje_do": null,
       "link": null,
       "dodatkowe": {
-        "pm25": 0.14,
-        "pm10": 0.18,
-        "caqi": 0.24
+        "pm25": 0.31,
+        "pm10": 0.41,
+        "caqi": 0.52
       },
-      "klucz": "9bdc7a08e6cd0367",
+      "klucz": "012323b705223814",
       "przestarzale": false,
       "wiek": null,
       "okres": ""
@@ -113,15 +156,15 @@
       "charakter": "stan",
       "typ": "Jakość powietrza (czujnik lokalny)",
       "tytul": "Iłowo-Osada, Wyzwolenia",
-      "opis": "PM2,5: 16 µg/m³, PM10: 19 µg/m³. Cóż... Bywało lepiej.",
+      "opis": "PM2,5: 8 µg/m³, PM10: 10 µg/m³. Wspaniałe powietrze!",
       "stopien": 0,
       "obowiazuje_od": null,
       "obowiazuje_do": null,
       "link": null,
       "dodatkowe": {
-        "pm25": 15.85,
-        "pm10": 19.21,
-        "caqi": 26.42
+        "pm25": 8.47,
+        "pm10": 9.9,
+        "caqi": 14.12
       },
       "klucz": "8839ac39f003b80b",
       "przestarzale": false,
@@ -133,14 +176,14 @@
       "charakter": "stan",
       "typ": "Prognoza",
       "tytul": "Najbliższe 24 godziny",
-      "opis": "Najsilniejszy prognozowany poryw 21 km/h, suma opadów 1.1 mm. Temperatura od 14 do 17 °C.",
+      "opis": "Najsilniejszy prognozowany poryw 20 km/h, suma opadów 0.1 mm. Temperatura od 13 do 20 °C.",
       "stopien": 0,
       "obowiazuje_od": null,
       "obowiazuje_do": null,
       "link": null,
       "dodatkowe": {
-        "maks_poryw_kmh": 21,
-        "suma_opadow_mm": 1.1
+        "maks_poryw_kmh": 20,
+        "suma_opadow_mm": 0.1
       },
       "klucz": "8c15ed19d97c626d",
       "przestarzale": false,
@@ -186,44 +229,44 @@
       "nazwa": "IMGW – ostrzeżenia meteorologiczne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-14T21:23:03+00:00",
+      "pobrano": "2026-09-14T23:41:45+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "API odpowiada, endpoint zwrócił 404 — brak ostrzeżeń tego typu",
-      "pobrano_ladnie": "14.09.2026, 23:23"
+      "pobrano_ladnie": "15.09.2026, 01:41"
     },
     {
       "id": "imgw-hydro",
       "nazwa": "IMGW – ostrzeżenia hydrologiczne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-14T21:23:04+00:00",
+      "pobrano": "2026-09-14T23:41:46+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": null,
-      "pobrano_ladnie": "14.09.2026, 23:23"
+      "pobrano_ladnie": "15.09.2026, 01:41"
     },
     {
       "id": "airly",
       "nazwa": "Airly – czujniki lokalne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-14T20:45:12+00:00",
-      "wiek_minut": 37,
+      "pobrano": "2026-09-14T23:41:49+00:00",
+      "wiek_minut": 0,
       "nieaktualne": false,
-      "uwaga": "z pamięci — odpytywane co 95 min (limit dobowy)",
-      "pobrano_ladnie": "14.09.2026, 22:45"
+      "uwaga": "czujniki niskokosztowe (nie referencyjne), 5 z 5",
+      "pobrano_ladnie": "15.09.2026, 01:41"
     },
     {
       "id": "open-meteo",
       "nazwa": "Open-Meteo – prognoza 24 h",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-14T21:23:04+00:00",
+      "pobrano": "2026-09-14T23:41:50+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": null,
-      "pobrano_ladnie": "14.09.2026, 23:23"
+      "pobrano_ladnie": "15.09.2026, 01:41"
     },
     {
       "id": "stopnie-alarmowe",
@@ -231,9 +274,9 @@
       "ok": true,
       "blad": null,
       "pobrano": "2026-09-14T21:23:40+00:00",
-      "wiek_minut": 0,
+      "wiek_minut": 138,
       "nieaktualne": false,
-      "uwaga": "z konfiguracji (aktualizacja ręczna), termin 30.11.2026 — za 77 dni",
+      "uwaga": "z pamięci — odpytywane co 180 min (limit dobowy)",
       "pobrano_ladnie": "14.09.2026, 23:23"
     },
     {
@@ -242,7 +285,7 @@
       "ok": true,
       "blad": null,
       "pobrano": "2026-09-14T20:45:33+00:00",
-      "wiek_minut": 37,
+      "wiek_minut": 176,
       "nieaktualne": false,
       "uwaga": "z pamięci — odpytywane co 180 min (limit dobowy)",
       "pobrano_ladnie": "14.09.2026, 22:45"
@@ -252,33 +295,33 @@
       "nazwa": "PSE – bilans mocy",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-14T21:23:41+00:00",
+      "pobrano": "2026-09-14T23:41:51+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "wariant: plan koordynacyjny dobowy",
-      "pobrano_ladnie": "14.09.2026, 23:23"
+      "pobrano_ladnie": "15.09.2026, 01:41"
     },
     {
       "id": "gminy",
       "nazwa": "Serwisy starostwa i gmin",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-14T20:45:59+00:00",
-      "wiek_minut": 37,
+      "pobrano": "2026-09-14T23:42:16+00:00",
+      "wiek_minut": 0,
       "nieaktualne": false,
-      "uwaga": "z pamięci — odpytywane co 55 min (limit dobowy)",
-      "pobrano_ladnie": "14.09.2026, 22:45"
+      "uwaga": "4 z 7 serwisów — bez: Gmina Działdowo, Gmina Iłowo-Osada, Gmina Płośnica",
+      "pobrano_ladnie": "15.09.2026, 01:42"
     },
     {
       "id": "wlasne",
       "nazwa": "Komunikaty własne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-14T21:23:41+00:00",
+      "pobrano": "2026-09-14T23:42:16+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "0 aktywnych z 0 w pliku",
-      "pobrano_ladnie": "14.09.2026, 23:23"
+      "pobrano_ladnie": "15.09.2026, 01:42"
     }
   ],
   "zrodla_niedostepne": [],
