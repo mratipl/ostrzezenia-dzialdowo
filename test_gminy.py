@@ -9,40 +9,50 @@ STRONA_Z_RSS = """
 </head><body><p>Strona główna</p></body></html>
 """
 
-KANAL = """<?xml version="1.0" encoding="UTF-8"?>
+# Daty WZGLĘDNE, nie zaszyte: okno czasowe zależy od wagi wpisu, więc test
+# z datami na sztywno psuł się po kilku dniach.
+from datetime import timedelta as _TD0
+from email.utils import format_datetime as _fdt
+from kolektor.model import teraz as _T0
+
+def _dni_temu(dni):
+    return _fdt(_T0() - _TD0(days=dni))
+
+KANAL = f"""<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0"><channel>
  <item><title>Przerwa w dostawie wody w Burkacie</title>
    <link>https://example.pl/woda</link>
-   <pubDate>Fri, 11 Sep 2026 08:00:00 +0200</pubDate>
-   <description><![CDATA[<p>W dniu 12 września nastąpi przerwa w dostawie wody.</p>]]></description></item>
- <item><title>Dożynki gminne 2026</title>
+   <pubDate>{_dni_temu(1)}</pubDate>
+   <description><![CDATA[<p>Nastapi czasowa przerwa w dostawie wody.</p>]]></description></item>
+ <item><title>Dozynki gminne 2026</title>
    <link>https://example.pl/dozynki</link>
-   <pubDate>Fri, 11 Sep 2026 09:00:00 +0200</pubDate>
-   <description>Zapraszamy na dożynki i konkurs wieńców.</description></item>
- <item><title>Trening systemu ostrzegania — syreny</title>
+   <pubDate>{_dni_temu(1)}</pubDate>
+   <description>Zapraszamy na dozynki i konkurs wiencow.</description></item>
+ <item><title>Trening systemu ostrzegania - syreny</title>
    <link>https://example.pl/syreny</link>
-   <pubDate>Thu, 10 Sep 2026 07:00:00 +0200</pubDate>
-   <description>W piątek uruchomione zostaną syreny alarmowe.</description></item>
- <item><title>Awaria sieci wodociągowej z 2019 roku</title>
+   <pubDate>{_dni_temu(1)}</pubDate>
+   <description>W piatek uruchomione zostana syreny alarmowe.</description></item>
+ <item><title>Awaria sieci wodociagowej sprzed lat</title>
    <link>https://example.pl/stare</link>
-   <pubDate>Mon, 04 Mar 2019 07:00:00 +0100</pubDate>
+   <pubDate>{_dni_temu(2000)}</pubDate>
    <description>Archiwalne.</description></item>
 </channel></rss>
 """
 
-# Realistyczna lista aktualności: data przy KAŻDYM wpisie. To właśnie datami
-# odróżniamy aktualności od menu, więc dane testowe muszą je mieć.
-STRONA_BEZ_RSS = """
+_WCZORAJ = (_T0() - _TD0(days=1)).strftime("%d.%m.%Y")
+_PRZEDWCZORAJ = (_T0() - _TD0(days=2)).strftime("%d.%m.%Y")
+
+STRONA_BEZ_RSS = f"""
 <html><body><main><ul>
- <li><a href="/a">Ostrzeżenie o silnym wiatrze dla gminy</a>
-     <time>11 września 2026</time>
-     <p>Prosimy o zachowanie ostrożności i zabezpieczenie przedmiotów.</p></li>
+ <li><a href="/a">Ostrzezenie o silnym wiatrze dla gminy</a>
+     <time>{_WCZORAJ}</time>
+     <p>Prosimy o zachowanie ostroznosci i zabezpieczenie przedmiotow.</p></li>
  <li><a href="/b">Nowy plac zabaw otwarty przy szkole</a>
-     <time>10 września 2026</time>
-     <p>Uroczyste otwarcie placu zabaw dla najmłodszych mieszkańców.</p></li>
- <li><a href="/c">Zebranie wiejskie w sprawie funduszu sołeckiego</a>
-     <time>9 września 2026</time>
-     <p>Porządek obrad zebrania oraz projekt podziału środków.</p></li>
+     <time>{_WCZORAJ}</time>
+     <p>Uroczyste otwarcie placu zabaw dla najmlodszych mieszkancow.</p></li>
+ <li><a href="/c">Zebranie wiejskie w sprawie funduszu soleckiego</a>
+     <time>{_PRZEDWCZORAJ}</time>
+     <p>Porzadek obrad zebrania oraz projekt podzialu srodkow.</p></li>
 </ul></main></body></html>
 """
 
@@ -70,10 +80,10 @@ tytuly = " ".join(p.tytul for p in w.pozycje)
 assert w.status.ok, "awaria jednego serwisu nie może zgasić całego źródła"
 assert "Przerwa w dostawie wody" in tytuly, "zgubiono komunikat o wodzie"
 assert "syreny" in tytuly.lower(), "zgubiono trening syren"
-assert "Ostrzeżenie o silnym wiatrze" in tytuly, "zgubiono wpis z HTML-a"
+assert "Ostrzezenie o silnym wiatrze" in tytuly, "zgubiono wpis z HTML-a"
 assert "Dożynki" not in tytuly, "przepuszczono treść niezwiązaną z ZK"
 assert "plac zabaw" not in tytuly.lower(), "przepuszczono treść niezwiązaną z ZK"
-assert "2019" not in tytuly, "przepuszczono wpis sprzed lat"
+assert "sprzed lat" not in tytuly, "przepuszczono wpis sprzed lat"
 assert "Starostwo" in (w.status.uwaga or ""), "brak informacji o nieudanym serwisie"
 
 print("\n== Gminy: deduplikacja przepisanych komunikatów ==")
@@ -186,10 +196,13 @@ for tytul, opis, oczekiwany in PRZYPADKI:
 
 print("\n== Zapowiedź po terminie wypada z tablicy ==")
 from kolektor.model import teraz
-assert gminy._minela_data_w_tytule("uruchomienie syren w dniu 01.09.2026", teraz())
-assert not gminy._minela_data_w_tytule("uruchomienie syren w dniu 31.12.2026", teraz())
-assert not gminy._minela_data_w_tytule("Przerwa w dostawie wody", teraz())
-print("   ✓ wpis z datą 01.09.2026 odrzucony, z 31.12.2026 zachowany")
+assert gminy._minela_data("uruchomienie syren w dniu 01.09.2026", teraz())
+assert not gminy._minela_data("uruchomienie syren w dniu 31.12.2026", teraz())
+assert not gminy._minela_data("Przerwa w dostawie wody", teraz())
+# Data publikacji w treści NIE jest datą zdarzenia — bez tego każdy wpis
+# parsowany z HTML-a wygasałby dzień po ukazaniu się.
+assert not gminy._minela_data("Ostrzeżenie o wiatrze 13.09.2026", teraz())
+print("   ✓ termin zdarzenia rozpoznany, data publikacji zignorowana")
 
 print("\n== Nagłówek: same informacje nie dają ostrzeżenia ==")
 from kolektor.render import przygotuj
@@ -233,18 +246,19 @@ for tytul, opis, ma_wypasc in OKOLICZNOSCIOWE:
     assert odrzucony == ma_wypasc, tytul
 
 print("\n== Jubileusz nie może trafić do nagłówka ==")
-JUBILEUSZ_RSS = """<?xml version="1.0" encoding="UTF-8"?>
+JUBILEUSZ_RSS = f"""<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0"><channel>
  <item><title>100 lat OSP Jeleń - wspólna historia, służba i tradycja</title>
    <link>https://example.pl/osp</link>
-   <pubDate>Sun, 07 Sep 2026 12:00:00 +0200</pubDate>
+   <pubDate>{_dni_temu(1)}</pubDate>
    <description>Świętowaliśmy jubileusz 100-lecie Ochotniczej Straży Pożarnej.</description></item>
  <item><title>Przerwa w dostawie wody w Lidzbarku</title>
    <link>https://example.pl/woda</link>
-   <pubDate>Thu, 11 Sep 2026 08:00:00 +0200</pubDate>
+   <pubDate>{_dni_temu(1)}</pubDate>
    <description>W związku z pracami sieciowymi nastąpi przerwa w dostawie wody.</description></item>
 </channel></rss>
 """
+
 def tylko_jubileusz(url, naglowki=None, proby=None, zapasowy_ua=True):
     return JUBILEUSZ_RSS if "feed" in url else STRONA_Z_RSS
 html_pomoc.pobierz_tekst = tylko_jubileusz
@@ -257,3 +271,50 @@ assert any("Przerwa" in x for x in tytuly), "zgubiono realny komunikat"
 assert all(p.stopien <= 1 for p in w.pozycje)
 
 print("\nKontrole treści okolicznościowych przeszły.")
+
+print("\n== Okno zależne od wagi: awaria wody wygasa szybciej niż ostrzeżenie ==")
+from datetime import timedelta as _TD
+from email.utils import format_datetime
+from kolektor.model import teraz as _T
+
+def kanal(wpisy):
+    pozycje = "".join(
+        f"<item><title>{tyt}</title><link>https://example.pl/{i}</link>"
+        f"<pubDate>{format_datetime(_T() - _TD(days=dni))}</pubDate>"
+        f"<description>{opis}</description></item>"
+        for i, (tyt, opis, dni) in enumerate(wpisy)
+    )
+    return f'<?xml version="1.0"?><rss version="2.0"><channel>{pozycje}</channel></rss>'
+
+WPISY = [
+    ("PRZERWA W DOSTAWIE WODY",
+     "Przedsiebiorstwo informuje, ze dzisiaj w godzinach 8:00-10:00 nastapi "
+     "czasowa przerwa w dostawie wody.", 3),
+    ("Ostrzezenie o wystepowaniu ASF na terenie gminy",
+     "Wyznaczono strefe objeta ograniczeniami w zwiazku z afrykanskim pomorem swin.", 7),
+    ("Awaria sieci energetycznej w Lidzbarku",
+     "Trwa usuwanie awarii, czesc odbiorcow bez pradu.", 1),
+]
+FEED = kanal(WPISY)
+def podstaw_kanal(url, naglowki=None, proby=None, zapasowy_ua=True):
+    return FEED if "feed" in url else STRONA_Z_RSS
+html_pomoc.pobierz_tekst = podstaw_kanal
+gminy.pobierz_tekst = podstaw_kanal
+
+w = gminy.komunikaty_gmin()
+tytuly = [p.tytul for p in w.pozycje]
+for p in w.pozycje:
+    print(f"   [{p.stopien}] {p.tytul[:54]}")
+assert not any("PRZERWA W DOSTAWIE" in x for x in tytuly), \
+    "utrudnienie sprzed 3 dni musi wygasnąć (okno 2 dni)"
+assert any("ASF" in x for x in tytuly), "ostrzeżenie sprzed 7 dni ma zostać (okno 10 dni)"
+assert any("Awaria" in x for x in tytuly), "awaria sprzed 1 dnia ma zostać"
+
+print("\n== Data w opisie, nie tylko w tytule ==")
+assert gminy._minela_data(
+    "Przerwa w dostawie wody W dniu 11 września 2026 nastąpi przerwa", _T())
+assert not gminy._minela_data(
+    "Przerwa w dostawie wody W dniu 31 grudnia 2026 nastąpi przerwa", _T())
+print("   ✓ 11 września odrzucone, 31 grudnia zachowane")
+
+print("\nKontrole okna czasowego przeszły.")
