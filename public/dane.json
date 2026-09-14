@@ -1,7 +1,7 @@
 {
   "powiat": "powiat działdowski",
-  "wygenerowano": "14.09.2026, 07:05",
-  "wygenerowano_iso": "2026-09-14T05:05:33+00:00",
+  "wygenerowano": "14.09.2026, 12:47",
+  "wygenerowano_iso": "2026-09-14T10:47:09+00:00",
   "naglowek": "Ostrzeżenie 1. stopnia — przerwa w dostawie wody",
   "klasa_statusu": "s1",
   "najwyzszy_stopien": 1,
@@ -99,9 +99,9 @@
       "obowiazuje_do": null,
       "link": null,
       "dodatkowe": {
-        "pm25": 0.07,
-        "pm10": 0.08,
-        "caqi": 0.12
+        "pm25": 0.04,
+        "pm10": 0.07,
+        "caqi": 0.08
       },
       "klucz": "9bdc7a08e6cd0367",
       "przestarzale": false,
@@ -113,15 +113,15 @@
       "charakter": "stan",
       "typ": "Jakość powietrza (czujnik lokalny)",
       "tytul": "Iłowo-Osada, Wyzwolenia",
-      "opis": "PM2,5: 21 µg/m³, PM10: 26 µg/m³. Cóż... Bywało lepiej.",
+      "opis": "PM2,5: 6 µg/m³, PM10: 7 µg/m³. Wspaniałe powietrze!",
       "stopien": 0,
       "obowiazuje_od": null,
       "obowiazuje_do": null,
       "link": null,
       "dodatkowe": {
-        "pm25": 21.15,
-        "pm10": 26.25,
-        "caqi": 35.26
+        "pm25": 5.78,
+        "pm10": 6.62,
+        "caqi": 9.64
       },
       "klucz": "8839ac39f003b80b",
       "przestarzale": false,
@@ -133,14 +133,14 @@
       "charakter": "stan",
       "typ": "Prognoza",
       "tytul": "Najbliższe 24 godziny",
-      "opis": "Najsilniejszy prognozowany poryw 23 km/h, suma opadów 1.2 mm. Temperatura od 13 do 18 °C.",
+      "opis": "Najsilniejszy prognozowany poryw 22 km/h, suma opadów 1.1 mm. Temperatura od 13 do 18 °C.",
       "stopien": 0,
       "obowiazuje_od": null,
       "obowiazuje_do": null,
       "link": null,
       "dodatkowe": {
-        "maks_poryw_kmh": 23,
-        "suma_opadow_mm": 1.2
+        "maks_poryw_kmh": 22,
+        "suma_opadow_mm": 1.1
       },
       "klucz": "8c15ed19d97c626d",
       "przestarzale": false,
@@ -186,22 +186,22 @@
       "nazwa": "IMGW – ostrzeżenia meteorologiczne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-14T05:05:35+00:00",
+      "pobrano": "2026-09-14T10:47:11+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "API odpowiada, endpoint zwrócił 404 — brak ostrzeżeń tego typu",
-      "pobrano_ladnie": "14.09.2026, 07:05"
+      "pobrano_ladnie": "14.09.2026, 12:47"
     },
     {
       "id": "imgw-hydro",
       "nazwa": "IMGW – ostrzeżenia hydrologiczne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-14T05:05:36+00:00",
+      "pobrano": "2026-09-14T10:47:12+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": null,
-      "pobrano_ladnie": "14.09.2026, 07:05"
+      "pobrano_ladnie": "14.09.2026, 12:47"
     },
     {
       "id": "gios",
@@ -209,7 +209,7 @@
       "ok": false,
       "blad": "Stacje znalezione (wariant: pełne nagłówki przeglądarki), brak indeksu. id=875 brak kategorii; klucze: ['@context', 'AqIndex', 'links', 'meta', 'totalPages']",
       "pobrano": "2026-09-13T14:27:41+00:00",
-      "wiek_minut": 877,
+      "wiek_minut": 1219,
       "nieaktualne": true,
       "uwaga": null,
       "pobrano_ladnie": "13.09.2026, 16:27"
@@ -219,77 +219,77 @@
       "nazwa": "Airly – czujniki lokalne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-14T05:05:40+00:00",
+      "pobrano": "2026-09-14T10:47:17+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "czujniki niskokosztowe (nie referencyjne), 2 z 3 — część niedostępna",
-      "pobrano_ladnie": "14.09.2026, 07:05"
+      "pobrano_ladnie": "14.09.2026, 12:47"
     },
     {
       "id": "open-meteo",
       "nazwa": "Open-Meteo – prognoza 24 h",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-14T05:05:40+00:00",
+      "pobrano": "2026-09-14T10:47:17+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": null,
-      "pobrano_ladnie": "14.09.2026, 07:05"
+      "pobrano_ladnie": "14.09.2026, 12:47"
     },
     {
       "id": "stopnie-alarmowe",
       "nazwa": "Stopnie alarmowe",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-14T05:06:07+00:00",
+      "pobrano": "2026-09-14T10:47:50+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "z konfiguracji (aktualizacja ręczna), termin 30.11.2026 — za 77 dni",
-      "pobrano_ladnie": "14.09.2026, 07:06"
+      "pobrano_ladnie": "14.09.2026, 12:47"
     },
     {
       "id": "lasy",
       "nazwa": "Zagrożenie pożarowe lasu",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-14T05:06:14+00:00",
+      "pobrano": "2026-09-14T10:47:57+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "źródło: www.traxelektronik.pl (komórka tabeli)",
-      "pobrano_ladnie": "14.09.2026, 07:06"
+      "pobrano_ladnie": "14.09.2026, 12:47"
     },
     {
       "id": "pse",
       "nazwa": "PSE – bilans mocy",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-14T05:06:15+00:00",
+      "pobrano": "2026-09-14T10:47:58+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "wariant: plan koordynacyjny dobowy",
-      "pobrano_ladnie": "14.09.2026, 07:06"
+      "pobrano_ladnie": "14.09.2026, 12:47"
     },
     {
       "id": "gminy",
       "nazwa": "Serwisy starostwa i gmin",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-14T05:06:35+00:00",
+      "pobrano": "2026-09-14T10:48:22+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "6 z 7 serwisów — bez: Gmina Płośnica",
-      "pobrano_ladnie": "14.09.2026, 07:06"
+      "pobrano_ladnie": "14.09.2026, 12:48"
     },
     {
       "id": "wlasne",
       "nazwa": "Komunikaty własne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-14T05:06:35+00:00",
+      "pobrano": "2026-09-14T10:48:22+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "0 aktywnych z 0 w pliku",
-      "pobrano_ladnie": "14.09.2026, 07:06"
+      "pobrano_ladnie": "14.09.2026, 12:48"
     }
   ],
   "zrodla_niedostepne": [
