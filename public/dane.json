@@ -1,7 +1,7 @@
 {
   "powiat": "powiat działdowski",
-  "wygenerowano": "14.09.2026, 22:45",
-  "wygenerowano_iso": "2026-09-14T20:45:02+00:00",
+  "wygenerowano": "14.09.2026, 23:23",
+  "wygenerowano_iso": "2026-09-14T21:23:01+00:00",
   "naglowek": "Ostrzeżenie 1. stopnia — przerwa w dostawie wody",
   "klasa_statusu": "s1",
   "najwyzszy_stopien": 1,
@@ -36,8 +36,8 @@
       "link": "https://www.gov.pl/web/rcb/stopnie-alarmowe",
       "dodatkowe": {},
       "klucz": "5c8d3a14b0f768bd",
-      "przestarzale": true,
-      "wiek": "3 godz.",
+      "przestarzale": false,
+      "wiek": null,
       "okres": "do 01.12.2026, 00:59"
     },
     {
@@ -52,8 +52,8 @@
       "link": "https://www.gov.pl/web/rcb/stopnie-alarmowe",
       "dodatkowe": {},
       "klucz": "252750a682085873",
-      "przestarzale": true,
-      "wiek": "3 godz.",
+      "przestarzale": false,
+      "wiek": null,
       "okres": "do 01.12.2026, 00:59"
     },
     {
@@ -68,8 +68,8 @@
       "link": "https://www.gov.pl/web/rcb/stopnie-alarmowe",
       "dodatkowe": {},
       "klucz": "8106af9a19baee88",
-      "przestarzale": true,
-      "wiek": "3 godz.",
+      "przestarzale": false,
+      "wiek": null,
       "okres": "do 01.12.2026, 00:59"
     },
     {
@@ -84,8 +84,8 @@
       "link": "https://www.gov.pl/web/rcb/stopnie-alarmowe",
       "dodatkowe": {},
       "klucz": "252750a682085873",
-      "przestarzale": true,
-      "wiek": "3 godz.",
+      "przestarzale": false,
+      "wiek": null,
       "okres": "do 01.12.2026, 00:59"
     },
     {
@@ -186,33 +186,22 @@
       "nazwa": "IMGW – ostrzeżenia meteorologiczne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-14T20:45:06+00:00",
+      "pobrano": "2026-09-14T21:23:03+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "API odpowiada, endpoint zwrócił 404 — brak ostrzeżeń tego typu",
-      "pobrano_ladnie": "14.09.2026, 22:45"
+      "pobrano_ladnie": "14.09.2026, 23:23"
     },
     {
       "id": "imgw-hydro",
       "nazwa": "IMGW – ostrzeżenia hydrologiczne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-14T20:45:07+00:00",
+      "pobrano": "2026-09-14T21:23:04+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": null,
-      "pobrano_ladnie": "14.09.2026, 22:45"
-    },
-    {
-      "id": "gios",
-      "nazwa": "GIOŚ – jakość powietrza",
-      "ok": false,
-      "blad": "Stacje znalezione (wariant: pełne nagłówki przeglądarki), brak indeksu. id=875 brak kategorii; klucze: ['@context', 'AqIndex', 'links', 'meta', 'totalPages']",
-      "pobrano": "2026-09-13T14:27:41+00:00",
-      "wiek_minut": 1817,
-      "nieaktualne": true,
-      "uwaga": null,
-      "pobrano_ladnie": "13.09.2026, 16:27"
+      "pobrano_ladnie": "14.09.2026, 23:23"
     },
     {
       "id": "airly",
@@ -220,9 +209,9 @@
       "ok": true,
       "blad": null,
       "pobrano": "2026-09-14T20:45:12+00:00",
-      "wiek_minut": 0,
+      "wiek_minut": 37,
       "nieaktualne": false,
-      "uwaga": "czujniki niskokosztowe (nie referencyjne), 2 z 3 — część niedostępna",
+      "uwaga": "z pamięci — odpytywane co 95 min (limit dobowy)",
       "pobrano_ladnie": "14.09.2026, 22:45"
     },
     {
@@ -230,22 +219,22 @@
       "nazwa": "Open-Meteo – prognoza 24 h",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-14T20:45:12+00:00",
+      "pobrano": "2026-09-14T21:23:04+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": null,
-      "pobrano_ladnie": "14.09.2026, 22:45"
+      "pobrano_ladnie": "14.09.2026, 23:23"
     },
     {
       "id": "stopnie-alarmowe",
-      "nazwa": "stopnie-alarmowe",
-      "ok": false,
-      "blad": "IncompleteRead: IncompleteRead(465427 bytes read)",
-      "pobrano": "2026-09-14T16:48:16+00:00",
-      "wiek_minut": 236,
+      "nazwa": "Stopnie alarmowe",
+      "ok": true,
+      "blad": null,
+      "pobrano": "2026-09-14T21:23:40+00:00",
+      "wiek_minut": 0,
       "nieaktualne": false,
-      "uwaga": null,
-      "pobrano_ladnie": "14.09.2026, 18:48"
+      "uwaga": "z konfiguracji (aktualizacja ręczna), termin 30.11.2026 — za 77 dni",
+      "pobrano_ladnie": "14.09.2026, 23:23"
     },
     {
       "id": "lasy",
@@ -253,9 +242,9 @@
       "ok": true,
       "blad": null,
       "pobrano": "2026-09-14T20:45:33+00:00",
-      "wiek_minut": 0,
+      "wiek_minut": 37,
       "nieaktualne": false,
-      "uwaga": "źródło: www.traxelektronik.pl (komórka tabeli)",
+      "uwaga": "z pamięci — odpytywane co 180 min (limit dobowy)",
       "pobrano_ladnie": "14.09.2026, 22:45"
     },
     {
@@ -263,11 +252,11 @@
       "nazwa": "PSE – bilans mocy",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-14T20:45:34+00:00",
+      "pobrano": "2026-09-14T21:23:41+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "wariant: plan koordynacyjny dobowy",
-      "pobrano_ladnie": "14.09.2026, 22:45"
+      "pobrano_ladnie": "14.09.2026, 23:23"
     },
     {
       "id": "gminy",
@@ -275,9 +264,9 @@
       "ok": true,
       "blad": null,
       "pobrano": "2026-09-14T20:45:59+00:00",
-      "wiek_minut": 0,
+      "wiek_minut": 37,
       "nieaktualne": false,
-      "uwaga": "6 z 7 serwisów — bez: Gmina Płośnica",
+      "uwaga": "z pamięci — odpytywane co 55 min (limit dobowy)",
       "pobrano_ladnie": "14.09.2026, 22:45"
     },
     {
@@ -285,17 +274,14 @@
       "nazwa": "Komunikaty własne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-14T20:45:59+00:00",
+      "pobrano": "2026-09-14T21:23:41+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "0 aktywnych z 0 w pliku",
-      "pobrano_ladnie": "14.09.2026, 22:45"
+      "pobrano_ladnie": "14.09.2026, 23:23"
     }
   ],
-  "zrodla_niedostepne": [
-    "GIOŚ – jakość powietrza",
-    "stopnie-alarmowe"
-  ],
+  "zrodla_niedostepne": [],
   "zrodla_bez_danych": [],
   "atrybucja": [
     "Źródłem pochodzenia danych jest Instytut Meteorologii i Gospodarki Wodnej – Państwowy Instytut Badawczy.",
