@@ -20,6 +20,18 @@ def znormalizuj(tekst: str) -> str:
     return "".join(z for z in bez_ogonkow.lower() if z.isalnum())
 
 
+def bez_ogonkow(tekst: str) -> str:
+    """Małe litery bez znaków diakrytycznych, ze zachowaniem spacji.
+
+    W przeciwieństwie do znormalizuj() nie usuwa separatorów, więc nadaje się
+    do dopasowywania fraz wielowyrazowych. Potrzebne, bo część serwisów pisze
+    bez polskich znaków ("ostrzezenie", "wylaczenie pradu") i dopasowanie
+    po formie z ogonkami po prostu nie trafia.
+    """
+    rozlozone = unicodedata.normalize("NFKD", tekst or "")
+    return "".join(z for z in rozlozone if not unicodedata.combining(z)).lower()
+
+
 def pole(slownik: dict[str, Any], *kandydaci: str, domyslnie: Any = None) -> Any:
     """Zwraca pierwszą pasującą wartość. Najpierw trafienie dokładne, potem po fragmencie."""
     if not isinstance(slownik, dict):

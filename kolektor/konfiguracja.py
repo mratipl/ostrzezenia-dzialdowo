@@ -40,12 +40,20 @@ FILTR_DROGOWY = [
 # centrum miasta, wieś pod miastem i drugą stronę powiatu.
 # Pełną listę z odległościami daje: python -m kolektor.main --airly
 AIRLY_INSTALACJE: list[tuple[int, str]] = [
-    (10303, "Działdowo, Plac Mickiewicza"),
-    # Księży Dwór (10343) wypadł — czujnik nie działa. Burkat to ta sama
-    # gmina i ten sam charakter terenu, 4,8 km od Działdowa.
-    (10304, "Burkat"),
+    (10298, "Działdowo, Karłowicza"),
+    (10286, "Lidzbark, Jeleńska"),
+    (10291, "Płośnica, Kościelna"),
+    (10288, "Rybno, Sportowa"),
     (10349, "Iłowo-Osada, Wyzwolenia"),
 ]
+# Gmina Działdowo bez pokrycia — wszystkie trzy jej czujniki (Księży Dwór,
+# Burkat, Uzdowo) nie działają. Otacza miasto z trzech stron, a czujnik
+# miejski jest blisko, więc strata jest ograniczona.
+#
+# Nietestowane: Karłowicza, Płośnica, Rybno. Martwy czujnik jest odrzucany
+# i raportowany ("3 z 5 — część niedostępna"), więc wymiana nie wymaga
+# zgadywania — wystarczy spojrzeć na tabelę źródeł.
+
 AIRLY_PROMIEN_KM = 30
 
 # --- Scrapery HTML -----------------------------------------------------
@@ -69,10 +77,18 @@ GMINY: list[tuple[str, str]] = [
     ("Gmina Rybno", "https://www.gminarybno.pl/"),
 ]
 
-# Skrócone z 21 dni: zapowiedź treningu syren z 1 września trafiła do nagłówka
-# 12 września jako "ostrzeżenie". Tablica ostrzegawcza ma pokazywać stan
-# bieżący, nie archiwum.
-GMINY_DNI_WSTECZ = 10
+# Okno zależy od wagi wpisu, bo różne rzeczy mają różny czas życia.
+#
+# Powód: komunikat o przerwie w dostawie wody z 11 września, dotyczący jednego
+# dnia w godzinach 8:00-10:00, wisiał w nagłówku jeszcze 14 września. Przy
+# jednym oknie dla wszystkiego nie da się tego rozdzielić — awaria wodociągu
+# jest zdarzeniem jednodniowym, a ostrzeżenie przed ASF może być aktualne
+# tygodniami.
+GMINY_DNI_WSTECZ = {
+    0: 3,    # informacje: trening syren, ćwiczenia — krótkie okno
+    1: 2,    # utrudnienia: przerwa w dostawie wody, wyłączenie prądu, objazd
+    2: 10,   # ostrzeżenia: skażenie, ASF, zjawiska pogodowe
+}
 
 # Serwisy gmin to głównie treści niezwiązane z kryzysówką — dożynki, konkursy,
 # inwestycje. Filtr jest tu ostrzejszy niż przy RCB: przepuszczamy tylko to,
@@ -173,6 +189,11 @@ ZRODLA_WYLACZONE = [
     # gmin, które je przepisują. Do włączenia, jeśli gov.pl kiedyś zacznie
     # serwować listę statycznie albo udostępni kanał RSS.
     "rcb",
+    # Najbliższe stacje GIOŚ to Ciechanów (48 km) i Ostróda — w Mławie
+    # czujnika nie ma. Z takiego dystansu odczyt nie opisuje powietrza
+    # w powiecie, zwłaszcza w sezonie grzewczym, a kafelka "Dobry" brzmiałaby
+    # jak zapewnienie. Warstwa powietrza opiera się na czujnikach Airly.
+    "gios",
 ]
 
 # --- Świeżość danych ---------------------------------------------------
@@ -209,7 +230,11 @@ MAKS_WIEK_PRZENOSZENIA_MIN = 360
 # jest pomijane, a jego poprzednie dane przenoszone jako aktualne — bez tego
 # Airly wyczerpałoby dobowy limit przed południem.
 MIN_ODSTEP_MIN = {
-    "airly": 55,
+    # Pięć czujników przy odstępie 95 min daje realny cykl 100 min
+    # (workflow chodzi co 20 min), czyli 14 pobrań na dobę: 14 × 5 = 70
+    # zapytań przy limicie 100. Zapas 30 pokrywa błędy sieciowe i ręczne
+    # sprawdzenia z przeglądarki.
+    "airly": 95,
     # Stopnie alarmowe zmieniają się kwartalnie, a stopień zagrożenia
     # pożarowego raz na dobę. Odpytywanie ich co 20 minut to tylko obciążanie
     # cudzych serwerów bez żadnego zysku informacyjnego.
