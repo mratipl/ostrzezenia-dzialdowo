@@ -113,8 +113,9 @@ assert "Silny wiatr" in tytuly, "zgubiono ostrzeżenie dla TERYT 2803"
 assert "Upał" not in tytuly, "przepuszczono ostrzeżenie spoza powiatu"
 assert any("Wezbranie" in t for t in tytuly), "zgubiono ostrzeżenie hydrologiczne"
 assert dane["najwyzszy_stopien"] == 2
-assert any("Olsztyn" in s["tytul"] or "Mława" in s["tytul"] for s in dane["stany"])
-assert not any("Warszawa" in s["tytul"] for s in dane["stany"]), "stacja spoza promienia"
+# GIOŚ jest wyłączony (najbliższe stacje poza powiatem), więc sprawdzamy
+# tylko to, co realnie zasila warstwę stanów.
+assert any(s["zrodlo"] == "open-meteo" for s in dane["stany"]), "brak prognozy"
 from kolektor.konfiguracja import ZRODLA_WYLACZONE
 if "gddkia" in ZRODLA_WYLACZONE:
     assert not any(z["zrodlo"] == "gddkia" for z in dane["zdarzenia"]), "wyłączone źródło nadal widoczne"
@@ -122,7 +123,7 @@ if "gddkia" in ZRODLA_WYLACZONE:
 else:
     assert any("Lidzbark" in z["opis"] for z in dane["zdarzenia"]), "zgubiono utrudnienie"
     assert not any("Wrocławia" in z["opis"] for z in dane["zdarzenia"]), "utrudnienie spoza terenu"
-PODSTAWIONE = {"IMGW", "GIOŚ", "Open-Meteo"}
+PODSTAWIONE = {"IMGW", "Open-Meteo"}
 zepsute = [z["nazwa"] for z in dane["zrodla"]
            if not z["ok"] and any(n in z["nazwa"] for n in PODSTAWIONE)]
 assert not zepsute, f"źródła zastępcze powinny działać: {zepsute}"

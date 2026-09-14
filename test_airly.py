@@ -16,8 +16,10 @@ def pomiar_dla(pm25, pm10, poziom, opis, godzin_temu=0):
                                      "level": poziom, "description": opis}]}}
 
 ODPOWIEDZI = {
-    "10303": pomiar_dla(41.0, 58.0, "HIGH", "Powietrze jest złej jakości."),
-    "10304": pomiar_dla(12.0, 18.0, "LOW", "Powietrze jest dobrej jakości."),
+    "10298": pomiar_dla(41.0, 58.0, "HIGH", "Powietrze jest złej jakości."),
+    "10286": pomiar_dla(12.0, 18.0, "LOW", "Powietrze jest dobrej jakości."),
+    "10291": pomiar_dla(19.0, 27.0, "MEDIUM", "Powietrze jest średniej jakości."),
+    "10288": pomiar_dla(11.0, 16.0, "LOW", "Powietrze jest dobrej jakości."),
     "10349": pomiar_dla(23.0, 34.0, "MEDIUM", "Powietrze jest średniej jakości."),
 }
 
@@ -41,19 +43,19 @@ assert not w.status.ok and w.status.uwaga.startswith("nieaktywne")
 assert N["zapytania"] == 0
 print("   ok —", w.status.uwaga)
 
-print("\n== pomiar z trzech czujników ==")
+print("\n== pomiar ze wszystkich czujników ==")
 os.environ["AIRLY_KLUCZ"] = "test"
 w = airly.pomiar()
 for p in w.pozycje:
     print(f"   [{p.stopien}] {p.tytul}: {p.opis}")
-assert w.status.ok and len(w.pozycje) == 3
+assert w.status.ok and len(w.pozycje) == 5
 assert w.pozycje[0].stopien == 2, "najgorszy odczyt musi być pierwszy"
-assert N["zapytania"] == 3, f"budżet: oczekiwano 3 zapytań, było {N['zapytania']}"
+assert N["zapytania"] == 5, f"budżet: oczekiwano 5 zapytań, było {N['zapytania']}"
 print("   zapytań:", N["zapytania"], "| uwaga:", w.status.uwaga)
 
 print("\n== martwy czujnik nie może udawać stanu bieżącego ==")
 MARTWY = dict(ODPOWIEDZI)
-MARTWY["10304"] = pomiar_dla(9.0, 14.0, "LOW", "Dane sprzed dni.", godzin_temu=72)
+MARTWY["10291"] = pomiar_dla(9.0, 14.0, "LOW", "Dane sprzed dni.", godzin_temu=72)
 def z_martwym(url, naglowki=None, proby=None, zapasowy_ua=True):
     N["zapytania"] += 1
     for ident, odp in MARTWY.items():
@@ -66,16 +68,16 @@ etykiety = [p.tytul for p in w.pozycje]
 print("   pokazane:", ", ".join(e[:30] for e in etykiety))
 print("   uwaga:   ", w.status.uwaga)
 assert w.status.ok, "pozostałe czujniki muszą działać dalej"
-assert len(w.pozycje) == 2, "odczyt sprzed 72 h nie może trafić na stronę"
-assert not any("Burkat" in e for e in etykiety)
-assert "2 z 3" in w.status.uwaga and "niedostępna" in w.status.uwaga
+assert len(w.pozycje) == 4, "odczyt sprzed 72 h nie może trafić na stronę"
+assert not any("Płośnica" in e for e in etykiety)
+assert "4 z 5" in w.status.uwaga and "niedostępna" in w.status.uwaga
 
 print("\n== brak znacznika czasu też dyskwalifikuje ==")
-BEZ_CZASU = {"10303": {"current": {"values": [{"name": "PM25", "value": 10}],
+BEZ_CZASU = {"10298": {"current": {"values": [{"name": "PM25", "value": 10}],
                                    "indexes": [{"level": "LOW", "description": "x"}]}}}
 def bez_czasu(url, naglowki=None, proby=None, zapasowy_ua=True):
     N["zapytania"] += 1
-    return BEZ_CZASU["10303"]
+    return BEZ_CZASU["10298"]
 airly.pobierz_json = bez_czasu
 w = airly.pomiar()
 print("   blad:", (w.status.blad or "")[:90])
@@ -83,9 +85,13 @@ assert not w.status.ok
 
 airly.pobierz_json = fałszywy
 print("\n== budżet dobowy ==")
-NA_CYKL, CYKLI = 3, 24
-print(f"   {NA_CYKL} zapytania × {CYKLI} cykli = {NA_CYKL*CYKLI} na dobę (limit 100)")
-assert NA_CYKL * CYKLI <= 100
+from kolektor.konfiguracja import AIRLY_INSTALACJE, MIN_ODSTEP_MIN
+NA_CYKL = len(AIRLY_INSTALACJE)
+CYKL_MIN = ((MIN_ODSTEP_MIN["airly"] // 20) + 1) * 20      # workflow chodzi co 20 min
+CYKLI = 24 * 60 // CYKL_MIN
+print(f"   {NA_CYKL} czujników × {CYKLI} pobrań (cykl {CYKL_MIN} min) = "
+      f"{NA_CYKL*CYKLI} zapytań na dobę, limit 100")
+assert NA_CYKL * CYKLI <= 100, "konfiguracja przekracza dobowy limit Airly"
 
 print("\n== kadencja: drugi przebieg w tej samej godzinie nie pyta ==")
 from kolektor.main import zbierz, WYJSCIE
@@ -112,7 +118,8 @@ dane = json.loads((WYJSCIE / "dane.json").read_text(encoding="utf-8"))
 airly_stan = [z for z in dane["zrodla"] if z["id"] == "airly"][0]
 print("   status:", airly_stan["ok"], "|", airly_stan["uwaga"])
 assert airly_stan["ok"] and "pamięci" in airly_stan["uwaga"]
-assert len([p for p in dane["stany"] if p["zrodlo"] == "airly"]) == 3, \
+from kolektor.konfiguracja import AIRLY_INSTALACJE as _INST
+assert len([p for p in dane["stany"] if p["zrodlo"] == "airly"]) == len(_INST), \
     "dane z pamięci muszą zostać przeniesione"
 
 print("\nWszystkie kontrole przeszły.")
