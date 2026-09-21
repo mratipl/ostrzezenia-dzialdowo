@@ -1,7 +1,7 @@
 {
   "powiat": "powiat działdowski",
-  "wygenerowano": "21.09.2026, 07:08",
-  "wygenerowano_iso": "2026-09-21T05:08:19+00:00",
+  "wygenerowano": "21.09.2026, 12:49",
+  "wygenerowano_iso": "2026-09-21T10:49:07+00:00",
   "naglowek": "Ostrzeżenie 2. stopnia — gmina lidzbark wzmacnia cyberbezpieczeństwo",
   "klasa_statusu": "s2",
   "najwyzszy_stopien": 2,
@@ -69,22 +69,6 @@
       "przestarzale": false,
       "wiek": null,
       "okres": "od 15.09.2026, 02:00"
-    },
-    {
-      "zrodlo": "gminy",
-      "charakter": "zdarzenie",
-      "typ": "Komunikat — Starostwo Działdowo",
-      "tytul": "Informacja dla organizacji pozarządowych",
-      "opis": "Artykuł Informacja dla organizacji pozarządowych pochodzi z serwisu Powiat Działdowski .",
-      "stopien": 2,
-      "obowiazuje_od": "2026-09-18T06:25:59+00:00",
-      "obowiazuje_do": null,
-      "link": "https://powiatdzialdowski.pl/informacja-dla-organizacji-pozarzadowych/",
-      "dodatkowe": {},
-      "klucz": "fad4e760858eadbd",
-      "przestarzale": false,
-      "wiek": null,
-      "okres": "od 18.09.2026, 08:25"
     }
   ],
   "stany": [
@@ -157,15 +141,15 @@
       "charakter": "stan",
       "typ": "Jakość powietrza (czujnik lokalny)",
       "tytul": "Działdowo, Karłowicza",
-      "opis": "PM2,5: 3 µg/m³, PM10: 3 µg/m³. Wspaniałe powietrze!",
+      "opis": "PM2,5: 1 µg/m³, PM10: 2 µg/m³. Wspaniałe powietrze!",
       "stopien": 0,
       "obowiazuje_od": null,
       "obowiazuje_do": null,
       "link": null,
       "dodatkowe": {
-        "pm25": 2.77,
-        "pm10": 3.49,
-        "caqi": 4.62
+        "pm25": 1.41,
+        "pm10": 1.93,
+        "caqi": 2.35
       },
       "klucz": "2e29e490e7d89d48",
       "przestarzale": false,
@@ -177,15 +161,15 @@
       "charakter": "stan",
       "typ": "Jakość powietrza (czujnik lokalny)",
       "tytul": "Lidzbark, Jeleńska",
-      "opis": "PM2,5: 3 µg/m³, PM10: 5 µg/m³. Wspaniałe powietrze!",
+      "opis": "PM2,5: 2 µg/m³, PM10: 3 µg/m³. Wspaniałe powietrze!",
       "stopien": 0,
       "obowiazuje_od": null,
       "obowiazuje_do": null,
       "link": null,
       "dodatkowe": {
-        "pm25": 2.92,
-        "pm10": 4.75,
-        "caqi": 4.88
+        "pm25": 1.64,
+        "pm10": 2.91,
+        "caqi": 2.91
       },
       "klucz": "20adfc0452bf8b12",
       "przestarzale": false,
@@ -197,15 +181,15 @@
       "charakter": "stan",
       "typ": "Jakość powietrza (czujnik lokalny)",
       "tytul": "Płośnica, Kościelna",
-      "opis": "PM2,5: 1 µg/m³, PM10: 1 µg/m³. Wspaniałe powietrze!",
+      "opis": "PM2,5: 2 µg/m³, PM10: 3 µg/m³. Wspaniałe powietrze!",
       "stopien": 0,
       "obowiazuje_od": null,
       "obowiazuje_do": null,
       "link": null,
       "dodatkowe": {
-        "pm25": 1.14,
-        "pm10": 1.49,
-        "caqi": 1.9
+        "pm25": 1.96,
+        "pm10": 2.6,
+        "caqi": 3.28
       },
       "klucz": "6370cff9d031f209",
       "przestarzale": false,
@@ -223,9 +207,9 @@
       "obowiazuje_do": null,
       "link": null,
       "dodatkowe": {
-        "pm25": 0.33,
-        "pm10": 0.48,
-        "caqi": 0.55
+        "pm25": 0.23,
+        "pm10": 0.34,
+        "caqi": 0.39
       },
       "klucz": "012323b705223814",
       "przestarzale": false,
@@ -237,15 +221,15 @@
       "charakter": "stan",
       "typ": "Jakość powietrza (czujnik lokalny)",
       "tytul": "Iłowo-Osada, Wyzwolenia",
-      "opis": "PM2,5: 2 µg/m³, PM10: 2 µg/m³. Wspaniałe powietrze!",
+      "opis": "PM2,5: 1 µg/m³, PM10: 1 µg/m³. Wspaniałe powietrze!",
       "stopien": 0,
       "obowiazuje_od": null,
       "obowiazuje_do": null,
       "link": null,
       "dodatkowe": {
-        "pm25": 1.73,
-        "pm10": 2.41,
-        "caqi": 2.89
+        "pm25": 1.07,
+        "pm10": 1.48,
+        "caqi": 1.78
       },
       "klucz": "8839ac39f003b80b",
       "przestarzale": false,
@@ -257,14 +241,14 @@
       "charakter": "stan",
       "typ": "Prognoza",
       "tytul": "Najbliższe 24 godziny",
-      "opis": "Najsilniejszy prognozowany poryw 43 km/h, suma opadów 3.3 mm. Temperatura od 11 do 14 °C.",
+      "opis": "Najsilniejszy prognozowany poryw 43 km/h, suma opadów 4.3 mm. Temperatura od 11 do 14 °C.",
       "stopien": 0,
       "obowiazuje_od": null,
       "obowiazuje_do": null,
       "link": null,
       "dodatkowe": {
         "maks_poryw_kmh": 43,
-        "suma_opadow_mm": 3.3
+        "suma_opadow_mm": 4.3
       },
       "klucz": "8c15ed19d97c626d",
       "przestarzale": false,
@@ -310,99 +294,99 @@
       "nazwa": "IMGW – ostrzeżenia meteorologiczne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-21T05:08:20+00:00",
+      "pobrano": "2026-09-21T10:49:08+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": null,
-      "pobrano_ladnie": "21.09.2026, 07:08"
+      "pobrano_ladnie": "21.09.2026, 12:49"
     },
     {
       "id": "imgw-hydro",
       "nazwa": "IMGW – ostrzeżenia hydrologiczne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-21T05:08:21+00:00",
+      "pobrano": "2026-09-21T10:49:09+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": null,
-      "pobrano_ladnie": "21.09.2026, 07:08"
+      "pobrano_ladnie": "21.09.2026, 12:49"
     },
     {
       "id": "airly",
       "nazwa": "Airly – czujniki lokalne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-21T05:08:24+00:00",
+      "pobrano": "2026-09-21T10:49:12+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "czujniki niskokosztowe (nie referencyjne), 5 z 5",
-      "pobrano_ladnie": "21.09.2026, 07:08"
+      "pobrano_ladnie": "21.09.2026, 12:49"
     },
     {
       "id": "open-meteo",
       "nazwa": "Open-Meteo – prognoza 24 h",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-21T05:08:24+00:00",
+      "pobrano": "2026-09-21T10:49:12+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": null,
-      "pobrano_ladnie": "21.09.2026, 07:08"
+      "pobrano_ladnie": "21.09.2026, 12:49"
     },
     {
       "id": "stopnie-alarmowe",
       "nazwa": "Stopnie alarmowe",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-21T05:08:49+00:00",
+      "pobrano": "2026-09-21T10:49:45+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "z konfiguracji (aktualizacja ręczna), termin 30.11.2026 — za 70 dni",
-      "pobrano_ladnie": "21.09.2026, 07:08"
+      "pobrano_ladnie": "21.09.2026, 12:49"
     },
     {
       "id": "lasy",
       "nazwa": "Zagrożenie pożarowe lasu",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-21T05:08:57+00:00",
+      "pobrano": "2026-09-21T10:49:52+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "źródło: www.traxelektronik.pl (komórka tabeli)",
-      "pobrano_ladnie": "21.09.2026, 07:08"
+      "pobrano_ladnie": "21.09.2026, 12:49"
     },
     {
       "id": "pse",
       "nazwa": "PSE – bilans mocy",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-21T05:08:58+00:00",
+      "pobrano": "2026-09-21T10:49:53+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "wariant: plan koordynacyjny dobowy",
-      "pobrano_ladnie": "21.09.2026, 07:08"
+      "pobrano_ladnie": "21.09.2026, 12:49"
     },
     {
       "id": "gminy",
       "nazwa": "Serwisy starostwa i gmin",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-21T05:09:17+00:00",
+      "pobrano": "2026-09-21T10:50:15+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "6 z 7 serwisów — bez: Gmina Płośnica",
-      "pobrano_ladnie": "21.09.2026, 07:09"
+      "pobrano_ladnie": "21.09.2026, 12:50"
     },
     {
       "id": "wlasne",
       "nazwa": "Komunikaty własne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-21T05:09:17+00:00",
+      "pobrano": "2026-09-21T10:50:15+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "0 aktywnych z 0 w pliku",
-      "pobrano_ladnie": "21.09.2026, 07:09"
+      "pobrano_ladnie": "21.09.2026, 12:50"
     }
   ],
   "zrodla_niedostepne": [],
