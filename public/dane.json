@@ -1,7 +1,7 @@
 {
   "powiat": "powiat działdowski",
-  "wygenerowano": "22.09.2026, 10:47",
-  "wygenerowano_iso": "2026-09-22T08:47:45+00:00",
+  "wygenerowano": "22.09.2026, 15:54",
+  "wygenerowano_iso": "2026-09-22T13:54:53+00:00",
   "naglowek": "Ostrzeżenie 2. stopnia — gmina lidzbark wzmacnia cyberbezpieczeństwo",
   "klasa_statusu": "s2",
   "najwyzszy_stopien": 2,
@@ -89,6 +89,22 @@
       "okres": "do 01.12.2026, 00:59"
     },
     {
+      "zrodlo": "lasy",
+      "charakter": "stan",
+      "typ": "Zagrożenie pożarowe lasu",
+      "tytul": "Olsztyn: 2. stopień — duże zagrożenie",
+      "opis": "Przy trzecim stopniu i utrzymującej się niskiej wilgotności ściółki nadleśnictwa mogą wprowadzić zakaz wstępu do lasu.",
+      "stopien": 2,
+      "obowiazuje_od": null,
+      "obowiazuje_do": null,
+      "link": null,
+      "dodatkowe": {},
+      "klucz": "fdc64c4e21b92442",
+      "przestarzale": false,
+      "wiek": null,
+      "okres": ""
+    },
+    {
       "zrodlo": "stopnie-alarmowe",
       "charakter": "stan",
       "typ": "Stopień alarmowy",
@@ -147,9 +163,9 @@
       "obowiazuje_do": null,
       "link": null,
       "dodatkowe": {
-        "pm25": 0.63,
-        "pm10": 0.88,
-        "caqi": 1.05
+        "pm25": 0.67,
+        "pm10": 0.81,
+        "caqi": 1.13
       },
       "klucz": "2e29e490e7d89d48",
       "przestarzale": false,
@@ -161,15 +177,15 @@
       "charakter": "stan",
       "typ": "Jakość powietrza (czujnik lokalny)",
       "tytul": "Lidzbark, Jeleńska",
-      "opis": "PM2,5: 1 µg/m³, PM10: 1 µg/m³. Wspaniałe powietrze!",
+      "opis": "PM2,5: 0 µg/m³, PM10: 1 µg/m³. Wspaniałe powietrze!",
       "stopien": 0,
       "obowiazuje_od": null,
       "obowiazuje_do": null,
       "link": null,
       "dodatkowe": {
-        "pm25": 1.13,
-        "pm10": 1.47,
-        "caqi": 1.88
+        "pm25": 0.41,
+        "pm10": 0.91,
+        "caqi": 0.91
       },
       "klucz": "20adfc0452bf8b12",
       "przestarzale": false,
@@ -181,15 +197,15 @@
       "charakter": "stan",
       "typ": "Jakość powietrza (czujnik lokalny)",
       "tytul": "Płośnica, Kościelna",
-      "opis": "PM2,5: 1 µg/m³, PM10: 2 µg/m³. Wspaniałe powietrze!",
+      "opis": "PM2,5: 1 µg/m³, PM10: 1 µg/m³. Wspaniałe powietrze!",
       "stopien": 0,
       "obowiazuje_od": null,
       "obowiazuje_do": null,
       "link": null,
       "dodatkowe": {
-        "pm25": 1.16,
-        "pm10": 1.51,
-        "caqi": 1.94
+        "pm25": 1.2,
+        "pm10": 1.45,
+        "caqi": 2.0
       },
       "klucz": "6370cff9d031f209",
       "przestarzale": false,
@@ -207,9 +223,9 @@
       "obowiazuje_do": null,
       "link": null,
       "dodatkowe": {
-        "pm25": 0.17,
-        "pm10": 0.25,
-        "caqi": 0.29
+        "pm25": 0.12,
+        "pm10": 0.18,
+        "caqi": 0.21
       },
       "klucz": "012323b705223814",
       "przestarzale": false,
@@ -227,9 +243,9 @@
       "obowiazuje_do": null,
       "link": null,
       "dodatkowe": {
-        "pm25": 1.46,
-        "pm10": 1.8,
-        "caqi": 2.44
+        "pm25": 1.22,
+        "pm10": 1.62,
+        "caqi": 2.04
       },
       "klucz": "8839ac39f003b80b",
       "przestarzale": false,
@@ -241,14 +257,14 @@
       "charakter": "stan",
       "typ": "Prognoza",
       "tytul": "Najbliższe 24 godziny",
-      "opis": "Najsilniejszy prognozowany poryw 39 km/h, suma opadów 6.8 mm. Temperatura od 10 do 15 °C.",
+      "opis": "Najsilniejszy prognozowany poryw 36 km/h, suma opadów 6.9 mm. Temperatura od 10 do 16 °C.",
       "stopien": 0,
       "obowiazuje_od": null,
       "obowiazuje_do": null,
       "link": null,
       "dodatkowe": {
-        "maks_poryw_kmh": 39,
-        "suma_opadow_mm": 6.8
+        "maks_poryw_kmh": 36,
+        "suma_opadow_mm": 6.9
       },
       "klucz": "8c15ed19d97c626d",
       "przestarzale": false,
@@ -270,22 +286,6 @@
       "przestarzale": false,
       "wiek": null,
       "okres": ""
-    },
-    {
-      "zrodlo": "lasy",
-      "charakter": "stan",
-      "typ": "Zagrożenie pożarowe lasu",
-      "tytul": "Olsztyn: 0. stopień — brak zagrożenia",
-      "opis": "Stopień ustalany codziennie na podstawie pomiarów o 9:00 i 13:00.",
-      "stopien": 0,
-      "obowiazuje_od": null,
-      "obowiazuje_do": null,
-      "link": null,
-      "dodatkowe": {},
-      "klucz": "e5d251e37c2c0673",
-      "przestarzale": false,
-      "wiek": null,
-      "okres": ""
     }
   ],
   "zrodla": [
@@ -294,99 +294,99 @@
       "nazwa": "IMGW – ostrzeżenia meteorologiczne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-22T08:47:47+00:00",
+      "pobrano": "2026-09-22T13:54:55+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": null,
-      "pobrano_ladnie": "22.09.2026, 10:47"
+      "pobrano_ladnie": "22.09.2026, 15:54"
     },
     {
       "id": "imgw-hydro",
       "nazwa": "IMGW – ostrzeżenia hydrologiczne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-22T08:47:48+00:00",
+      "pobrano": "2026-09-22T13:54:57+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": null,
-      "pobrano_ladnie": "22.09.2026, 10:47"
+      "pobrano_ladnie": "22.09.2026, 15:54"
     },
     {
       "id": "airly",
       "nazwa": "Airly – czujniki lokalne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-22T08:47:51+00:00",
+      "pobrano": "2026-09-22T13:54:59+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "czujniki niskokosztowe (nie referencyjne), 5 z 5",
-      "pobrano_ladnie": "22.09.2026, 10:47"
+      "pobrano_ladnie": "22.09.2026, 15:54"
     },
     {
       "id": "open-meteo",
       "nazwa": "Open-Meteo – prognoza 24 h",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-22T08:47:52+00:00",
+      "pobrano": "2026-09-22T13:55:00+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": null,
-      "pobrano_ladnie": "22.09.2026, 10:47"
+      "pobrano_ladnie": "22.09.2026, 15:55"
     },
     {
       "id": "stopnie-alarmowe",
       "nazwa": "Stopnie alarmowe",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-22T08:48:20+00:00",
+      "pobrano": "2026-09-22T13:55:32+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "z konfiguracji (aktualizacja ręczna), termin 30.11.2026 — za 69 dni",
-      "pobrano_ladnie": "22.09.2026, 10:48"
+      "pobrano_ladnie": "22.09.2026, 15:55"
     },
     {
       "id": "lasy",
       "nazwa": "Zagrożenie pożarowe lasu",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-22T08:48:27+00:00",
+      "pobrano": "2026-09-22T13:55:39+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "źródło: www.traxelektronik.pl (komórka tabeli)",
-      "pobrano_ladnie": "22.09.2026, 10:48"
+      "pobrano_ladnie": "22.09.2026, 15:55"
     },
     {
       "id": "pse",
       "nazwa": "PSE – bilans mocy",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-22T08:48:28+00:00",
+      "pobrano": "2026-09-22T13:55:40+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "wariant: plan koordynacyjny dobowy",
-      "pobrano_ladnie": "22.09.2026, 10:48"
+      "pobrano_ladnie": "22.09.2026, 15:55"
     },
     {
       "id": "gminy",
       "nazwa": "Serwisy starostwa i gmin",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-22T08:48:50+00:00",
+      "pobrano": "2026-09-22T13:56:03+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "6 z 7 serwisów — bez: Gmina Płośnica",
-      "pobrano_ladnie": "22.09.2026, 10:48"
+      "pobrano_ladnie": "22.09.2026, 15:56"
     },
     {
       "id": "wlasne",
       "nazwa": "Komunikaty własne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-22T08:48:50+00:00",
+      "pobrano": "2026-09-22T13:56:03+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "0 aktywnych z 0 w pliku",
-      "pobrano_ladnie": "22.09.2026, 10:48"
+      "pobrano_ladnie": "22.09.2026, 15:56"
     }
   ],
   "zrodla_niedostepne": [],
