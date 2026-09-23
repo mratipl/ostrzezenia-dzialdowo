@@ -1,11 +1,27 @@
 {
   "powiat": "powiat działdowski",
-  "wygenerowano": "23.09.2026, 09:23",
-  "wygenerowano_iso": "2026-09-23T07:23:29+00:00",
-  "naglowek": "Ostrzeżenie 2. stopnia — gmina lidzbark wzmacnia cyberbezpieczeństwo",
+  "wygenerowano": "23.09.2026, 14:59",
+  "wygenerowano_iso": "2026-09-23T12:59:50+00:00",
+  "naglowek": "Ostrzeżenie 2. stopnia — bursztynek do adopcji",
   "klasa_statusu": "s2",
   "najwyzszy_stopien": 2,
   "zdarzenia": [
+    {
+      "zrodlo": "gminy",
+      "charakter": "zdarzenie",
+      "typ": "Komunikat — Gmina Lidzbark",
+      "tytul": "Bursztynek do adopcji",
+      "opis": "Bursztynek piękny pies o bursztynowych oczach i ślicznym umaszczeniu szuka swojego miejsca na ziemi....domu i kochających go opiekunów Bursztynek ma około trzech lat, został zaszczepiony na choroby zakaźne i wściekliznę, zaczipowany, zabezpieczony na p...",
+      "stopien": 2,
+      "obowiazuje_od": "2026-09-23T00:00:00+00:00",
+      "obowiazuje_do": null,
+      "link": "https://lidzbark.pl/images/article/41a48f50b4f03d0a054fcfe5caafcd000b87eb05.jpeg",
+      "dodatkowe": {},
+      "klucz": "7801c1de1fab6d77",
+      "przestarzale": false,
+      "wiek": null,
+      "okres": "od 23.09.2026, 02:00"
+    },
     {
       "zrodlo": "gminy",
       "charakter": "zdarzenie",
@@ -69,6 +85,22 @@
       "przestarzale": false,
       "wiek": null,
       "okres": "od 15.09.2026, 02:00"
+    },
+    {
+      "zrodlo": "gminy",
+      "charakter": "zdarzenie",
+      "typ": "Komunikat — Gmina Lidzbark",
+      "tytul": "Zamknięcie przejście pomiędzy Cmentarzem Ewangelicko-Augsburskim a ogródkami działkowym przy ulicy Stefana Żeromskiegoi",
+      "opis": "Ważna informacja dla Mieszkańców, w imieniu PZD Rodzinnych Ogrodów Działkowych im. Stefana Żeromskiego informujemy się, że już niebawem przejście pomiędzy Cmentarzem Ewangelicko-Augsburskim a ogródkami działkowymi będzie niedostępne. Mieszkańcy korzystaj...",
+      "stopien": 1,
+      "obowiazuje_od": "2026-09-23T00:00:00+00:00",
+      "obowiazuje_do": null,
+      "link": "https://lidzbark.pl/images/article/3194bd6e7816a0723c33aa293b749f6125583eff.jpeg",
+      "dodatkowe": {},
+      "klucz": "90714dfab67d05d3",
+      "przestarzale": false,
+      "wiek": null,
+      "okres": "od 23.09.2026, 02:00"
     }
   ],
   "stany": [
@@ -87,22 +119,6 @@
       "przestarzale": false,
       "wiek": null,
       "okres": "do 01.12.2026, 00:59"
-    },
-    {
-      "zrodlo": "lasy",
-      "charakter": "stan",
-      "typ": "Zagrożenie pożarowe lasu",
-      "tytul": "Olsztyn: 2. stopień — duże zagrożenie",
-      "opis": "Przy trzecim stopniu i utrzymującej się niskiej wilgotności ściółki nadleśnictwa mogą wprowadzić zakaz wstępu do lasu.",
-      "stopien": 2,
-      "obowiazuje_od": null,
-      "obowiazuje_do": null,
-      "link": null,
-      "dodatkowe": {},
-      "klucz": "fdc64c4e21b92442",
-      "przestarzale": false,
-      "wiek": null,
-      "okres": ""
     },
     {
       "zrodlo": "stopnie-alarmowe",
@@ -157,15 +173,15 @@
       "charakter": "stan",
       "typ": "Jakość powietrza (czujnik lokalny)",
       "tytul": "Działdowo, Karłowicza",
-      "opis": "PM2,5: 7 µg/m³, PM10: 8 µg/m³. Wspaniałe powietrze!",
+      "opis": "PM2,5: 1 µg/m³, PM10: 1 µg/m³. Wspaniałe powietrze!",
       "stopien": 0,
       "obowiazuje_od": null,
       "obowiazuje_do": null,
       "link": null,
       "dodatkowe": {
-        "pm25": 7.02,
-        "pm10": 8.38,
-        "caqi": 11.7
+        "pm25": 1.21,
+        "pm10": 1.47,
+        "caqi": 2.03
       },
       "klucz": "2e29e490e7d89d48",
       "przestarzale": false,
@@ -177,15 +193,15 @@
       "charakter": "stan",
       "typ": "Jakość powietrza (czujnik lokalny)",
       "tytul": "Lidzbark, Jeleńska",
-      "opis": "PM2,5: 5 µg/m³, PM10: 6 µg/m³. Wspaniałe powietrze!",
+      "opis": "PM2,5: 0 µg/m³, PM10: 1 µg/m³. Wspaniałe powietrze!",
       "stopien": 0,
       "obowiazuje_od": null,
       "obowiazuje_do": null,
       "link": null,
       "dodatkowe": {
-        "pm25": 5.07,
-        "pm10": 5.91,
-        "caqi": 8.45
+        "pm25": 0.41,
+        "pm10": 0.6,
+        "caqi": 0.68
       },
       "klucz": "20adfc0452bf8b12",
       "przestarzale": false,
@@ -203,9 +219,9 @@
       "obowiazuje_do": null,
       "link": null,
       "dodatkowe": {
-        "pm25": 1.77,
-        "pm10": 2.06,
-        "caqi": 2.95
+        "pm25": 1.9,
+        "pm10": 2.15,
+        "caqi": 3.17
       },
       "klucz": "6370cff9d031f209",
       "przestarzale": false,
@@ -223,9 +239,9 @@
       "obowiazuje_do": null,
       "link": null,
       "dodatkowe": {
-        "pm25": 0.12,
-        "pm10": 0.19,
-        "caqi": 0.2
+        "pm25": 0.0,
+        "pm10": 0.06,
+        "caqi": 0.07
       },
       "klucz": "012323b705223814",
       "przestarzale": false,
@@ -237,15 +253,15 @@
       "charakter": "stan",
       "typ": "Jakość powietrza (czujnik lokalny)",
       "tytul": "Iłowo-Osada, Wyzwolenia",
-      "opis": "PM2,5: 3 µg/m³, PM10: 3 µg/m³. Wspaniałe powietrze!",
+      "opis": "PM2,5: 1 µg/m³, PM10: 2 µg/m³. Wspaniałe powietrze!",
       "stopien": 0,
       "obowiazuje_od": null,
       "obowiazuje_do": null,
       "link": null,
       "dodatkowe": {
-        "pm25": 2.84,
-        "pm10": 3.36,
-        "caqi": 4.74
+        "pm25": 1.46,
+        "pm10": 1.79,
+        "caqi": 2.44
       },
       "klucz": "8839ac39f003b80b",
       "przestarzale": false,
@@ -257,14 +273,14 @@
       "charakter": "stan",
       "typ": "Prognoza",
       "tytul": "Najbliższe 24 godziny",
-      "opis": "Najsilniejszy prognozowany poryw 33 km/h, suma opadów 1.2 mm. Temperatura od 8 do 14 °C.",
+      "opis": "Najsilniejszy prognozowany poryw 32 km/h, suma opadów 1.5 mm. Temperatura od 8 do 14 °C.",
       "stopien": 0,
       "obowiazuje_od": null,
       "obowiazuje_do": null,
       "link": null,
       "dodatkowe": {
-        "maks_poryw_kmh": 33,
-        "suma_opadow_mm": 1.2
+        "maks_poryw_kmh": 32,
+        "suma_opadow_mm": 1.5
       },
       "klucz": "8c15ed19d97c626d",
       "przestarzale": false,
@@ -286,6 +302,22 @@
       "przestarzale": false,
       "wiek": null,
       "okres": ""
+    },
+    {
+      "zrodlo": "lasy",
+      "charakter": "stan",
+      "typ": "Zagrożenie pożarowe lasu",
+      "tytul": "Olsztyn: 0. stopień — brak zagrożenia",
+      "opis": "Stopień ustalany codziennie na podstawie pomiarów o 9:00 i 13:00.",
+      "stopien": 0,
+      "obowiazuje_od": null,
+      "obowiazuje_do": null,
+      "link": null,
+      "dodatkowe": {},
+      "klucz": "e5d251e37c2c0673",
+      "przestarzale": false,
+      "wiek": null,
+      "okres": ""
     }
   ],
   "zrodla": [
@@ -294,99 +326,99 @@
       "nazwa": "IMGW – ostrzeżenia meteorologiczne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-23T07:23:35+00:00",
+      "pobrano": "2026-09-23T12:59:52+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "API odpowiada, endpoint zwrócił 404 — brak ostrzeżeń tego typu",
-      "pobrano_ladnie": "23.09.2026, 09:23"
+      "pobrano_ladnie": "23.09.2026, 14:59"
     },
     {
       "id": "imgw-hydro",
       "nazwa": "IMGW – ostrzeżenia hydrologiczne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-23T07:23:36+00:00",
+      "pobrano": "2026-09-23T12:59:52+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": null,
-      "pobrano_ladnie": "23.09.2026, 09:23"
+      "pobrano_ladnie": "23.09.2026, 14:59"
     },
     {
       "id": "airly",
       "nazwa": "Airly – czujniki lokalne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-23T07:23:39+00:00",
+      "pobrano": "2026-09-23T12:59:56+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "czujniki niskokosztowe (nie referencyjne), 5 z 5",
-      "pobrano_ladnie": "23.09.2026, 09:23"
+      "pobrano_ladnie": "23.09.2026, 14:59"
     },
     {
       "id": "open-meteo",
       "nazwa": "Open-Meteo – prognoza 24 h",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-23T07:23:39+00:00",
+      "pobrano": "2026-09-23T12:59:56+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": null,
-      "pobrano_ladnie": "23.09.2026, 09:23"
+      "pobrano_ladnie": "23.09.2026, 14:59"
     },
     {
       "id": "stopnie-alarmowe",
       "nazwa": "Stopnie alarmowe",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-23T07:24:12+00:00",
+      "pobrano": "2026-09-23T13:00:23+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "z konfiguracji (aktualizacja ręczna), termin 30.11.2026 — za 68 dni",
-      "pobrano_ladnie": "23.09.2026, 09:24"
+      "pobrano_ladnie": "23.09.2026, 15:00"
     },
     {
       "id": "lasy",
       "nazwa": "Zagrożenie pożarowe lasu",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-23T07:24:19+00:00",
+      "pobrano": "2026-09-23T13:00:30+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "źródło: www.traxelektronik.pl (komórka tabeli)",
-      "pobrano_ladnie": "23.09.2026, 09:24"
+      "pobrano_ladnie": "23.09.2026, 15:00"
     },
     {
       "id": "pse",
       "nazwa": "PSE – bilans mocy",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-23T07:24:20+00:00",
+      "pobrano": "2026-09-23T13:00:31+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "wariant: plan koordynacyjny dobowy",
-      "pobrano_ladnie": "23.09.2026, 09:24"
+      "pobrano_ladnie": "23.09.2026, 15:00"
     },
     {
       "id": "gminy",
       "nazwa": "Serwisy starostwa i gmin",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-23T07:24:44+00:00",
+      "pobrano": "2026-09-23T13:00:51+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
-      "uwaga": "6 z 7 serwisów — bez: Gmina Płośnica",
-      "pobrano_ladnie": "23.09.2026, 09:24"
+      "uwaga": "4 z 7 serwisów — bez: Gmina Działdowo, Gmina Iłowo-Osada, Gmina Płośnica",
+      "pobrano_ladnie": "23.09.2026, 15:00"
     },
     {
       "id": "wlasne",
       "nazwa": "Komunikaty własne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-23T07:24:44+00:00",
+      "pobrano": "2026-09-23T13:00:51+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "0 aktywnych z 0 w pliku",
-      "pobrano_ladnie": "23.09.2026, 09:24"
+      "pobrano_ladnie": "23.09.2026, 15:00"
     }
   ],
   "zrodla_niedostepne": [],
