@@ -1,7 +1,7 @@
 {
   "powiat": "powiat działdowski",
-  "wygenerowano": "24.09.2026, 05:21",
-  "wygenerowano_iso": "2026-09-24T03:21:08+00:00",
+  "wygenerowano": "24.09.2026, 10:44",
+  "wygenerowano_iso": "2026-09-24T08:44:32+00:00",
   "naglowek": "Ostrzeżenie 2. stopnia — trening akademii ochrony ludności i obrony cywilnej",
   "klasa_statusu": "s2",
   "najwyzszy_stopien": 2,
@@ -105,22 +105,6 @@
     {
       "zrodlo": "gminy",
       "charakter": "zdarzenie",
-      "typ": "Komunikat — Miasto Działdowo",
-      "tytul": "Publikacje o obozie KL Soldau trafią do bibliotek",
-      "opis": "W środę, 23 września 2026 roku, w Centrum Aktywności Organizacji Pozarządowych w Działdowie odbyło się... Artykuł Publikacje o obozie KL Soldau trafią do bibliotek pochodzi z serwisu Działdowo.pl .",
-      "stopien": 2,
-      "obowiazuje_od": "2026-09-23T17:19:48+00:00",
-      "obowiazuje_do": null,
-      "link": "https://www.dzialdowo.pl/publikacje-o-obozie-kl-soldau-trafia-do-bibliotek/?utm_source=rss&utm_medium=rss&utm_campaign=publikacje-o-obozie-kl-soldau-trafia-do-bibliotek",
-      "dodatkowe": {},
-      "klucz": "77bc3757c8ddaa81",
-      "przestarzale": false,
-      "wiek": null,
-      "okres": "od 23.09.2026, 19:19"
-    },
-    {
-      "zrodlo": "gminy",
-      "charakter": "zdarzenie",
       "typ": "Komunikat — Gmina Lidzbark",
       "tytul": "Zamknięcie przejście pomiędzy Cmentarzem Ewangelicko-Augsburskim a ogródkami działkowym przy ulicy Stefana Żeromskiegoi",
       "opis": "Ważna informacja dla Mieszkańców, w imieniu PZD Rodzinnych Ogrodów Działkowych im. Stefana Żeromskiego informujemy się, że już niebawem przejście pomiędzy Cmentarzem Ewangelicko-Augsburskim a ogródkami działkowymi będzie niedostępne. Mieszkańcy korzystaj...",
@@ -133,6 +117,22 @@
       "przestarzale": false,
       "wiek": null,
       "okres": "od 23.09.2026, 02:00"
+    },
+    {
+      "zrodlo": "gminy",
+      "charakter": "zdarzenie",
+      "typ": "Komunikat — Miasto Działdowo",
+      "tytul": "Kolizja na ul. Zamkowej w Działdowie. 19. latek ukarany mandatem i punktami",
+      "opis": "W Działdowie miało miejsce zderzenie dwóch samochodów. Sprawcą zdarzenia okazał się 19. letni kierowca, który... Artykuł Kolizja na ul. Zamkowej w Działdowie. 19. latek ukarany mandatem i punktami pochodzi z serwisu Działdowo.pl .",
+      "stopien": 1,
+      "obowiazuje_od": "2026-09-24T07:29:54+00:00",
+      "obowiazuje_do": null,
+      "link": "https://www.dzialdowo.pl/kolizja-na-ul-zamkowej-w-dzialdowie-19-latek-ukarany-mandatem-i-punktami/?utm_source=rss&utm_medium=rss&utm_campaign=kolizja-na-ul-zamkowej-w-dzialdowie-19-latek-ukarany-mandatem-i-punktami",
+      "dodatkowe": {},
+      "klucz": "4b06c7f4c5c76c13",
+      "przestarzale": false,
+      "wiek": null,
+      "okres": "od 24.09.2026, 09:29"
     }
   ],
   "stany": [
@@ -205,15 +205,15 @@
       "charakter": "stan",
       "typ": "Jakość powietrza (czujnik lokalny)",
       "tytul": "Działdowo, Karłowicza",
-      "opis": "PM2,5: 9 µg/m³, PM10: 10 µg/m³. Wspaniałe powietrze!",
+      "opis": "PM2,5: 13 µg/m³, PM10: 15 µg/m³. Wspaniałe powietrze!",
       "stopien": 0,
       "obowiazuje_od": null,
       "obowiazuje_do": null,
       "link": null,
       "dodatkowe": {
-        "pm25": 8.97,
-        "pm10": 10.32,
-        "caqi": 14.96
+        "pm25": 12.69,
+        "pm10": 14.82,
+        "caqi": 21.15
       },
       "klucz": "2e29e490e7d89d48",
       "przestarzale": false,
@@ -225,15 +225,15 @@
       "charakter": "stan",
       "typ": "Jakość powietrza (czujnik lokalny)",
       "tytul": "Lidzbark, Jeleńska",
-      "opis": "PM2,5: 19 µg/m³, PM10: 25 µg/m³. Cóż... Bywało lepiej.",
+      "opis": "PM2,5: 12 µg/m³, PM10: 14 µg/m³. Wspaniałe powietrze!",
       "stopien": 0,
       "obowiazuje_od": null,
       "obowiazuje_do": null,
       "link": null,
       "dodatkowe": {
-        "pm25": 18.89,
-        "pm10": 24.6,
-        "caqi": 31.48
+        "pm25": 11.65,
+        "pm10": 13.56,
+        "caqi": 19.42
       },
       "klucz": "20adfc0452bf8b12",
       "przestarzale": false,
@@ -245,15 +245,15 @@
       "charakter": "stan",
       "typ": "Jakość powietrza (czujnik lokalny)",
       "tytul": "Płośnica, Kościelna",
-      "opis": "PM2,5: 4 µg/m³, PM10: 5 µg/m³. Wspaniałe powietrze!",
+      "opis": "PM2,5: 7 µg/m³, PM10: 8 µg/m³. Wspaniałe powietrze!",
       "stopien": 0,
       "obowiazuje_od": null,
       "obowiazuje_do": null,
       "link": null,
       "dodatkowe": {
-        "pm25": 4.5,
-        "pm10": 5.12,
-        "caqi": 7.5
+        "pm25": 7.27,
+        "pm10": 8.2,
+        "caqi": 12.11
       },
       "klucz": "6370cff9d031f209",
       "przestarzale": false,
@@ -265,15 +265,15 @@
       "charakter": "stan",
       "typ": "Jakość powietrza (czujnik lokalny)",
       "tytul": "Rybno, Sportowa",
-      "opis": "PM2,5: 0 µg/m³, PM10: 0 µg/m³. Wspaniałe powietrze!",
+      "opis": "PM2,5: 1 µg/m³, PM10: 1 µg/m³. Wspaniałe powietrze!",
       "stopien": 0,
       "obowiazuje_od": null,
       "obowiazuje_do": null,
       "link": null,
       "dodatkowe": {
-        "pm25": 0.07,
-        "pm10": 0.07,
-        "caqi": 0.11
+        "pm25": 0.83,
+        "pm10": 0.98,
+        "caqi": 1.39
       },
       "klucz": "012323b705223814",
       "przestarzale": false,
@@ -285,15 +285,15 @@
       "charakter": "stan",
       "typ": "Jakość powietrza (czujnik lokalny)",
       "tytul": "Iłowo-Osada, Wyzwolenia",
-      "opis": "PM2,5: 8 µg/m³, PM10: 9 µg/m³. Wspaniałe powietrze!",
+      "opis": "PM2,5: 14 µg/m³, PM10: 17 µg/m³. Wspaniałe powietrze!",
       "stopien": 0,
       "obowiazuje_od": null,
       "obowiazuje_do": null,
       "link": null,
       "dodatkowe": {
-        "pm25": 7.63,
-        "pm10": 9.05,
-        "caqi": 12.73
+        "pm25": 13.95,
+        "pm10": 17.11,
+        "caqi": 23.26
       },
       "klucz": "8839ac39f003b80b",
       "przestarzale": false,
@@ -358,99 +358,99 @@
       "nazwa": "IMGW – ostrzeżenia meteorologiczne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-24T03:21:10+00:00",
+      "pobrano": "2026-09-24T08:44:33+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
-      "uwaga": "API odpowiada, endpoint zwrócił 404 — brak ostrzeżeń tego typu",
-      "pobrano_ladnie": "24.09.2026, 05:21"
+      "uwaga": null,
+      "pobrano_ladnie": "24.09.2026, 10:44"
     },
     {
       "id": "imgw-hydro",
       "nazwa": "IMGW – ostrzeżenia hydrologiczne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-24T03:21:11+00:00",
+      "pobrano": "2026-09-24T08:44:34+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": null,
-      "pobrano_ladnie": "24.09.2026, 05:21"
+      "pobrano_ladnie": "24.09.2026, 10:44"
     },
     {
       "id": "airly",
       "nazwa": "Airly – czujniki lokalne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-24T03:21:14+00:00",
+      "pobrano": "2026-09-24T08:44:36+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "czujniki niskokosztowe (nie referencyjne), 5 z 5",
-      "pobrano_ladnie": "24.09.2026, 05:21"
+      "pobrano_ladnie": "24.09.2026, 10:44"
     },
     {
       "id": "open-meteo",
       "nazwa": "Open-Meteo – prognoza 24 h",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-24T03:21:15+00:00",
+      "pobrano": "2026-09-24T08:44:36+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": null,
-      "pobrano_ladnie": "24.09.2026, 05:21"
+      "pobrano_ladnie": "24.09.2026, 10:44"
     },
     {
       "id": "stopnie-alarmowe",
       "nazwa": "Stopnie alarmowe",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-24T03:21:44+00:00",
+      "pobrano": "2026-09-24T08:44:58+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "z konfiguracji (aktualizacja ręczna), termin 30.11.2026 — za 67 dni",
-      "pobrano_ladnie": "24.09.2026, 05:21"
+      "pobrano_ladnie": "24.09.2026, 10:44"
     },
     {
       "id": "lasy",
       "nazwa": "Zagrożenie pożarowe lasu",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-24T03:21:51+00:00",
+      "pobrano": "2026-09-24T08:45:05+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "źródło: www.traxelektronik.pl (komórka tabeli)",
-      "pobrano_ladnie": "24.09.2026, 05:21"
+      "pobrano_ladnie": "24.09.2026, 10:45"
     },
     {
       "id": "pse",
       "nazwa": "PSE – bilans mocy",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-24T03:21:52+00:00",
+      "pobrano": "2026-09-24T08:45:06+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "wariant: plan koordynacyjny dobowy",
-      "pobrano_ladnie": "24.09.2026, 05:21"
+      "pobrano_ladnie": "24.09.2026, 10:45"
     },
     {
       "id": "gminy",
       "nazwa": "Serwisy starostwa i gmin",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-24T03:22:15+00:00",
+      "pobrano": "2026-09-24T08:45:25+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "6 z 7 serwisów — bez: Gmina Płośnica",
-      "pobrano_ladnie": "24.09.2026, 05:22"
+      "pobrano_ladnie": "24.09.2026, 10:45"
     },
     {
       "id": "wlasne",
       "nazwa": "Komunikaty własne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-09-24T03:22:15+00:00",
+      "pobrano": "2026-09-24T08:45:25+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "0 aktywnych z 0 w pliku",
-      "pobrano_ladnie": "24.09.2026, 05:22"
+      "pobrano_ladnie": "24.09.2026, 10:45"
     }
   ],
   "zrodla_niedostepne": [],
