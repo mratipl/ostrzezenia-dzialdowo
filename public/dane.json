@@ -1,33 +1,49 @@
 {
   "powiat": "powiat działdowski",
-  "wygenerowano": "15.10.2026, 08:24",
-  "wygenerowano_iso": "2026-10-15T06:24:08+00:00",
-  "naglowek": "Ostrzeżenie 2. stopnia — najnowsze informacje",
+  "wygenerowano": "15.10.2026, 14:04",
+  "wygenerowano_iso": "2026-10-15T12:04:22+00:00",
+  "naglowek": "Ostrzeżenie 2. stopnia — poznaj alerty rcb o zagrożeniu atakiem z powietrza",
   "klasa_statusu": "s2",
   "najwyzszy_stopien": 2,
   "zdarzenia": [
     {
       "zrodlo": "gminy",
       "charakter": "zdarzenie",
-      "typ": "Komunikat — Gmina Rybno",
-      "tytul": "Najnowsze informacje",
-      "opis": "Najnowsze informacje Najczęściej czytane Polecane Zgłaszanie przypuszczeń i przypadków wystąpienia ptasiej grypy oraz rzekomego pomoru drobiu Opublikowano: 2026-10-14 15:57:26 W związku z pismem Wojewody Warmińsko-Mazurskiego w Olsztynie dotyczącym zagrożenia wysoce zjadliwą grypą ptaków (HPAI) oraz rzekomym pomorem drobiu, Urząd Gminy apeluje do mieszkańców o zachowanie czujności i stosowanie się",
+      "typ": "Komunikat — Gmina Działdowo",
+      "tytul": "Poznaj alerty RCB o zagrożeniu atakiem z powietrza",
+      "opis": "",
       "stopien": 2,
-      "obowiazuje_od": "2026-10-14T00:00:00+00:00",
+      "obowiazuje_od": "2026-10-15T13:28:38+02:00",
       "obowiazuje_do": null,
-      "link": "https://www.gminarybno.pl/#featured-trips",
+      "link": "https://gminadzialdowo.pl/asp/pl_start.asp?typ=13&menu=10&artykul=2355&akcja=artykul",
       "dodatkowe": {},
-      "klucz": "8fcc3842e1ad71d2",
+      "klucz": "850b55ab5d9e8e21",
       "przestarzale": false,
       "wiek": null,
-      "okres": "od 14.10.2026, 02:00"
+      "okres": "od 15.10.2026, 13:28"
+    },
+    {
+      "zrodlo": "gminy",
+      "charakter": "zdarzenie",
+      "typ": "Komunikat — Gmina Lidzbark",
+      "tytul": "Bezpieczeństwo dzieci i młodzieży to nasz wspólny priorytet",
+      "opis": "W dniu 12 października odbyło się spotkanie z dyrektorami placówek oświatowych i opiekuńczych z terenu Gminy Lidzbark, poświęcone bezpieczeństwu oraz skutecznemu reagowaniu na sytuacje zagrożenia. W spotkaniu uczestniczyli: Burmistrz Lidzbarka, Zastępca ...",
+      "stopien": 2,
+      "obowiazuje_od": "2026-10-15T00:00:00+00:00",
+      "obowiazuje_do": null,
+      "link": "https://lidzbark.pl/images/article/51f1f3cbd6456299744bbb17c5f42dd5957fdaaa.jpeg",
+      "dodatkowe": {},
+      "klucz": "804bd7b3c3d86b79",
+      "przestarzale": false,
+      "wiek": null,
+      "okres": "od 15.10.2026, 02:00"
     },
     {
       "zrodlo": "gminy",
       "charakter": "zdarzenie",
       "typ": "Komunikat — Gmina Rybno",
       "tytul": "Zgłaszanie przypuszczeń i przypadków wystąpienia ptasiej grypy oraz rzekomego pomoru drobiu",
-      "opis": "Zgłaszanie przypuszczeń i przypadków wystąpienia ptasiej grypy oraz rzekomego pomoru drobiu Opublikowano: 2026-10-14 15:57:26 W związku z pismem Wojewody Warmińsko-Mazurskiego w Olsztynie dotyczącym zagrożenia wysoce zjadliwą grypą ptaków (HPAI) oraz rzekomym pomorem drobiu, Urząd Gminy apeluje do mieszkańców o zachowanie czujności i stosowanie się do zaleceń służb weterynaryjnych. Czytaj więcej M",
+      "opis": "Zgłaszanie przypuszczeń i przypadków wystąpienia ptasiej grypy oraz rzekomego pomoru drobiu Opublikowano: 2026-10-14 15:57:26 W związku z pismem Wojewody Warmińsko-Mazurskiego w Olsztynie dotyczącym zagrożenia wysoce zjadliwą grypą ptaków (HPAI) oraz rzekomym pomorem drobiu, Urząd Gminy apeluje do mieszkańców o zachowanie czujności i stosowanie się do zaleceń służb weterynaryjnych. Czytaj więcej",
       "stopien": 2,
       "obowiazuje_od": "2026-10-14T00:00:00+00:00",
       "obowiazuje_do": null,
@@ -55,20 +71,23 @@
       "okres": "od 14.10.2026, 08:20"
     },
     {
-      "zrodlo": "gminy",
+      "zrodlo": "imgw-meteo",
       "charakter": "zdarzenie",
-      "typ": "Komunikat — Miasto Działdowo",
-      "tytul": "Wtargnął pod samochód i zbiegł",
-      "opis": "Mieszkaniec Rybna wszedł przed jadące auto, doprowadzając do kolizji drogowej. Mężczyzna po opatrzeniu przez załogę... Artykuł Wtargnął pod samochód i zbiegł pochodzi z serwisu Działdowo.pl .",
+      "typ": "Ostrzeżenie meteorologiczne",
+      "tytul": "Gęsta mgła",
+      "opis": "Prognozuje się gęste mgły, w zasięgu których widzialność może miejscami wynosić poniżej 200 m.",
       "stopien": 1,
-      "obowiazuje_od": "2026-10-14T16:18:07+00:00",
-      "obowiazuje_do": null,
-      "link": "https://www.dzialdowo.pl/wtargnal-pod-samochod-i-zbiegl/?utm_source=rss&utm_medium=rss&utm_campaign=wtargnal-pod-samochod-i-zbiegl",
-      "dodatkowe": {},
-      "klucz": "a4199301f528a8dd",
+      "obowiazuje_od": "2026-10-15 22:00:00",
+      "obowiazuje_do": "2026-10-16 09:00:00",
+      "link": null,
+      "dodatkowe": {
+        "prawdopodobienstwo": "80%",
+        "biuro": "Centralne Biuro Prognoz Meteorologicznych w Warszawie"
+      },
+      "klucz": "d616a79df3cc0bd0",
       "przestarzale": false,
       "wiek": null,
-      "okres": "od 14.10.2026, 18:18"
+      "okres": "od 16.10.2026, 00:00 do 16.10.2026, 11:00"
     }
   ],
   "stany": [
@@ -141,15 +160,15 @@
       "charakter": "stan",
       "typ": "Jakość powietrza (czujnik lokalny)",
       "tytul": "Działdowo, Karłowicza",
-      "opis": "PM2,5: 8 µg/m³, PM10: 9 µg/m³. Wspaniałe powietrze!",
+      "opis": "PM2,5: 3 µg/m³, PM10: 4 µg/m³. Wspaniałe powietrze!",
       "stopien": 0,
       "obowiazuje_od": null,
       "obowiazuje_do": null,
       "link": null,
       "dodatkowe": {
-        "pm25": 7.57,
-        "pm10": 9.27,
-        "caqi": 12.63
+        "pm25": 3.37,
+        "pm10": 4.06,
+        "caqi": 5.62
       },
       "klucz": "2e29e490e7d89d48",
       "przestarzale": false,
@@ -161,15 +180,15 @@
       "charakter": "stan",
       "typ": "Jakość powietrza (czujnik lokalny)",
       "tytul": "Lidzbark, Jeleńska",
-      "opis": "PM2,5: 6 µg/m³, PM10: 10 µg/m³. Wspaniałe powietrze!",
+      "opis": "PM2,5: 3 µg/m³, PM10: 5 µg/m³. Wspaniałe powietrze!",
       "stopien": 0,
       "obowiazuje_od": null,
       "obowiazuje_do": null,
       "link": null,
       "dodatkowe": {
-        "pm25": 6.36,
-        "pm10": 9.75,
-        "caqi": 10.61
+        "pm25": 2.87,
+        "pm10": 4.57,
+        "caqi": 4.78
       },
       "klucz": "20adfc0452bf8b12",
       "przestarzale": false,
@@ -181,15 +200,15 @@
       "charakter": "stan",
       "typ": "Jakość powietrza (czujnik lokalny)",
       "tytul": "Płośnica, Kościelna",
-      "opis": "PM2,5: 5 µg/m³, PM10: 6 µg/m³. Wspaniałe powietrze!",
+      "opis": "PM2,5: 2 µg/m³, PM10: 3 µg/m³. Wspaniałe powietrze!",
       "stopien": 0,
       "obowiazuje_od": null,
       "obowiazuje_do": null,
       "link": null,
       "dodatkowe": {
-        "pm25": 4.61,
-        "pm10": 5.85,
-        "caqi": 7.69
+        "pm25": 2.25,
+        "pm10": 2.95,
+        "caqi": 3.76
       },
       "klucz": "6370cff9d031f209",
       "przestarzale": false,
@@ -201,15 +220,15 @@
       "charakter": "stan",
       "typ": "Jakość powietrza (czujnik lokalny)",
       "tytul": "Rybno, Sportowa",
-      "opis": "PM2,5: 0 µg/m³, PM10: 1 µg/m³. Wspaniałe powietrze!",
+      "opis": "PM2,5: 0 µg/m³, PM10: 0 µg/m³. Wspaniałe powietrze!",
       "stopien": 0,
       "obowiazuje_od": null,
       "obowiazuje_do": null,
       "link": null,
       "dodatkowe": {
-        "pm25": 0.49,
-        "pm10": 0.55,
-        "caqi": 0.82
+        "pm25": 0.09,
+        "pm10": 0.11,
+        "caqi": 0.16
       },
       "klucz": "012323b705223814",
       "przestarzale": false,
@@ -221,15 +240,15 @@
       "charakter": "stan",
       "typ": "Jakość powietrza (czujnik lokalny)",
       "tytul": "Iłowo-Osada, Wyzwolenia",
-      "opis": "PM2,5: 7 µg/m³, PM10: 9 µg/m³. Wspaniałe powietrze!",
+      "opis": "PM2,5: 16 µg/m³, PM10: 22 µg/m³. Cóż... Bywało lepiej.",
       "stopien": 0,
       "obowiazuje_od": null,
       "obowiazuje_do": null,
       "link": null,
       "dodatkowe": {
-        "pm25": 6.6,
-        "pm10": 8.69,
-        "caqi": 11.0
+        "pm25": 16.48,
+        "pm10": 21.69,
+        "caqi": 27.48
       },
       "klucz": "8839ac39f003b80b",
       "przestarzale": false,
@@ -278,99 +297,99 @@
       "nazwa": "IMGW – ostrzeżenia meteorologiczne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-10-15T06:24:09+00:00",
+      "pobrano": "2026-10-15T12:04:23+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": null,
-      "pobrano_ladnie": "15.10.2026, 08:24"
+      "pobrano_ladnie": "15.10.2026, 14:04"
     },
     {
       "id": "imgw-hydro",
       "nazwa": "IMGW – ostrzeżenia hydrologiczne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-10-15T06:24:10+00:00",
+      "pobrano": "2026-10-15T12:04:24+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": null,
-      "pobrano_ladnie": "15.10.2026, 08:24"
+      "pobrano_ladnie": "15.10.2026, 14:04"
     },
     {
       "id": "airly",
       "nazwa": "Airly – czujniki lokalne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-10-15T06:24:13+00:00",
+      "pobrano": "2026-10-15T12:04:26+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "czujniki niskokosztowe (nie referencyjne), 5 z 5",
-      "pobrano_ladnie": "15.10.2026, 08:24"
+      "pobrano_ladnie": "15.10.2026, 14:04"
     },
     {
       "id": "open-meteo",
       "nazwa": "Open-Meteo – prognoza 24 h",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-10-15T06:24:13+00:00",
+      "pobrano": "2026-10-15T12:04:26+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": null,
-      "pobrano_ladnie": "15.10.2026, 08:24"
+      "pobrano_ladnie": "15.10.2026, 14:04"
     },
     {
       "id": "stopnie-alarmowe",
       "nazwa": "Stopnie alarmowe",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-10-15T06:24:52+00:00",
+      "pobrano": "2026-10-15T12:06:43+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "z konfiguracji (aktualizacja ręczna), termin 30.11.2026 — za 46 dni",
-      "pobrano_ladnie": "15.10.2026, 08:24"
+      "pobrano_ladnie": "15.10.2026, 14:06"
     },
     {
       "id": "lasy",
       "nazwa": "Zagrożenie pożarowe lasu",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-10-15T06:24:52+00:00",
+      "pobrano": "2026-10-15T12:06:43+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "poza sezonem (stopnie ustalane od 1 marca do 30 września)",
-      "pobrano_ladnie": "15.10.2026, 08:24"
+      "pobrano_ladnie": "15.10.2026, 14:06"
     },
     {
       "id": "pse",
       "nazwa": "PSE – bilans mocy",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-10-15T06:24:52+00:00",
+      "pobrano": "2026-10-15T12:06:44+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "wariant: plan koordynacyjny dobowy",
-      "pobrano_ladnie": "15.10.2026, 08:24"
+      "pobrano_ladnie": "15.10.2026, 14:06"
     },
     {
       "id": "gminy",
       "nazwa": "Serwisy starostwa i gmin",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-10-15T06:25:37+00:00",
+      "pobrano": "2026-10-15T12:07:40+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "6 z 7 serwisów — bez: Gmina Płośnica",
-      "pobrano_ladnie": "15.10.2026, 08:25"
+      "pobrano_ladnie": "15.10.2026, 14:07"
     },
     {
       "id": "wlasne",
       "nazwa": "Komunikaty własne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-10-15T06:25:37+00:00",
+      "pobrano": "2026-10-15T12:07:40+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "0 aktywnych z 0 w pliku",
-      "pobrano_ladnie": "15.10.2026, 08:25"
+      "pobrano_ladnie": "15.10.2026, 14:07"
     }
   ],
   "zrodla_niedostepne": [],
