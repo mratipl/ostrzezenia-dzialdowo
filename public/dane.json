@@ -1,7 +1,7 @@
 {
   "powiat": "powiat działdowski",
-  "wygenerowano": "16.10.2026, 21:00",
-  "wygenerowano_iso": "2026-10-16T19:00:02+00:00",
+  "wygenerowano": "17.10.2026, 00:00",
+  "wygenerowano_iso": "2026-10-16T22:00:09+00:00",
   "naglowek": "Ostrzeżenie 2. stopnia — poznaj alerty rcb o zagrożeniu atakiem z powietrza",
   "klasa_statusu": "s2",
   "najwyzszy_stopien": 2,
@@ -73,26 +73,6 @@
   ],
   "stany": [
     {
-      "zrodlo": "airly",
-      "charakter": "stan",
-      "typ": "Jakość powietrza (czujnik lokalny)",
-      "tytul": "Działdowo, Karłowicza",
-      "opis": "PM2,5: 113 µg/m³, PM10: 136 µg/m³. Bardzo duże zanieczyszczenie!",
-      "stopien": 3,
-      "obowiazuje_od": null,
-      "obowiazuje_do": null,
-      "link": null,
-      "dodatkowe": {
-        "pm25": 112.63,
-        "pm10": 135.97,
-        "caqi": 101.2
-      },
-      "klucz": "b9a3c3157423572c",
-      "przestarzale": false,
-      "wiek": null,
-      "okres": ""
-    },
-    {
       "zrodlo": "stopnie-alarmowe",
       "charakter": "stan",
       "typ": "Stopień alarmowy",
@@ -112,16 +92,36 @@
       "zrodlo": "airly",
       "charakter": "stan",
       "typ": "Jakość powietrza (czujnik lokalny)",
-      "tytul": "Lidzbark, Jeleńska",
-      "opis": "PM2,5: 39 µg/m³, PM10: 53 µg/m³. Jakość powietrza jest średnia.",
+      "tytul": "Działdowo, Karłowicza",
+      "opis": "PM2,5: 30 µg/m³, PM10: 40 µg/m³. Jakość powietrza jest średnia.",
       "stopien": 1,
       "obowiazuje_od": null,
       "obowiazuje_do": null,
       "link": null,
       "dodatkowe": {
-        "pm25": 39.31,
-        "pm10": 53.39,
-        "caqi": 59.31
+        "pm25": 30.41,
+        "pm10": 40.4,
+        "caqi": 50.42
+      },
+      "klucz": "967d4314efe4ebf9",
+      "przestarzale": false,
+      "wiek": null,
+      "okres": ""
+    },
+    {
+      "zrodlo": "airly",
+      "charakter": "stan",
+      "typ": "Jakość powietrza (czujnik lokalny)",
+      "tytul": "Lidzbark, Jeleńska",
+      "opis": "PM2,5: 35 µg/m³, PM10: 46 µg/m³. Jakość powietrza jest średnia.",
+      "stopien": 1,
+      "obowiazuje_od": null,
+      "obowiazuje_do": null,
+      "link": null,
+      "dodatkowe": {
+        "pm25": 34.71,
+        "pm10": 46.04,
+        "caqi": 54.72
       },
       "klucz": "2e143129402db1f8",
       "przestarzale": false,
@@ -132,36 +132,16 @@
       "zrodlo": "airly",
       "charakter": "stan",
       "typ": "Jakość powietrza (czujnik lokalny)",
-      "tytul": "Płośnica, Kościelna",
-      "opis": "PM2,5: 54 µg/m³, PM10: 64 µg/m³. Jakość powietrza jest średnia.",
-      "stopien": 1,
-      "obowiazuje_od": null,
-      "obowiazuje_do": null,
-      "link": null,
-      "dodatkowe": {
-        "pm25": 54.26,
-        "pm10": 63.97,
-        "caqi": 74.26
-      },
-      "klucz": "2605d2be39163125",
-      "przestarzale": false,
-      "wiek": null,
-      "okres": ""
-    },
-    {
-      "zrodlo": "airly",
-      "charakter": "stan",
-      "typ": "Jakość powietrza (czujnik lokalny)",
       "tytul": "Iłowo-Osada, Wyzwolenia",
-      "opis": "PM2,5: 33 µg/m³, PM10: 45 µg/m³. Jakość powietrza jest średnia.",
+      "opis": "PM2,5: 34 µg/m³, PM10: 45 µg/m³. Jakość powietrza jest średnia.",
       "stopien": 1,
       "obowiazuje_od": null,
       "obowiazuje_do": null,
       "link": null,
       "dodatkowe": {
-        "pm25": 33.43,
-        "pm10": 45.46,
-        "caqi": 53.44
+        "pm25": 33.78,
+        "pm10": 44.63,
+        "caqi": 53.78
       },
       "klucz": "cfaea2a40ecaa59a",
       "przestarzale": false,
@@ -220,6 +200,26 @@
       "zrodlo": "airly",
       "charakter": "stan",
       "typ": "Jakość powietrza (czujnik lokalny)",
+      "tytul": "Płośnica, Kościelna",
+      "opis": "PM2,5: 13 µg/m³, PM10: 14 µg/m³. Wspaniałe powietrze!",
+      "stopien": 0,
+      "obowiazuje_od": null,
+      "obowiazuje_do": null,
+      "link": null,
+      "dodatkowe": {
+        "pm25": 12.56,
+        "pm10": 14.4,
+        "caqi": 20.94
+      },
+      "klucz": "6370cff9d031f209",
+      "przestarzale": false,
+      "wiek": null,
+      "okres": ""
+    },
+    {
+      "zrodlo": "airly",
+      "charakter": "stan",
+      "typ": "Jakość powietrza (czujnik lokalny)",
       "tytul": "Rybno, Sportowa",
       "opis": "PM2,5: 0 µg/m³, PM10: 0 µg/m³. Wspaniałe powietrze!",
       "stopien": 0,
@@ -227,9 +227,9 @@
       "obowiazuje_do": null,
       "link": null,
       "dodatkowe": {
-        "pm25": 0.26,
-        "pm10": 0.29,
-        "caqi": 0.44
+        "pm25": 0.24,
+        "pm10": 0.27,
+        "caqi": 0.41
       },
       "klucz": "012323b705223814",
       "przestarzale": false,
@@ -241,13 +241,13 @@
       "charakter": "stan",
       "typ": "Prognoza",
       "tytul": "Najbliższe 24 godziny",
-      "opis": "Najsilniejszy prognozowany poryw 21 km/h, suma opadów 0.0 mm. Temperatura od 5 do 14 °C.",
+      "opis": "Najsilniejszy prognozowany poryw 19 km/h, suma opadów 0.0 mm. Temperatura od 4 do 13 °C.",
       "stopien": 0,
       "obowiazuje_od": null,
       "obowiazuje_do": null,
       "link": null,
       "dodatkowe": {
-        "maks_poryw_kmh": 21,
+        "maks_poryw_kmh": 19,
         "suma_opadow_mm": 0.0
       },
       "klucz": "8c15ed19d97c626d",
@@ -278,44 +278,44 @@
       "nazwa": "IMGW – ostrzeżenia meteorologiczne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-10-16T19:00:03+00:00",
+      "pobrano": "2026-10-16T22:00:11+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": null,
-      "pobrano_ladnie": "16.10.2026, 21:00"
+      "pobrano_ladnie": "17.10.2026, 00:00"
     },
     {
       "id": "imgw-hydro",
       "nazwa": "IMGW – ostrzeżenia hydrologiczne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-10-16T19:00:06+00:00",
+      "pobrano": "2026-10-16T22:00:12+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": null,
-      "pobrano_ladnie": "16.10.2026, 21:00"
+      "pobrano_ladnie": "17.10.2026, 00:00"
     },
     {
       "id": "airly",
       "nazwa": "Airly – czujniki lokalne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-10-16T19:00:09+00:00",
+      "pobrano": "2026-10-16T22:00:14+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "czujniki niskokosztowe (nie referencyjne), 5 z 5",
-      "pobrano_ladnie": "16.10.2026, 21:00"
+      "pobrano_ladnie": "17.10.2026, 00:00"
     },
     {
       "id": "open-meteo",
       "nazwa": "Open-Meteo – prognoza 24 h",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-10-16T19:00:10+00:00",
+      "pobrano": "2026-10-16T22:00:15+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": null,
-      "pobrano_ladnie": "16.10.2026, 21:00"
+      "pobrano_ladnie": "17.10.2026, 00:00"
     },
     {
       "id": "stopnie-alarmowe",
@@ -323,9 +323,9 @@
       "ok": true,
       "blad": null,
       "pobrano": "2026-10-16T19:01:32+00:00",
-      "wiek_minut": 0,
+      "wiek_minut": 178,
       "nieaktualne": false,
-      "uwaga": "z konfiguracji (aktualizacja ręczna), termin 30.11.2026 — za 45 dni",
+      "uwaga": "z pamięci — odpytywane co 180 min (limit dobowy)",
       "pobrano_ladnie": "16.10.2026, 21:01"
     },
     {
@@ -334,9 +334,9 @@
       "ok": true,
       "blad": null,
       "pobrano": "2026-10-16T19:01:32+00:00",
-      "wiek_minut": 0,
+      "wiek_minut": 178,
       "nieaktualne": false,
-      "uwaga": "poza sezonem (stopnie ustalane od 1 marca do 30 września)",
+      "uwaga": "z pamięci — odpytywane co 180 min (limit dobowy)",
       "pobrano_ladnie": "16.10.2026, 21:01"
     },
     {
@@ -344,33 +344,33 @@
       "nazwa": "PSE – bilans mocy",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-10-16T19:01:33+00:00",
+      "pobrano": "2026-10-16T22:00:16+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "wariant: plan koordynacyjny dobowy",
-      "pobrano_ladnie": "16.10.2026, 21:01"
+      "pobrano_ladnie": "17.10.2026, 00:00"
     },
     {
       "id": "gminy",
       "nazwa": "Serwisy starostwa i gmin",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-10-16T19:02:15+00:00",
+      "pobrano": "2026-10-16T22:00:41+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "6 z 7 serwisów — bez: Gmina Płośnica",
-      "pobrano_ladnie": "16.10.2026, 21:02"
+      "pobrano_ladnie": "17.10.2026, 00:00"
     },
     {
       "id": "wlasne",
       "nazwa": "Komunikaty własne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-10-16T19:02:15+00:00",
+      "pobrano": "2026-10-16T22:00:41+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "0 aktywnych z 0 w pliku",
-      "pobrano_ladnie": "16.10.2026, 21:02"
+      "pobrano_ladnie": "17.10.2026, 00:00"
     }
   ],
   "zrodla_niedostepne": [],
