@@ -1,7 +1,7 @@
 {
   "powiat": "powiat działdowski",
-  "wygenerowano": "22.10.2026, 09:08",
-  "wygenerowano_iso": "2026-10-22T07:08:50+00:00",
+  "wygenerowano": "22.10.2026, 15:01",
+  "wygenerowano_iso": "2026-10-22T13:01:15+00:00",
   "naglowek": "Ostrzeżenie 2. stopnia — poznaj alerty rcb o zagrożeniu atakiem z powietrza",
   "klasa_statusu": "s2",
   "najwyzszy_stopien": 2,
@@ -26,6 +26,38 @@
       "zrodlo": "gminy",
       "charakter": "zdarzenie",
       "typ": "Komunikat — Gmina Lidzbark",
+      "tytul": "Lepiej przygotowani na deszcz. Trwa czyszczenie kanalizacji deszczowej w Lidzbarku",
+      "opis": "Choć nie zawsze widać efekty tych prac gołym okiem, ich znaczenie jest bardzo duże. Na ulicach Lidzbarka prowadzone jest czyszczenie studzienek i sieci kanalizacji deszczowej, aby zapewnić sprawny odpływ wód opadowych i ograniczyć ryzyko podtopień podc...",
+      "stopien": 2,
+      "obowiazuje_od": "2026-10-22T00:00:00+00:00",
+      "obowiazuje_do": null,
+      "link": "https://lidzbark.pl/images/article/70aa5ae3458cf837f220a5a37fcbd15c2e8073b4.jpeg",
+      "dodatkowe": {},
+      "klucz": "7303fbce1b11f75c",
+      "przestarzale": false,
+      "wiek": null,
+      "okres": "od 22.10.2026, 02:00"
+    },
+    {
+      "zrodlo": "gminy",
+      "charakter": "zdarzenie",
+      "typ": "Komunikat — Gmina Lidzbark",
+      "tytul": "Jeleń zyskuje nową nawierzchnię",
+      "opis": "Na drodze gminnej w miejscowości Jeleń trwa układanie nawierzchni asfaltowej. To kolejny ważny etap przebudowy, który przybliża nas do zakończenia inwestycji i poprawy komfortu codziennego poruszania się po tej trasie. Umowę na dofinansowanie tego zada...",
+      "stopien": 2,
+      "obowiazuje_od": "2026-10-22T00:00:00+00:00",
+      "obowiazuje_do": null,
+      "link": "https://lidzbark.pl/images/article/931d04cd9422a8ec0a1f5250dfbb9f0798bba3ec.jpeg",
+      "dodatkowe": {},
+      "klucz": "039d372d5191342d",
+      "przestarzale": false,
+      "wiek": null,
+      "okres": "od 22.10.2026, 02:00"
+    },
+    {
+      "zrodlo": "gminy",
+      "charakter": "zdarzenie",
+      "typ": "Komunikat — Gmina Lidzbark",
       "tytul": "Bezpieczeństwo dzieci i młodzieży to nasz wspólny priorytet",
       "opis": "W dniu 12 października odbyło się spotkanie z dyrektorami placówek oświatowych i opiekuńczych z terenu Gminy Lidzbark, poświęcone bezpieczeństwu oraz skutecznemu reagowaniu na sytuacje zagrożenia. W spotkaniu uczestniczyli: Burmistrz Lidzbarka, Zastępca ...",
       "stopien": 2,
@@ -41,18 +73,18 @@
     {
       "zrodlo": "gminy",
       "charakter": "zdarzenie",
-      "typ": "Komunikat — Miasto Działdowo",
-      "tytul": "„Bezpieczne Gazociągi” – działania informacyjne dotyczące bezpiecznego prowadzenia prac ziemnych",
-      "opis": "Szanowni Państwo, Polska Spółka Gazownictwa sp. z o.o., jako operator systemu dystrybucyjnego gazowego, prowadzi kampanię informacyjno-prewencyjną... Artykuł „Bezpieczne Gazociągi” – działania informacyjne dotyczące bezpiecznego prowadzenia prac ziemnych pochodzi z serwisu Działdowo.pl .",
-      "stopien": 0,
-      "obowiazuje_od": "2026-10-21T08:18:01+00:00",
+      "typ": "Komunikat — Gmina Rybno",
+      "tytul": "Zgłaszanie przypuszczeń i przypadków wystąpienia ptasiej grypy oraz rzekomego pomoru drobiu",
+      "opis": "14.10.2026 Zgłaszanie przypuszczeń i przypadków wystąpienia ptasiej grypy oraz rzekomego pomoru drobiu W związku z pismem Wojewody Warmińsko-Mazurskiego w Olsztynie dotyczącym zagrożenia wysoce zjadliwą grypą ptaków (HPAI) oraz rzekomym pomorem drobiu, Urząd Gminy apeluje do mieszkańców o zachowanie czujności i stosowanie się do zaleceń służb weterynaryjnych. Czytaj więcej →",
+      "stopien": 2,
+      "obowiazuje_od": "2026-10-14T00:00:00+00:00",
       "obowiazuje_do": null,
-      "link": "https://www.dzialdowo.pl/bezpieczne-gazociagi-dzialania-informacyjne-dotyczace-bezpiecznego-prowadzenia-prac-ziemnych/?utm_source=rss&utm_medium=rss&utm_campaign=bezpieczne-gazociagi-dzialania-informacyjne-dotyczace-bezpiecznego-prowadzenia-prac-ziemnych",
+      "link": "https://www.gminarybno.pl/artykul/zg-aszanie-przypuszcze-i-przypadk-w-wyst-pienia-ptasiej-grypy-oraz-rzekomego-pomoru-drobiu-42",
       "dodatkowe": {},
-      "klucz": "7bd377721ff7188e",
+      "klucz": "96a7116325d7cb47",
       "przestarzale": false,
       "wiek": null,
-      "okres": "od 21.10.2026, 10:18"
+      "okres": "od 14.10.2026, 02:00"
     }
   ],
   "stany": [
@@ -125,15 +157,15 @@
       "charakter": "stan",
       "typ": "Jakość powietrza (czujnik lokalny)",
       "tytul": "Działdowo, Karłowicza",
-      "opis": "PM2,5: 14 µg/m³, PM10: 17 µg/m³. Wspaniałe powietrze!",
+      "opis": "PM2,5: 21 µg/m³, PM10: 26 µg/m³. Cóż... Bywało lepiej.",
       "stopien": 0,
       "obowiazuje_od": null,
       "obowiazuje_do": null,
       "link": null,
       "dodatkowe": {
-        "pm25": 14.03,
-        "pm10": 16.77,
-        "caqi": 23.39
+        "pm25": 20.91,
+        "pm10": 26.45,
+        "caqi": 34.85
       },
       "klucz": "2e29e490e7d89d48",
       "przestarzale": false,
@@ -145,15 +177,15 @@
       "charakter": "stan",
       "typ": "Jakość powietrza (czujnik lokalny)",
       "tytul": "Lidzbark, Jeleńska",
-      "opis": "PM2,5: 16 µg/m³, PM10: 18 µg/m³. Cóż... Bywało lepiej.",
+      "opis": "PM2,5: 23 µg/m³, PM10: 30 µg/m³. Cóż... Bywało lepiej.",
       "stopien": 0,
       "obowiazuje_od": null,
       "obowiazuje_do": null,
       "link": null,
       "dodatkowe": {
-        "pm25": 15.71,
-        "pm10": 17.8,
-        "caqi": 26.19
+        "pm25": 22.94,
+        "pm10": 29.55,
+        "caqi": 38.24
       },
       "klucz": "20adfc0452bf8b12",
       "przestarzale": false,
@@ -165,15 +197,15 @@
       "charakter": "stan",
       "typ": "Jakość powietrza (czujnik lokalny)",
       "tytul": "Płośnica, Kościelna",
-      "opis": "PM2,5: 13 µg/m³, PM10: 15 µg/m³. Wspaniałe powietrze!",
+      "opis": "PM2,5: 22 µg/m³, PM10: 26 µg/m³. Cóż... Bywało lepiej.",
       "stopien": 0,
       "obowiazuje_od": null,
       "obowiazuje_do": null,
       "link": null,
       "dodatkowe": {
-        "pm25": 12.98,
-        "pm10": 14.72,
-        "caqi": 21.63
+        "pm25": 21.65,
+        "pm10": 26.31,
+        "caqi": 36.09
       },
       "klucz": "6370cff9d031f209",
       "przestarzale": false,
@@ -191,9 +223,9 @@
       "obowiazuje_do": null,
       "link": null,
       "dodatkowe": {
-        "pm25": 0.19,
-        "pm10": 0.27,
-        "caqi": 0.31
+        "pm25": 0.33,
+        "pm10": 0.39,
+        "caqi": 0.55
       },
       "klucz": "012323b705223814",
       "przestarzale": false,
@@ -205,15 +237,15 @@
       "charakter": "stan",
       "typ": "Jakość powietrza (czujnik lokalny)",
       "tytul": "Iłowo-Osada, Wyzwolenia",
-      "opis": "PM2,5: 13 µg/m³, PM10: 16 µg/m³. Wspaniałe powietrze!",
+      "opis": "PM2,5: 18 µg/m³, PM10: 22 µg/m³. Cóż... Bywało lepiej.",
       "stopien": 0,
       "obowiazuje_od": null,
       "obowiazuje_do": null,
       "link": null,
       "dodatkowe": {
-        "pm25": 13.34,
-        "pm10": 15.69,
-        "caqi": 22.24
+        "pm25": 18.47,
+        "pm10": 22.39,
+        "caqi": 30.79
       },
       "klucz": "8839ac39f003b80b",
       "przestarzale": false,
@@ -225,14 +257,14 @@
       "charakter": "stan",
       "typ": "Prognoza",
       "tytul": "Najbliższe 24 godziny",
-      "opis": "Najsilniejszy prognozowany poryw 41 km/h, suma opadów 14.6 mm. Temperatura od 9 do 12 °C.",
+      "opis": "Najsilniejszy prognozowany poryw 40 km/h, suma opadów 16.3 mm. Temperatura od 9 do 13 °C.",
       "stopien": 0,
       "obowiazuje_od": null,
       "obowiazuje_do": null,
       "link": null,
       "dodatkowe": {
-        "maks_poryw_kmh": 41,
-        "suma_opadow_mm": 14.6
+        "maks_poryw_kmh": 40,
+        "suma_opadow_mm": 16.3
       },
       "klucz": "8c15ed19d97c626d",
       "przestarzale": false,
@@ -262,99 +294,99 @@
       "nazwa": "IMGW – ostrzeżenia meteorologiczne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-10-22T07:08:51+00:00",
+      "pobrano": "2026-10-22T13:01:16+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": null,
-      "pobrano_ladnie": "22.10.2026, 09:08"
+      "pobrano_ladnie": "22.10.2026, 15:01"
     },
     {
       "id": "imgw-hydro",
       "nazwa": "IMGW – ostrzeżenia hydrologiczne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-10-22T07:08:51+00:00",
+      "pobrano": "2026-10-22T13:01:17+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": null,
-      "pobrano_ladnie": "22.10.2026, 09:08"
+      "pobrano_ladnie": "22.10.2026, 15:01"
     },
     {
       "id": "airly",
       "nazwa": "Airly – czujniki lokalne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-10-22T07:08:54+00:00",
+      "pobrano": "2026-10-22T13:01:21+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "czujniki niskokosztowe (nie referencyjne), 5 z 5",
-      "pobrano_ladnie": "22.10.2026, 09:08"
+      "pobrano_ladnie": "22.10.2026, 15:01"
     },
     {
       "id": "open-meteo",
       "nazwa": "Open-Meteo – prognoza 24 h",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-10-22T07:08:54+00:00",
+      "pobrano": "2026-10-22T13:01:21+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": null,
-      "pobrano_ladnie": "22.10.2026, 09:08"
+      "pobrano_ladnie": "22.10.2026, 15:01"
     },
     {
       "id": "stopnie-alarmowe",
       "nazwa": "Stopnie alarmowe",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-10-22T07:09:25+00:00",
+      "pobrano": "2026-10-22T13:01:51+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "z konfiguracji (aktualizacja ręczna), termin 30.11.2026 — za 39 dni",
-      "pobrano_ladnie": "22.10.2026, 09:09"
+      "pobrano_ladnie": "22.10.2026, 15:01"
     },
     {
       "id": "lasy",
       "nazwa": "Zagrożenie pożarowe lasu",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-10-22T07:09:25+00:00",
+      "pobrano": "2026-10-22T13:01:51+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "poza sezonem (stopnie ustalane od 1 marca do 30 września)",
-      "pobrano_ladnie": "22.10.2026, 09:09"
+      "pobrano_ladnie": "22.10.2026, 15:01"
     },
     {
       "id": "pse",
       "nazwa": "PSE – bilans mocy",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-10-22T07:09:25+00:00",
+      "pobrano": "2026-10-22T13:01:52+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "wariant: plan koordynacyjny dobowy",
-      "pobrano_ladnie": "22.10.2026, 09:09"
+      "pobrano_ladnie": "22.10.2026, 15:01"
     },
     {
       "id": "gminy",
       "nazwa": "Serwisy starostwa i gmin",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-10-22T07:09:48+00:00",
+      "pobrano": "2026-10-22T13:02:14+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
-      "uwaga": "5 z 7 serwisów — bez: Gmina Płośnica, Gmina Rybno",
-      "pobrano_ladnie": "22.10.2026, 09:09"
+      "uwaga": "6 z 7 serwisów — bez: Gmina Płośnica",
+      "pobrano_ladnie": "22.10.2026, 15:02"
     },
     {
       "id": "wlasne",
       "nazwa": "Komunikaty własne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-10-22T07:09:48+00:00",
+      "pobrano": "2026-10-22T13:02:14+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "0 aktywnych z 0 w pliku",
-      "pobrano_ladnie": "22.10.2026, 09:09"
+      "pobrano_ladnie": "22.10.2026, 15:02"
     }
   ],
   "zrodla_niedostepne": [],
