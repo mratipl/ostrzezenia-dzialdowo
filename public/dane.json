@@ -1,27 +1,11 @@
 {
   "powiat": "powiat działdowski",
-  "wygenerowano": "03.11.2026, 06:30",
-  "wygenerowano_iso": "2026-11-03T05:30:12+00:00",
-  "naglowek": "Ostrzeżenie 2. stopnia — wszystkie aktualności →",
+  "wygenerowano": "03.11.2026, 13:58",
+  "wygenerowano_iso": "2026-11-03T12:58:57+00:00",
+  "naglowek": "Ostrzeżenie 2. stopnia — wypełnij ankietę i miej wpływ na rozwój naszego regionu",
   "klasa_statusu": "s2",
   "najwyzszy_stopien": 2,
   "zdarzenia": [
-    {
-      "zrodlo": "gminy",
-      "charakter": "zdarzenie",
-      "typ": "Komunikat — Gmina Rybno",
-      "tytul": "Wszystkie aktualności →",
-      "opis": "Bądź na bieżąco Informacje z gminy Wszystkie aktualności → 28.10.2026 Wypełnij ankietę i miej wpływ na rozwój naszego regionu Lokalna Grupa Działania Ziemia Lubawska zaprasza mieszkańców, przedsiębiorców, rolników, przedstawicieli sektora publicznego oraz organizacji pozarządowych do udziału w ankiecie dotyczącej aktualizacji Lokalnej Strategii Rozwoju na lata 2023-2030. Czytaj więcej → Wydarzenie",
-      "stopien": 2,
-      "obowiazuje_od": "2026-10-28T00:00:00+00:00",
-      "obowiazuje_do": null,
-      "link": "https://www.gminarybno.pl/aktualnosci",
-      "dodatkowe": {},
-      "klucz": "327b3ad0549c7ab1",
-      "przestarzale": false,
-      "wiek": null,
-      "okres": "od 28.10.2026, 01:00"
-    },
     {
       "zrodlo": "gminy",
       "charakter": "zdarzenie",
@@ -37,22 +21,6 @@
       "przestarzale": false,
       "wiek": null,
       "okres": "od 28.10.2026, 01:00"
-    },
-    {
-      "zrodlo": "gminy",
-      "charakter": "zdarzenie",
-      "typ": "Komunikat — Starostwo Działdowo",
-      "tytul": "Wybrano nowe władze Zarządu Oddziału Powiatowego Związku Ochotniczych Straży Pożarnych RP w Działdowie! (film)",
-      "opis": "Artykuł Wybrano nowe władze Zarządu Oddziału Powiatowego Związku Ochotniczych Straży Pożarnych RP w Działdowie! (film) pochodzi z serwisu Powiat Działdowski .",
-      "stopien": 2,
-      "obowiazuje_od": "2026-11-02T10:50:36+00:00",
-      "obowiazuje_do": null,
-      "link": "https://powiatdzialdowski.pl/wybrano-nowe-wladze-zarzadu-oddzialu-powiatowego-zwiazku-ochotniczych-strazy-pozarnych-rp-w-dzialdowie-film/",
-      "dodatkowe": {},
-      "klucz": "f8a28fa5a5667f07",
-      "przestarzale": false,
-      "wiek": null,
-      "okres": "od 02.11.2026, 11:50"
     }
   ],
   "stany": [
@@ -125,15 +93,15 @@
       "charakter": "stan",
       "typ": "Jakość powietrza (czujnik lokalny)",
       "tytul": "Działdowo, Karłowicza",
-      "opis": "PM2,5: 15 µg/m³, PM10: 17 µg/m³. Wspaniałe powietrze!",
+      "opis": "PM2,5: 15 µg/m³, PM10: 19 µg/m³. Wspaniałe powietrze!",
       "stopien": 0,
       "obowiazuje_od": null,
       "obowiazuje_do": null,
       "link": null,
       "dodatkowe": {
-        "pm25": 14.59,
-        "pm10": 17.24,
-        "caqi": 24.32
+        "pm25": 14.93,
+        "pm10": 19.07,
+        "caqi": 24.88
       },
       "klucz": "2e29e490e7d89d48",
       "przestarzale": false,
@@ -145,15 +113,15 @@
       "charakter": "stan",
       "typ": "Jakość powietrza (czujnik lokalny)",
       "tytul": "Lidzbark, Jeleńska",
-      "opis": "PM2,5: 21 µg/m³, PM10: 25 µg/m³. Cóż... Bywało lepiej.",
+      "opis": "PM2,5: 5 µg/m³, PM10: 6 µg/m³. Wspaniałe powietrze!",
       "stopien": 0,
       "obowiazuje_od": null,
       "obowiazuje_do": null,
       "link": null,
       "dodatkowe": {
-        "pm25": 20.57,
-        "pm10": 25.21,
-        "caqi": 34.29
+        "pm25": 4.95,
+        "pm10": 5.81,
+        "caqi": 8.26
       },
       "klucz": "20adfc0452bf8b12",
       "przestarzale": false,
@@ -165,15 +133,15 @@
       "charakter": "stan",
       "typ": "Jakość powietrza (czujnik lokalny)",
       "tytul": "Płośnica, Kościelna",
-      "opis": "PM2,5: 19 µg/m³, PM10: 22 µg/m³. Cóż... Bywało lepiej.",
+      "opis": "PM2,5: 6 µg/m³, PM10: 6 µg/m³. Wspaniałe powietrze!",
       "stopien": 0,
       "obowiazuje_od": null,
       "obowiazuje_do": null,
       "link": null,
       "dodatkowe": {
-        "pm25": 18.61,
-        "pm10": 21.86,
-        "caqi": 31.02
+        "pm25": 5.52,
+        "pm10": 6.16,
+        "caqi": 9.21
       },
       "klucz": "6370cff9d031f209",
       "przestarzale": false,
@@ -191,9 +159,9 @@
       "obowiazuje_do": null,
       "link": null,
       "dodatkowe": {
-        "pm25": 0.33,
-        "pm10": 0.38,
-        "caqi": 0.55
+        "pm25": 0.13,
+        "pm10": 0.14,
+        "caqi": 0.22
       },
       "klucz": "012323b705223814",
       "przestarzale": false,
@@ -205,15 +173,15 @@
       "charakter": "stan",
       "typ": "Jakość powietrza (czujnik lokalny)",
       "tytul": "Iłowo-Osada, Wyzwolenia",
-      "opis": "PM2,5: 19 µg/m³, PM10: 23 µg/m³. Cóż... Bywało lepiej.",
+      "opis": "PM2,5: 8 µg/m³, PM10: 10 µg/m³. Wspaniałe powietrze!",
       "stopien": 0,
       "obowiazuje_od": null,
       "obowiazuje_do": null,
       "link": null,
       "dodatkowe": {
-        "pm25": 18.55,
-        "pm10": 22.85,
-        "caqi": 30.93
+        "pm25": 8.37,
+        "pm10": 10.31,
+        "caqi": 13.95
       },
       "klucz": "8839ac39f003b80b",
       "przestarzale": false,
@@ -225,14 +193,14 @@
       "charakter": "stan",
       "typ": "Prognoza",
       "tytul": "Najbliższe 24 godziny",
-      "opis": "Najsilniejszy prognozowany poryw 27 km/h, suma opadów 0.0 mm. Temperatura od 3 do 9 °C.",
+      "opis": "Najsilniejszy prognozowany poryw 26 km/h, suma opadów 0.2 mm. Temperatura od 4 do 9 °C.",
       "stopien": 0,
       "obowiazuje_od": null,
       "obowiazuje_do": null,
       "link": null,
       "dodatkowe": {
-        "maks_poryw_kmh": 27,
-        "suma_opadow_mm": 0.0
+        "maks_poryw_kmh": 26,
+        "suma_opadow_mm": 0.2
       },
       "klucz": "8c15ed19d97c626d",
       "przestarzale": false,
@@ -262,99 +230,99 @@
       "nazwa": "IMGW – ostrzeżenia meteorologiczne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-11-03T05:30:13+00:00",
+      "pobrano": "2026-11-03T12:58:58+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": null,
-      "pobrano_ladnie": "03.11.2026, 06:30"
+      "pobrano_ladnie": "03.11.2026, 13:58"
     },
     {
       "id": "imgw-hydro",
       "nazwa": "IMGW – ostrzeżenia hydrologiczne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-11-03T05:30:14+00:00",
+      "pobrano": "2026-11-03T12:58:59+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": null,
-      "pobrano_ladnie": "03.11.2026, 06:30"
+      "pobrano_ladnie": "03.11.2026, 13:58"
     },
     {
       "id": "airly",
       "nazwa": "Airly – czujniki lokalne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-11-03T05:30:18+00:00",
+      "pobrano": "2026-11-03T12:59:01+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "czujniki niskokosztowe (nie referencyjne), 5 z 5",
-      "pobrano_ladnie": "03.11.2026, 06:30"
+      "pobrano_ladnie": "03.11.2026, 13:59"
     },
     {
       "id": "open-meteo",
       "nazwa": "Open-Meteo – prognoza 24 h",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-11-03T05:30:18+00:00",
+      "pobrano": "2026-11-03T12:59:02+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": null,
-      "pobrano_ladnie": "03.11.2026, 06:30"
+      "pobrano_ladnie": "03.11.2026, 13:59"
     },
     {
       "id": "stopnie-alarmowe",
       "nazwa": "Stopnie alarmowe",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-11-03T05:30:48+00:00",
+      "pobrano": "2026-11-03T12:59:26+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "z konfiguracji (aktualizacja ręczna), termin 30.11.2026 — za 27 dni",
-      "pobrano_ladnie": "03.11.2026, 06:30"
+      "pobrano_ladnie": "03.11.2026, 13:59"
     },
     {
       "id": "lasy",
       "nazwa": "Zagrożenie pożarowe lasu",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-11-03T05:30:48+00:00",
+      "pobrano": "2026-11-03T12:59:26+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "poza sezonem (stopnie ustalane od 1 marca do 30 września)",
-      "pobrano_ladnie": "03.11.2026, 06:30"
+      "pobrano_ladnie": "03.11.2026, 13:59"
     },
     {
       "id": "pse",
       "nazwa": "PSE – bilans mocy",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-11-03T05:30:49+00:00",
+      "pobrano": "2026-11-03T12:59:27+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "wariant: plan koordynacyjny dobowy",
-      "pobrano_ladnie": "03.11.2026, 06:30"
+      "pobrano_ladnie": "03.11.2026, 13:59"
     },
     {
       "id": "gminy",
       "nazwa": "Serwisy starostwa i gmin",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-11-03T05:31:10+00:00",
+      "pobrano": "2026-11-03T12:59:44+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "6 z 7 serwisów — bez: Gmina Płośnica",
-      "pobrano_ladnie": "03.11.2026, 06:31"
+      "pobrano_ladnie": "03.11.2026, 13:59"
     },
     {
       "id": "wlasne",
       "nazwa": "Komunikaty własne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-11-03T05:31:10+00:00",
+      "pobrano": "2026-11-03T12:59:44+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "0 aktywnych z 0 w pliku",
-      "pobrano_ladnie": "03.11.2026, 06:31"
+      "pobrano_ladnie": "03.11.2026, 13:59"
     }
   ],
   "zrodla_niedostepne": [],
