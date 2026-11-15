@@ -1,7 +1,7 @@
 {
   "powiat": "powiat działdowski",
-  "wygenerowano": "14.11.2026, 21:47",
-  "wygenerowano_iso": "2026-11-14T20:47:27+00:00",
+  "wygenerowano": "15.11.2026, 01:47",
+  "wygenerowano_iso": "2026-11-15T00:47:31+00:00",
   "naglowek": "Brak ostrzeżeń",
   "klasa_statusu": "s0",
   "najwyzszy_stopien": 0,
@@ -25,26 +25,6 @@
   ],
   "stany": [
     {
-      "zrodlo": "airly",
-      "charakter": "stan",
-      "typ": "Jakość powietrza (czujnik lokalny)",
-      "tytul": "Iłowo-Osada, Wyzwolenia",
-      "opis": "PM2,5: 62 µg/m³, PM10: 79 µg/m³. Słaba jakość powietrza!",
-      "stopien": 2,
-      "obowiazuje_od": null,
-      "obowiazuje_do": null,
-      "link": null,
-      "dodatkowe": {
-        "pm25": 62.46,
-        "pm10": 78.62,
-        "caqi": 78.39
-      },
-      "klucz": "2ed3c28d623866f6",
-      "przestarzale": false,
-      "wiek": null,
-      "okres": ""
-    },
-    {
       "zrodlo": "stopnie-alarmowe",
       "charakter": "stan",
       "typ": "Stopień alarmowy",
@@ -59,6 +39,26 @@
       "przestarzale": false,
       "wiek": null,
       "okres": "do 01.12.2026, 00:59"
+    },
+    {
+      "zrodlo": "airly",
+      "charakter": "stan",
+      "typ": "Jakość powietrza (czujnik lokalny)",
+      "tytul": "Lidzbark, Jeleńska",
+      "opis": "PM2,5: 40 µg/m³, PM10: 53 µg/m³. Jakość powietrza jest średnia.",
+      "stopien": 1,
+      "obowiazuje_od": null,
+      "obowiazuje_do": null,
+      "link": null,
+      "dodatkowe": {
+        "pm25": 40.45,
+        "pm10": 53.45,
+        "caqi": 60.46
+      },
+      "klucz": "2e143129402db1f8",
+      "przestarzale": false,
+      "wiek": null,
+      "okres": ""
     },
     {
       "zrodlo": "stopnie-alarmowe",
@@ -113,15 +113,15 @@
       "charakter": "stan",
       "typ": "Jakość powietrza (czujnik lokalny)",
       "tytul": "Działdowo, Karłowicza",
-      "opis": "PM2,5: 19 µg/m³, PM10: 23 µg/m³. Cóż... Bywało lepiej.",
+      "opis": "PM2,5: 28 µg/m³, PM10: 39 µg/m³. Cóż... Bywało lepiej.",
       "stopien": 0,
       "obowiazuje_od": null,
       "obowiazuje_do": null,
       "link": null,
       "dodatkowe": {
-        "pm25": 18.83,
-        "pm10": 22.65,
-        "caqi": 31.38
+        "pm25": 28.37,
+        "pm10": 38.78,
+        "caqi": 47.28
       },
       "klucz": "2e29e490e7d89d48",
       "przestarzale": false,
@@ -132,18 +132,18 @@
       "zrodlo": "airly",
       "charakter": "stan",
       "typ": "Jakość powietrza (czujnik lokalny)",
-      "tytul": "Lidzbark, Jeleńska",
-      "opis": "PM2,5: 24 µg/m³, PM10: 33 µg/m³. Cóż... Bywało lepiej.",
+      "tytul": "Płośnica, Kościelna",
+      "opis": "PM2,5: 16 µg/m³, PM10: 18 µg/m³. Cóż... Bywało lepiej.",
       "stopien": 0,
       "obowiazuje_od": null,
       "obowiazuje_do": null,
       "link": null,
       "dodatkowe": {
-        "pm25": 24.46,
-        "pm10": 33.17,
-        "caqi": 40.77
+        "pm25": 15.97,
+        "pm10": 18.24,
+        "caqi": 26.62
       },
-      "klucz": "20adfc0452bf8b12",
+      "klucz": "6370cff9d031f209",
       "przestarzale": false,
       "wiek": null,
       "okres": ""
@@ -152,18 +152,18 @@
       "zrodlo": "airly",
       "charakter": "stan",
       "typ": "Jakość powietrza (czujnik lokalny)",
-      "tytul": "Płośnica, Kościelna",
-      "opis": "PM2,5: 20 µg/m³, PM10: 23 µg/m³. Cóż... Bywało lepiej.",
+      "tytul": "Iłowo-Osada, Wyzwolenia",
+      "opis": "PM2,5: 29 µg/m³, PM10: 39 µg/m³. Cóż... Bywało lepiej.",
       "stopien": 0,
       "obowiazuje_od": null,
       "obowiazuje_do": null,
       "link": null,
       "dodatkowe": {
-        "pm25": 19.74,
-        "pm10": 23.4,
-        "caqi": 32.9
+        "pm25": 28.94,
+        "pm10": 39.34,
+        "caqi": 48.24
       },
-      "klucz": "6370cff9d031f209",
+      "klucz": "8839ac39f003b80b",
       "przestarzale": false,
       "wiek": null,
       "okres": ""
@@ -173,13 +173,13 @@
       "charakter": "stan",
       "typ": "Prognoza",
       "tytul": "Najbliższe 24 godziny",
-      "opis": "Najsilniejszy prognozowany poryw 44 km/h, suma opadów 0.0 mm. Temperatura od 1 do 4 °C.",
+      "opis": "Najsilniejszy prognozowany poryw 36 km/h, suma opadów 0.0 mm. Temperatura od -1 do 5 °C.",
       "stopien": 0,
       "obowiazuje_od": null,
       "obowiazuje_do": null,
       "link": null,
       "dodatkowe": {
-        "maks_poryw_kmh": 44,
+        "maks_poryw_kmh": 36,
         "suma_opadow_mm": 0.0
       },
       "klucz": "8c15ed19d97c626d",
@@ -210,99 +210,99 @@
       "nazwa": "IMGW – ostrzeżenia meteorologiczne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-11-14T20:47:29+00:00",
+      "pobrano": "2026-11-15T00:47:33+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": null,
-      "pobrano_ladnie": "14.11.2026, 21:47"
+      "pobrano_ladnie": "15.11.2026, 01:47"
     },
     {
       "id": "imgw-hydro",
       "nazwa": "IMGW – ostrzeżenia hydrologiczne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-11-14T20:47:29+00:00",
+      "pobrano": "2026-11-15T00:47:34+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": null,
-      "pobrano_ladnie": "14.11.2026, 21:47"
+      "pobrano_ladnie": "15.11.2026, 01:47"
     },
     {
       "id": "airly",
       "nazwa": "Airly – czujniki lokalne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-11-14T20:47:33+00:00",
+      "pobrano": "2026-11-15T00:47:37+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "czujniki niskokosztowe (nie referencyjne), 4 z 5 — część niedostępna",
-      "pobrano_ladnie": "14.11.2026, 21:47"
+      "pobrano_ladnie": "15.11.2026, 01:47"
     },
     {
       "id": "open-meteo",
       "nazwa": "Open-Meteo – prognoza 24 h",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-11-14T20:49:25+00:00",
+      "pobrano": "2026-11-15T00:49:05+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": null,
-      "pobrano_ladnie": "14.11.2026, 21:49"
+      "pobrano_ladnie": "15.11.2026, 01:49"
     },
     {
       "id": "stopnie-alarmowe",
       "nazwa": "Stopnie alarmowe",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-11-14T20:55:26+00:00",
+      "pobrano": "2026-11-15T00:55:07+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
-      "uwaga": "z konfiguracji (aktualizacja ręczna), termin 30.11.2026 — za 16 dni",
-      "pobrano_ladnie": "14.11.2026, 21:55"
+      "uwaga": "z konfiguracji (aktualizacja ręczna), termin 30.11.2026 — za 15 dni",
+      "pobrano_ladnie": "15.11.2026, 01:55"
     },
     {
       "id": "lasy",
       "nazwa": "Zagrożenie pożarowe lasu",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-11-14T20:55:26+00:00",
+      "pobrano": "2026-11-15T00:55:07+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "poza sezonem (stopnie ustalane od 1 marca do 30 września)",
-      "pobrano_ladnie": "14.11.2026, 21:55"
+      "pobrano_ladnie": "15.11.2026, 01:55"
     },
     {
       "id": "pse",
       "nazwa": "PSE – bilans mocy",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-11-14T20:55:27+00:00",
+      "pobrano": "2026-11-15T00:55:09+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "wariant: plan koordynacyjny dobowy",
-      "pobrano_ladnie": "14.11.2026, 21:55"
+      "pobrano_ladnie": "15.11.2026, 01:55"
     },
     {
       "id": "gminy",
       "nazwa": "Serwisy starostwa i gmin",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-11-14T20:55:48+00:00",
+      "pobrano": "2026-11-15T00:55:29+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
-      "uwaga": "6 z 7 serwisów — bez: Gmina Płośnica",
-      "pobrano_ladnie": "14.11.2026, 21:55"
+      "uwaga": "4 z 7 serwisów — bez: Gmina Działdowo, Gmina Iłowo-Osada, Gmina Płośnica",
+      "pobrano_ladnie": "15.11.2026, 01:55"
     },
     {
       "id": "wlasne",
       "nazwa": "Komunikaty własne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-11-14T20:55:48+00:00",
+      "pobrano": "2026-11-15T00:55:29+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "0 aktywnych z 0 w pliku",
-      "pobrano_ladnie": "14.11.2026, 21:55"
+      "pobrano_ladnie": "15.11.2026, 01:55"
     }
   ],
   "zrodla_niedostepne": [],
