@@ -1,7 +1,7 @@
 {
   "powiat": "powiat działdowski",
-  "wygenerowano": "15.11.2026, 01:47",
-  "wygenerowano_iso": "2026-11-15T00:47:31+00:00",
+  "wygenerowano": "15.11.2026, 08:35",
+  "wygenerowano_iso": "2026-11-15T07:35:01+00:00",
   "naglowek": "Brak ostrzeżeń",
   "klasa_statusu": "s0",
   "najwyzszy_stopien": 0,
@@ -45,15 +45,15 @@
       "charakter": "stan",
       "typ": "Jakość powietrza (czujnik lokalny)",
       "tytul": "Lidzbark, Jeleńska",
-      "opis": "PM2,5: 40 µg/m³, PM10: 53 µg/m³. Jakość powietrza jest średnia.",
+      "opis": "PM2,5: 31 µg/m³, PM10: 42 µg/m³. Jakość powietrza jest średnia.",
       "stopien": 1,
       "obowiazuje_od": null,
       "obowiazuje_do": null,
       "link": null,
       "dodatkowe": {
-        "pm25": 40.45,
-        "pm10": 53.45,
-        "caqi": 60.46
+        "pm25": 30.87,
+        "pm10": 42.36,
+        "caqi": 50.88
       },
       "klucz": "2e143129402db1f8",
       "przestarzale": false,
@@ -113,15 +113,15 @@
       "charakter": "stan",
       "typ": "Jakość powietrza (czujnik lokalny)",
       "tytul": "Działdowo, Karłowicza",
-      "opis": "PM2,5: 28 µg/m³, PM10: 39 µg/m³. Cóż... Bywało lepiej.",
+      "opis": "PM2,5: 28 µg/m³, PM10: 38 µg/m³. Cóż... Bywało lepiej.",
       "stopien": 0,
       "obowiazuje_od": null,
       "obowiazuje_do": null,
       "link": null,
       "dodatkowe": {
-        "pm25": 28.37,
-        "pm10": 38.78,
-        "caqi": 47.28
+        "pm25": 27.65,
+        "pm10": 37.61,
+        "caqi": 46.1
       },
       "klucz": "2e29e490e7d89d48",
       "przestarzale": false,
@@ -133,15 +133,15 @@
       "charakter": "stan",
       "typ": "Jakość powietrza (czujnik lokalny)",
       "tytul": "Płośnica, Kościelna",
-      "opis": "PM2,5: 16 µg/m³, PM10: 18 µg/m³. Cóż... Bywało lepiej.",
+      "opis": "PM2,5: 28 µg/m³, PM10: 36 µg/m³. Cóż... Bywało lepiej.",
       "stopien": 0,
       "obowiazuje_od": null,
       "obowiazuje_do": null,
       "link": null,
       "dodatkowe": {
-        "pm25": 15.97,
-        "pm10": 18.24,
-        "caqi": 26.62
+        "pm25": 28.4,
+        "pm10": 36.43,
+        "caqi": 47.33
       },
       "klucz": "6370cff9d031f209",
       "przestarzale": false,
@@ -153,15 +153,15 @@
       "charakter": "stan",
       "typ": "Jakość powietrza (czujnik lokalny)",
       "tytul": "Iłowo-Osada, Wyzwolenia",
-      "opis": "PM2,5: 29 µg/m³, PM10: 39 µg/m³. Cóż... Bywało lepiej.",
+      "opis": "PM2,5: 27 µg/m³, PM10: 36 µg/m³. Cóż... Bywało lepiej.",
       "stopien": 0,
       "obowiazuje_od": null,
       "obowiazuje_do": null,
       "link": null,
       "dodatkowe": {
-        "pm25": 28.94,
-        "pm10": 39.34,
-        "caqi": 48.24
+        "pm25": 27.01,
+        "pm10": 36.09,
+        "caqi": 45.03
       },
       "klucz": "8839ac39f003b80b",
       "przestarzale": false,
@@ -210,99 +210,99 @@
       "nazwa": "IMGW – ostrzeżenia meteorologiczne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-11-15T00:47:33+00:00",
+      "pobrano": "2026-11-15T07:35:02+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": null,
-      "pobrano_ladnie": "15.11.2026, 01:47"
+      "pobrano_ladnie": "15.11.2026, 08:35"
     },
     {
       "id": "imgw-hydro",
       "nazwa": "IMGW – ostrzeżenia hydrologiczne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-11-15T00:47:34+00:00",
+      "pobrano": "2026-11-15T07:35:03+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": null,
-      "pobrano_ladnie": "15.11.2026, 01:47"
+      "pobrano_ladnie": "15.11.2026, 08:35"
     },
     {
       "id": "airly",
       "nazwa": "Airly – czujniki lokalne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-11-15T00:47:37+00:00",
+      "pobrano": "2026-11-15T07:35:05+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "czujniki niskokosztowe (nie referencyjne), 4 z 5 — część niedostępna",
-      "pobrano_ladnie": "15.11.2026, 01:47"
+      "pobrano_ladnie": "15.11.2026, 08:35"
     },
     {
       "id": "open-meteo",
       "nazwa": "Open-Meteo – prognoza 24 h",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-11-15T00:49:05+00:00",
+      "pobrano": "2026-11-15T07:35:05+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": null,
-      "pobrano_ladnie": "15.11.2026, 01:49"
+      "pobrano_ladnie": "15.11.2026, 08:35"
     },
     {
       "id": "stopnie-alarmowe",
       "nazwa": "Stopnie alarmowe",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-11-15T00:55:07+00:00",
+      "pobrano": "2026-11-15T07:41:06+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "z konfiguracji (aktualizacja ręczna), termin 30.11.2026 — za 15 dni",
-      "pobrano_ladnie": "15.11.2026, 01:55"
+      "pobrano_ladnie": "15.11.2026, 08:41"
     },
     {
       "id": "lasy",
       "nazwa": "Zagrożenie pożarowe lasu",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-11-15T00:55:07+00:00",
+      "pobrano": "2026-11-15T07:41:06+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "poza sezonem (stopnie ustalane od 1 marca do 30 września)",
-      "pobrano_ladnie": "15.11.2026, 01:55"
+      "pobrano_ladnie": "15.11.2026, 08:41"
     },
     {
       "id": "pse",
       "nazwa": "PSE – bilans mocy",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-11-15T00:55:09+00:00",
+      "pobrano": "2026-11-15T07:41:07+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "wariant: plan koordynacyjny dobowy",
-      "pobrano_ladnie": "15.11.2026, 01:55"
+      "pobrano_ladnie": "15.11.2026, 08:41"
     },
     {
       "id": "gminy",
       "nazwa": "Serwisy starostwa i gmin",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-11-15T00:55:29+00:00",
+      "pobrano": "2026-11-15T07:41:24+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
-      "uwaga": "4 z 7 serwisów — bez: Gmina Działdowo, Gmina Iłowo-Osada, Gmina Płośnica",
-      "pobrano_ladnie": "15.11.2026, 01:55"
+      "uwaga": "6 z 7 serwisów — bez: Gmina Płośnica",
+      "pobrano_ladnie": "15.11.2026, 08:41"
     },
     {
       "id": "wlasne",
       "nazwa": "Komunikaty własne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-11-15T00:55:29+00:00",
+      "pobrano": "2026-11-15T07:41:24+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "0 aktywnych z 0 w pliku",
-      "pobrano_ladnie": "15.11.2026, 01:55"
+      "pobrano_ladnie": "15.11.2026, 08:41"
     }
   ],
   "zrodla_niedostepne": [],
