@@ -1,28 +1,11 @@
 {
   "powiat": "powiat działdowski",
-  "wygenerowano": "19.11.2026, 00:19",
-  "wygenerowano_iso": "2026-11-18T23:19:06+00:00",
+  "wygenerowano": "19.11.2026, 05:15",
+  "wygenerowano_iso": "2026-11-19T04:15:53+00:00",
   "naglowek": "Brak ostrzeżeń",
   "klasa_statusu": "s0",
   "najwyzszy_stopien": 0,
-  "zdarzenia": [
-    {
-      "zrodlo": "gminy",
-      "charakter": "zdarzenie",
-      "typ": "Komunikat — Gmina Lidzbark",
-      "tytul": "Marsz w ramach Kampanii Białej Wstążki w Lidzbarku",
-      "opis": "Zespół Interdyscyplinarny w Lidzbarku oraz Miejski Ośrodek Pomocy Społecznej w Lidzbarku zapraszają do udziału w marszu w ramach Kampanii Białej Wstążki. Wydarzenie ma na celu wyrażenie sprzeciwu wobec przemocy oraz zwrócenie uwagi na potrzebę budowania...",
-      "stopien": 0,
-      "obowiazuje_od": "2026-11-16T00:00:00+00:00",
-      "obowiazuje_do": null,
-      "link": "https://lidzbark.pl/images/article/05fcb46a9cab3ba5b2d6ab411fbf1cac79f70a53.jpeg",
-      "dodatkowe": {},
-      "klucz": "2f6d4096b707b459",
-      "przestarzale": false,
-      "wiek": null,
-      "okres": "od 16.11.2026, 01:00"
-    }
-  ],
+  "zdarzenia": [],
   "stany": [
     {
       "zrodlo": "stopnie-alarmowe",
@@ -39,6 +22,25 @@
       "przestarzale": false,
       "wiek": null,
       "okres": "do 01.12.2026, 00:59"
+    },
+    {
+      "zrodlo": "open-meteo",
+      "charakter": "stan",
+      "typ": "Prognoza",
+      "tytul": "Najbliższe 24 godziny",
+      "opis": "Najsilniejszy prognozowany poryw 60 km/h, suma opadów 4.2 mm. Temperatura od 5 do 8 °C.",
+      "stopien": 1,
+      "obowiazuje_od": null,
+      "obowiazuje_do": null,
+      "link": null,
+      "dodatkowe": {
+        "maks_poryw_kmh": 60,
+        "suma_opadow_mm": 4.2
+      },
+      "klucz": "e59588e272a17ca1",
+      "przestarzale": false,
+      "wiek": null,
+      "okres": ""
     },
     {
       "zrodlo": "stopnie-alarmowe",
@@ -93,15 +95,15 @@
       "charakter": "stan",
       "typ": "Jakość powietrza (czujnik lokalny)",
       "tytul": "Działdowo, Karłowicza",
-      "opis": "PM2,5: 7 µg/m³, PM10: 9 µg/m³. Wspaniałe powietrze!",
+      "opis": "PM2,5: 1 µg/m³, PM10: 2 µg/m³. Wspaniałe powietrze!",
       "stopien": 0,
       "obowiazuje_od": null,
       "obowiazuje_do": null,
       "link": null,
       "dodatkowe": {
-        "pm25": 7.42,
-        "pm10": 8.69,
-        "caqi": 12.37
+        "pm25": 1.35,
+        "pm10": 1.59,
+        "caqi": 2.25
       },
       "klucz": "2e29e490e7d89d48",
       "przestarzale": false,
@@ -113,15 +115,15 @@
       "charakter": "stan",
       "typ": "Jakość powietrza (czujnik lokalny)",
       "tytul": "Lidzbark, Jeleńska",
-      "opis": "PM2,5: 5 µg/m³, PM10: 7 µg/m³. Wspaniałe powietrze!",
+      "opis": "PM2,5: 1 µg/m³, PM10: 1 µg/m³. Wspaniałe powietrze!",
       "stopien": 0,
       "obowiazuje_od": null,
       "obowiazuje_do": null,
       "link": null,
       "dodatkowe": {
-        "pm25": 5.47,
-        "pm10": 6.89,
-        "caqi": 9.12
+        "pm25": 0.83,
+        "pm10": 1.04,
+        "caqi": 1.39
       },
       "klucz": "20adfc0452bf8b12",
       "przestarzale": false,
@@ -133,15 +135,15 @@
       "charakter": "stan",
       "typ": "Jakość powietrza (czujnik lokalny)",
       "tytul": "Płośnica, Kościelna",
-      "opis": "PM2,5: 0 µg/m³, PM10: 0 µg/m³. Wspaniałe powietrze!",
+      "opis": "PM2,5: 1 µg/m³, PM10: 1 µg/m³. Wspaniałe powietrze!",
       "stopien": 0,
       "obowiazuje_od": null,
       "obowiazuje_do": null,
       "link": null,
       "dodatkowe": {
-        "pm25": 0.31,
-        "pm10": 0.37,
-        "caqi": 0.52
+        "pm25": 0.66,
+        "pm10": 0.88,
+        "caqi": 1.1
       },
       "klucz": "6370cff9d031f209",
       "przestarzale": false,
@@ -153,36 +155,17 @@
       "charakter": "stan",
       "typ": "Jakość powietrza (czujnik lokalny)",
       "tytul": "Iłowo-Osada, Wyzwolenia",
-      "opis": "PM2,5: 9 µg/m³, PM10: 10 µg/m³. Wspaniałe powietrze!",
+      "opis": "PM2,5: 2 µg/m³, PM10: 2 µg/m³. Wspaniałe powietrze!",
       "stopien": 0,
       "obowiazuje_od": null,
       "obowiazuje_do": null,
       "link": null,
       "dodatkowe": {
-        "pm25": 9.04,
-        "pm10": 10.49,
-        "caqi": 15.07
+        "pm25": 1.84,
+        "pm10": 2.14,
+        "caqi": 3.07
       },
       "klucz": "8839ac39f003b80b",
-      "przestarzale": false,
-      "wiek": null,
-      "okres": ""
-    },
-    {
-      "zrodlo": "open-meteo",
-      "charakter": "stan",
-      "typ": "Prognoza",
-      "tytul": "Najbliższe 24 godziny",
-      "opis": "Najsilniejszy prognozowany poryw 54 km/h, suma opadów 1.1 mm. Temperatura od 4 do 7 °C.",
-      "stopien": 0,
-      "obowiazuje_od": null,
-      "obowiazuje_do": null,
-      "link": null,
-      "dodatkowe": {
-        "maks_poryw_kmh": 54,
-        "suma_opadow_mm": 1.1
-      },
-      "klucz": "8c15ed19d97c626d",
       "przestarzale": false,
       "wiek": null,
       "okres": ""
@@ -210,99 +193,99 @@
       "nazwa": "IMGW – ostrzeżenia meteorologiczne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-11-18T23:19:06+00:00",
+      "pobrano": "2026-11-19T04:15:54+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": null,
-      "pobrano_ladnie": "19.11.2026, 00:19"
+      "pobrano_ladnie": "19.11.2026, 05:15"
     },
     {
       "id": "imgw-hydro",
       "nazwa": "IMGW – ostrzeżenia hydrologiczne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-11-18T23:19:07+00:00",
+      "pobrano": "2026-11-19T04:15:55+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
-      "uwaga": "API odpowiada, endpoint zwrócił 404 — brak ostrzeżeń tego typu",
-      "pobrano_ladnie": "19.11.2026, 00:19"
+      "uwaga": null,
+      "pobrano_ladnie": "19.11.2026, 05:15"
     },
     {
       "id": "airly",
       "nazwa": "Airly – czujniki lokalne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-11-18T23:19:10+00:00",
+      "pobrano": "2026-11-19T04:15:59+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "czujniki niskokosztowe (nie referencyjne), 4 z 5 — część niedostępna",
-      "pobrano_ladnie": "19.11.2026, 00:19"
+      "pobrano_ladnie": "19.11.2026, 05:15"
     },
     {
       "id": "open-meteo",
       "nazwa": "Open-Meteo – prognoza 24 h",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-11-18T23:19:10+00:00",
+      "pobrano": "2026-11-19T04:15:59+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": null,
-      "pobrano_ladnie": "19.11.2026, 00:19"
+      "pobrano_ladnie": "19.11.2026, 05:15"
     },
     {
       "id": "stopnie-alarmowe",
       "nazwa": "Stopnie alarmowe",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-11-18T23:19:36+00:00",
+      "pobrano": "2026-11-19T04:16:33+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
-      "uwaga": "z konfiguracji (aktualizacja ręczna), termin 30.11.2026 — za 12 dni — SPRAWDŹ PRZEDŁUŻENIE",
-      "pobrano_ladnie": "19.11.2026, 00:19"
+      "uwaga": "z konfiguracji (aktualizacja ręczna), termin 30.11.2026 — za 11 dni — SPRAWDŹ PRZEDŁUŻENIE",
+      "pobrano_ladnie": "19.11.2026, 05:16"
     },
     {
       "id": "lasy",
       "nazwa": "Zagrożenie pożarowe lasu",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-11-18T23:19:36+00:00",
+      "pobrano": "2026-11-19T04:16:33+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "poza sezonem (stopnie ustalane od 1 marca do 30 września)",
-      "pobrano_ladnie": "19.11.2026, 00:19"
+      "pobrano_ladnie": "19.11.2026, 05:16"
     },
     {
       "id": "pse",
       "nazwa": "PSE – bilans mocy",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-11-18T23:19:37+00:00",
+      "pobrano": "2026-11-19T04:16:34+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "wariant: plan koordynacyjny dobowy",
-      "pobrano_ladnie": "19.11.2026, 00:19"
+      "pobrano_ladnie": "19.11.2026, 05:16"
     },
     {
       "id": "gminy",
       "nazwa": "Serwisy starostwa i gmin",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-11-18T23:19:55+00:00",
+      "pobrano": "2026-11-19T04:17:01+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "4 z 7 serwisów — bez: Gmina Działdowo, Gmina Iłowo-Osada, Gmina Płośnica",
-      "pobrano_ladnie": "19.11.2026, 00:19"
+      "pobrano_ladnie": "19.11.2026, 05:17"
     },
     {
       "id": "wlasne",
       "nazwa": "Komunikaty własne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-11-18T23:19:55+00:00",
+      "pobrano": "2026-11-19T04:17:01+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "0 aktywnych z 0 w pliku",
-      "pobrano_ladnie": "19.11.2026, 00:19"
+      "pobrano_ladnie": "19.11.2026, 05:17"
     }
   ],
   "zrodla_niedostepne": [],
