@@ -1,7 +1,7 @@
 {
   "powiat": "powiat działdowski",
-  "wygenerowano": "27.11.2026, 19:41",
-  "wygenerowano_iso": "2026-11-27T18:41:37+00:00",
+  "wygenerowano": "28.11.2026, 02:46",
+  "wygenerowano_iso": "2026-11-28T01:46:35+00:00",
   "naglowek": "Ostrzeżenie 2. stopnia — jaka będzie szkoła przyszłości? w działdowie odbył się iii powiatowy kongres oświatowy",
   "klasa_statusu": "s2",
   "najwyzszy_stopien": 2,
@@ -40,26 +40,6 @@
     }
   ],
   "stany": [
-    {
-      "zrodlo": "airly",
-      "charakter": "stan",
-      "typ": "Jakość powietrza (czujnik lokalny)",
-      "tytul": "Lidzbark, Jeleńska",
-      "opis": "PM2,5: 56 µg/m³, PM10: 69 µg/m³. Słaba jakość powietrza!",
-      "stopien": 2,
-      "obowiazuje_od": null,
-      "obowiazuje_do": null,
-      "link": null,
-      "dodatkowe": {
-        "pm25": 55.99,
-        "pm10": 68.68,
-        "caqi": 75.45
-      },
-      "klucz": "cdc4d8ce5af7d783",
-      "przestarzale": false,
-      "wiek": null,
-      "okres": ""
-    },
     {
       "zrodlo": "stopnie-alarmowe",
       "charakter": "stan",
@@ -129,15 +109,15 @@
       "charakter": "stan",
       "typ": "Jakość powietrza (czujnik lokalny)",
       "tytul": "Działdowo, Karłowicza",
-      "opis": "PM2,5: 15 µg/m³, PM10: 17 µg/m³. Wspaniałe powietrze!",
+      "opis": "PM2,5: 17 µg/m³, PM10: 21 µg/m³. Cóż... Bywało lepiej.",
       "stopien": 0,
       "obowiazuje_od": null,
       "obowiazuje_do": null,
       "link": null,
       "dodatkowe": {
-        "pm25": 14.64,
-        "pm10": 17.37,
-        "caqi": 24.41
+        "pm25": 17.19,
+        "pm10": 20.65,
+        "caqi": 28.66
       },
       "klucz": "2e29e490e7d89d48",
       "przestarzale": false,
@@ -148,16 +128,36 @@
       "zrodlo": "airly",
       "charakter": "stan",
       "typ": "Jakość powietrza (czujnik lokalny)",
-      "tytul": "Płośnica, Kościelna",
-      "opis": "PM2,5: 12 µg/m³, PM10: 14 µg/m³. Wspaniałe powietrze!",
+      "tytul": "Lidzbark, Jeleńska",
+      "opis": "PM2,5: 21 µg/m³, PM10: 27 µg/m³. Cóż... Bywało lepiej.",
       "stopien": 0,
       "obowiazuje_od": null,
       "obowiazuje_do": null,
       "link": null,
       "dodatkowe": {
-        "pm25": 12.5,
-        "pm10": 14.14,
-        "caqi": 20.84
+        "pm25": 21.4,
+        "pm10": 26.92,
+        "caqi": 35.66
+      },
+      "klucz": "20adfc0452bf8b12",
+      "przestarzale": false,
+      "wiek": null,
+      "okres": ""
+    },
+    {
+      "zrodlo": "airly",
+      "charakter": "stan",
+      "typ": "Jakość powietrza (czujnik lokalny)",
+      "tytul": "Płośnica, Kościelna",
+      "opis": "PM2,5: 18 µg/m³, PM10: 21 µg/m³. Cóż... Bywało lepiej.",
+      "stopien": 0,
+      "obowiazuje_od": null,
+      "obowiazuje_do": null,
+      "link": null,
+      "dodatkowe": {
+        "pm25": 17.94,
+        "pm10": 20.69,
+        "caqi": 29.9
       },
       "klucz": "6370cff9d031f209",
       "przestarzale": false,
@@ -169,15 +169,15 @@
       "charakter": "stan",
       "typ": "Jakość powietrza (czujnik lokalny)",
       "tytul": "Iłowo-Osada, Wyzwolenia",
-      "opis": "PM2,5: 23 µg/m³, PM10: 29 µg/m³. Cóż... Bywało lepiej.",
+      "opis": "PM2,5: 21 µg/m³, PM10: 25 µg/m³. Cóż... Bywało lepiej.",
       "stopien": 0,
       "obowiazuje_od": null,
       "obowiazuje_do": null,
       "link": null,
       "dodatkowe": {
-        "pm25": 23.0,
-        "pm10": 28.94,
-        "caqi": 38.34
+        "pm25": 20.55,
+        "pm10": 25.03,
+        "caqi": 34.25
       },
       "klucz": "8839ac39f003b80b",
       "przestarzale": false,
@@ -189,14 +189,14 @@
       "charakter": "stan",
       "typ": "Prognoza",
       "tytul": "Najbliższe 24 godziny",
-      "opis": "Najsilniejszy prognozowany poryw 28 km/h, suma opadów 0.1 mm. Temperatura od -3 do 1 °C.",
+      "opis": "Najsilniejszy prognozowany poryw 24 km/h, suma opadów 0.0 mm. Temperatura od -8 do -3 °C.",
       "stopien": 0,
       "obowiazuje_od": null,
       "obowiazuje_do": null,
       "link": null,
       "dodatkowe": {
-        "maks_poryw_kmh": 28,
-        "suma_opadow_mm": 0.1
+        "maks_poryw_kmh": 24,
+        "suma_opadow_mm": 0.0
       },
       "klucz": "8c15ed19d97c626d",
       "przestarzale": false,
@@ -226,99 +226,99 @@
       "nazwa": "IMGW – ostrzeżenia meteorologiczne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-11-27T18:41:38+00:00",
+      "pobrano": "2026-11-28T01:46:36+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": null,
-      "pobrano_ladnie": "27.11.2026, 19:41"
+      "pobrano_ladnie": "28.11.2026, 02:46"
     },
     {
       "id": "imgw-hydro",
       "nazwa": "IMGW – ostrzeżenia hydrologiczne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-11-27T18:41:38+00:00",
+      "pobrano": "2026-11-28T01:46:36+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": null,
-      "pobrano_ladnie": "27.11.2026, 19:41"
+      "pobrano_ladnie": "28.11.2026, 02:46"
     },
     {
       "id": "airly",
       "nazwa": "Airly – czujniki lokalne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-11-27T18:41:41+00:00",
+      "pobrano": "2026-11-28T01:46:39+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "czujniki niskokosztowe (nie referencyjne), 4 z 5 — część niedostępna",
-      "pobrano_ladnie": "27.11.2026, 19:41"
+      "pobrano_ladnie": "28.11.2026, 02:46"
     },
     {
       "id": "open-meteo",
       "nazwa": "Open-Meteo – prognoza 24 h",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-11-27T18:41:41+00:00",
+      "pobrano": "2026-11-28T01:46:39+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": null,
-      "pobrano_ladnie": "27.11.2026, 19:41"
+      "pobrano_ladnie": "28.11.2026, 02:46"
     },
     {
       "id": "stopnie-alarmowe",
       "nazwa": "Stopnie alarmowe",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-11-27T18:42:04+00:00",
+      "pobrano": "2026-11-28T01:47:02+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
-      "uwaga": "z konfiguracji (aktualizacja ręczna), termin 30.11.2026 — za 3 dni — SPRAWDŹ PRZEDŁUŻENIE",
-      "pobrano_ladnie": "27.11.2026, 19:42"
+      "uwaga": "z konfiguracji (aktualizacja ręczna), termin 30.11.2026 — za 2 dni — SPRAWDŹ PRZEDŁUŻENIE",
+      "pobrano_ladnie": "28.11.2026, 02:47"
     },
     {
       "id": "lasy",
       "nazwa": "Zagrożenie pożarowe lasu",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-11-27T18:42:04+00:00",
+      "pobrano": "2026-11-28T01:47:02+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "poza sezonem (stopnie ustalane od 1 marca do 30 września)",
-      "pobrano_ladnie": "27.11.2026, 19:42"
+      "pobrano_ladnie": "28.11.2026, 02:47"
     },
     {
       "id": "pse",
       "nazwa": "PSE – bilans mocy",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-11-27T18:42:05+00:00",
+      "pobrano": "2026-11-28T01:47:03+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "wariant: plan koordynacyjny dobowy",
-      "pobrano_ladnie": "27.11.2026, 19:42"
+      "pobrano_ladnie": "28.11.2026, 02:47"
     },
     {
       "id": "gminy",
       "nazwa": "Serwisy starostwa i gmin",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-11-27T18:42:22+00:00",
+      "pobrano": "2026-11-28T01:47:19+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
-      "uwaga": "4 z 7 serwisów — bez: Gmina Działdowo, Gmina Iłowo-Osada, Gmina Płośnica",
-      "pobrano_ladnie": "27.11.2026, 19:42"
+      "uwaga": "6 z 7 serwisów — bez: Gmina Płośnica",
+      "pobrano_ladnie": "28.11.2026, 02:47"
     },
     {
       "id": "wlasne",
       "nazwa": "Komunikaty własne",
       "ok": true,
       "blad": null,
-      "pobrano": "2026-11-27T18:42:22+00:00",
+      "pobrano": "2026-11-28T01:47:19+00:00",
       "wiek_minut": 0,
       "nieaktualne": false,
       "uwaga": "0 aktywnych z 0 w pliku",
-      "pobrano_ladnie": "27.11.2026, 19:42"
+      "pobrano_ladnie": "28.11.2026, 02:47"
     }
   ],
   "zrodla_niedostepne": [],
